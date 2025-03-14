@@ -23,7 +23,7 @@ def save_to_file(content, file_name="rna_sequence.txt"):
 
 if __name__ == "__main__":
     # Define an input string
-    input_string = "I need a jobbbbbb!!! thank you!"
+    input_string = "hi"
     
     # Flag to control saving to file
     save_to_file_flag = True  # Change to False if you do not want to save the output to a file
