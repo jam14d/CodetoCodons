@@ -3,7 +3,7 @@
 ## Overview
 This web application, built with Streamlit, simulates the process of DNA mutation, transcription, and translation into proteins. Users can input text, which is then converted into a DNA sequence, potentially mutated, transcribed into RNA, and finally translated into a protein sequence.
 
-🤖 Hugging Face AI Integration with Falcon-7B
+## Hugging Face AI Integration with Falcon-7B
 To make learning more interactive, the app integrates Hugging Face’s Falcon-7B Large Language Model (LLM) to generate real-time explanations about biological processes such as DNA replication, RNA transcription, and protein synthesis.
 
 ## Features
