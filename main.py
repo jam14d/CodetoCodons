@@ -2,6 +2,7 @@ import streamlit as st
 import random
 import requests
 import time  # Added for retries
+import os
 
 from pipeline import Pipeline
 from string_reader import StringReader
@@ -11,9 +12,18 @@ from space_remover import SpaceRemover
 from special_characters_remover import SpecialCharactersRemover
 from protein_synthesis import translate_rna_to_protein
 
+
 # Hugging Face API Setup
 API_URL = "https://api-inference.huggingface.co/models/tiiuae/falcon-7b-instruct"
-headers = {"Authorization": "TOKEN"}
+
+# Retrieve the token from an environment variable
+HF_TOKEN = os.getenv("HUGGINGFACE_TOKEN")
+
+# Ensure the token exists to prevent errors
+if HF_TOKEN is None:
+    raise ValueError("❌ Error: Hugging Face API token is missing! Set it as an environment variable.")
+
+headers = {"Authorization": f"Bearer {HF_TOKEN}"}
 
 def query_llm(prompt, retries=3):
     """Queries Hugging Face API with retries and removes the prompt echo."""
