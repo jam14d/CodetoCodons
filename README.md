@@ -1,7 +1,10 @@
 # Code to Codons: Developing a Python Web App for DNA Mutation and Protein Synthesis
 
 ## Overview
-This is a web application designed to simulate the process of DNA mutation, transcription, and translation into proteins. This tool allows users to input a text, which is then converted into a DNA sequence, potentially mutated, transcribed into RNA, and finally translated into a protein sequence.
+This web application simulates the process of DNA mutation, transcription, and translation into proteins. Users can input text, which is then converted into a DNA sequence, potentially mutated, transcribed into RNA, and finally translated into a protein sequence.
+
+🤖 Hugging Face AI Integration with Falcon-7B
+To make learning more interactive, the app integrates Hugging Face’s Falcon-7B Large Language Model (LLM) to generate real-time explanations about biological processes such as DNA replication, RNA transcription, and protein synthesis.
 
 ## Features
 - **Text to DNA Conversion:** Convert input text into a simulated DNA sequence.
