@@ -13,7 +13,7 @@ To make learning more interactive, the app integrates Hugging Face’s Falcon-7B
 - **Protein Translation:** Translate the RNA sequence into a chain of amino acids, forming a protein.
 
 ## How to run the application:
-    `streamlit run main.py`
+streamlit run main.py
 
 ## Usage
 Upon launching the application, you will see a text area where you can input your text. After inputting the text, use the slider to set the mutation rate and press the "Let's Transcribe and Translate!" button to see the results:
