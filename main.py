@@ -82,3 +82,4 @@ if st.button('Transcribe and Translate'):
             st.write(protein_sequence)
     else:
         st.error("Please enter some text to process.")
+#test
