@@ -1,0 +1,22 @@
+amino_acid_properties = {
+    'Ala': {'Hydrophobicity': 1.8, 'Charge': 0, 'Size': 89},
+    'Arg': {'Hydrophobicity': -4.5, 'Charge': 1, 'Size': 174},
+    'Asn': {'Hydrophobicity': -3.5, 'Charge': 0, 'Size': 132},
+    'Asp': {'Hydrophobicity': -3.5, 'Charge': -1, 'Size': 133},
+    'Cys': {'Hydrophobicity': 2.5, 'Charge': 0, 'Size': 121},
+    'Gln': {'Hydrophobicity': -3.5, 'Charge': 0, 'Size': 146},
+    'Glu': {'Hydrophobicity': -3.5, 'Charge': -1, 'Size': 147},
+    'Gly': {'Hydrophobicity': -0.4, 'Charge': 0, 'Size': 75},
+    'His': {'Hydrophobicity': -3.2, 'Charge': 1, 'Size': 155},
+    'Ile': {'Hydrophobicity': 4.5, 'Charge': 0, 'Size': 131},
+    'Leu': {'Hydrophobicity': 3.8, 'Charge': 0, 'Size': 131},
+    'Lys': {'Hydrophobicity': -3.9, 'Charge': 1, 'Size': 146},
+    'Met': {'Hydrophobicity': 1.9, 'Charge': 0, 'Size': 149},
+    'Phe': {'Hydrophobicity': 2.8, 'Charge': 0, 'Size': 165},
+    'Pro': {'Hydrophobicity': -1.6, 'Charge': 0, 'Size': 115},
+    'Ser': {'Hydrophobicity': -0.8, 'Charge': 0, 'Size': 105},
+    'Thr': {'Hydrophobicity': -0.7, 'Charge': 0, 'Size': 119},
+    'Trp': {'Hydrophobicity': -0.9, 'Charge': 0, 'Size': 204},
+    'Tyr': {'Hydrophobicity': -1.3, 'Charge': 0, 'Size': 181},
+    'Val': {'Hydrophobicity': 4.2, 'Charge': 0, 'Size': 117}
+}
