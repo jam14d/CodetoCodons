@@ -126,7 +126,7 @@ if st.button("Let's Transcribe and Translate!"):
 
         with st.spinner("Unraveling the mystery of mutations..."):
             explanation_mutation = query_llm(
-                "Describe DNA mutations in a fun way, like unexpected plot twists in a story. Make sure to mention that some mutations can be beneficial!"
+                "Describe DNA mutations. Also, make sure to mention that some mutations can be beneficial! Then, use an analogy to explain it in an engaging way."
             )
 
         st.markdown("**Mutations: Life's Plot Twists!**")
@@ -139,7 +139,7 @@ if st.button("Let's Transcribe and Translate!"):
 
         with st.spinner("Writing the script for transcription..."):
             explanation_transcription = query_llm(
-                "Explain transcription (DNA to mRNA) in a fun and easy way, like copying a recipe to make a new dish."
+                "Explain transcription (DNA to mRNA). Then, use an analogy to explain it in an engaging way."
             )
 
         st.markdown("**Transcription: Copying Life’s Recipes**")
@@ -152,7 +152,7 @@ if st.button("Let's Transcribe and Translate!"):
             with st.spinner("🤔 Understanding the impact of missing an ATG..."):
                 explanation_atg_missing= query_llm(
                     "Explain what happens if the ATG start codon in a DNA sequence is not available. "
-                    "Use an engaging analogy, like the missing conductor of an orchestra")
+                    "Then, use an analogy to explain it in an engaging way.")
             
                 st.markdown("**What Happens When ATG is Missing?**")
                 st.write(explanation_atg_missing)  # **This line ensures the explanation is displayed!**
@@ -164,7 +164,7 @@ if st.button("Let's Transcribe and Translate!"):
             with st.spinner("🤔 Understanding the impact of losing ATG..."):
                 explanation_atg_mutation = query_llm(
                     "Explain what happens if the ATG start codon in a DNA sequence is mutated during Transcription. "
-                    "Use an engaging analogy, like a conductor of an orchestra who doesn't know what he's supposed to do"
+                    "Then, use an analogy to explain it in an engaging way."
                 )
 
             st.markdown("**What Happens When ATG Gets Mutated?**")
@@ -181,7 +181,7 @@ if st.button("Let's Transcribe and Translate!"):
 
             with st.spinner("Decoding the protein-making process..."):
                 explanation_translation = query_llm(
-                    "Describe translation (mRNA to protein) in a fun and engaging way, like a factory assembling a product from instructions."
+                    "Describe translation (mRNA to protein). Then, use an analogy to explain it in an engaging way."
                 )
 
             st.markdown("**Translation: The Protein Factory!**")
