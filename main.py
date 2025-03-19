@@ -118,7 +118,7 @@ if st.button("Let's Transcribe and Translate!"):
                 "Explain DNA in a fun and simple way, like how blueprints guide building construction."
             )
 
-        st.markdown("**DNA: The Blueprint of Life**")
+        st.markdown("**What is DNA?**")
         st.write(explanation_dna)
 
         st.text("Mutated DNA Sequence:")
@@ -126,10 +126,10 @@ if st.button("Let's Transcribe and Translate!"):
 
         with st.spinner("Unraveling the mystery of mutations..."):
             explanation_mutation = query_llm(
-                "Describe DNA mutations. Also, make sure to mention that some mutations can be beneficial! Then, use an analogy to explain it in an engaging way."
+                "Describe DNA mutations. Also, make sure to mention that some mutations can be beneficial! Then, use a plot twist analogy to explain it in an engaging way."
             )
 
-        st.markdown("**Mutations: Life's Plot Twists!**")
+        st.markdown("**Mutations: Life's Plot Twists**")
         st.write(explanation_mutation)
 
         # Transcribe to RNA
@@ -139,10 +139,10 @@ if st.button("Let's Transcribe and Translate!"):
 
         with st.spinner("Writing the script for transcription..."):
             explanation_transcription = query_llm(
-                "Explain transcription (DNA to mRNA). Then, use an analogy to explain it in an engaging way."
+                "Explain transcription (DNA to mRNA). Then, use a copy machine analogy to explain it in an engaging way."
             )
 
-        st.markdown("**Transcription: Copying Life’s Recipes**")
+        st.markdown("**Transcription: Life's Copy Machine**")
         st.write(explanation_transcription)
 
         # Check for 'ATG' start codon
@@ -181,7 +181,7 @@ if st.button("Let's Transcribe and Translate!"):
 
             with st.spinner("Decoding the protein-making process..."):
                 explanation_translation = query_llm(
-                    "Describe translation (mRNA to protein). Then, use an analogy to explain it in an engaging way."
+                    "Describe translation (mRNA to protein). Then, use a factory analogy to explain it in an engaging way."
                 )
 
             st.markdown("**Translation: The Protein Factory!**")
