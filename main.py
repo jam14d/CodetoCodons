@@ -1,5 +1,6 @@
 import streamlit as st
 import random
+import re
 import requests
 import time  # Added for retries
 import os
@@ -25,8 +26,9 @@ if HF_TOKEN is None:
 
 headers = {"Authorization": f"Bearer {HF_TOKEN}"}
 
+
 def query_llm(prompt, retries=3):
-    """Queries Hugging Face API with retries and removes the prompt echo."""
+    """Queries Hugging Face API with improved prompts and character filtering."""
     for attempt in range(retries):
         response = requests.post(API_URL, headers=headers, json={"inputs": prompt})
 
@@ -40,8 +42,12 @@ def query_llm(prompt, retries=3):
                 else:
                     return "Error: Unexpected response format."
 
-                # **Remove the prompt from the response**
+                # **Ensure the response doesn't include strange characters**
                 cleaned_response = full_response.replace(prompt, "").strip()
+                
+                # Remove any non-ASCII characters (fixes weird output)
+                cleaned_response = re.sub(r'[^\x00-\x7F]+', '', cleaned_response)
+
                 return cleaned_response
 
             except requests.exceptions.JSONDecodeError:
@@ -59,6 +65,7 @@ def query_llm(prompt, retries=3):
             return f"❌ Error: API call failed with status code {response.status_code}"
 
     return "❌ API is currently unavailable. Please try again later."
+
 
 
 def mutate_dna(dna_sequence, mutation_rate):
@@ -118,7 +125,7 @@ if st.button("Let's Transcribe and Translate!"):
                 "Explain DNA in a fun and simple way, like how blueprints guide building construction."
             )
 
-        st.markdown("**What is DNA?**")
+        st.markdown("**DNA: The Blueprint**")
         st.write(explanation_dna)
 
         st.text("Mutated DNA Sequence:")
@@ -126,10 +133,10 @@ if st.button("Let's Transcribe and Translate!"):
 
         with st.spinner("Unraveling the mystery of mutations..."):
             explanation_mutation = query_llm(
-                "Describe DNA mutations. Also, make sure to mention that some mutations can be beneficial! Then, use a plot twist analogy to explain it in an engaging way."
+                "Describe what mutations in DNA. Then describe it as changing the blueprint for construction."
             )
 
-        st.markdown("**Mutations: Life's Plot Twists**")
+        st.markdown("**Mutations: Altering The Blueprint**")
         st.write(explanation_mutation)
 
         # Transcribe to RNA
@@ -139,10 +146,11 @@ if st.button("Let's Transcribe and Translate!"):
 
         with st.spinner("Writing the script for transcription..."):
             explanation_transcription = query_llm(
-                "Explain transcription (DNA to mRNA). Then, use a copy machine analogy to explain it in an engaging way."
+                "Explain transcription (DNA to mRNA) in clear, simple English. "
+                "Use a copy machine analogy. Keep the explanation concise and informative."
             )
 
-        st.markdown("**Transcription: Life's Copy Machine**")
+        st.markdown("**Transcription: A Copy Machine**")
         st.write(explanation_transcription)
 
         # Check for 'ATG' start codon
