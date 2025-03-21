@@ -138,14 +138,3 @@ def visualize_dna(original_sequence, mutated_sequence, mutation_info):
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 ```
-
----
-
-## **Final Thoughts**
-This script provides:
-- **Editable visual output (SVG)** for DNA sequences.
-- **Structured storage (JSON)** for mutation tracking.
-- **Real-time visualization (OpenCV)** for easy interpretation.
-
-🚀 Modify this script to include more mutations, additional annotations, or alternative storage formats!
-
