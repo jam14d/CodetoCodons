@@ -146,9 +146,11 @@ if st.button("Let's Transcribe and Translate!"):
 
         with st.spinner("Writing the script for transcription..."):
             explanation_transcription = query_llm(
-                "Explain transcription (DNA to mRNA) in clear, simple English. "
-                "Use a copy machine analogy. Keep the explanation concise and informative."
-            )
+    "Explain the biological process of transcription, where DNA is converted into mRNA."
+    "Keep the explanation concise, engaging, and scientifically accurate, suitable for someone new to genetics."
+    "Then, use a copy machine analogy to explain it in an engaging way"
+)
+
 
         st.markdown("**Transcription: A Copy Machine**")
         st.write(explanation_transcription)

@@ -1,0 +1,27 @@
+{
+    "original_sequence": [
+        "A-T",
+        "C-G",
+        "G-C",
+        "T-A",
+        "A-T",
+        "G-C",
+        "C-G",
+        "T-A"
+    ],
+    "mutated_sequence": [
+        "A-T",
+        "C-G",
+        "G-C",
+        "G-A",
+        "A-T",
+        "G-C",
+        "C-G",
+        "T-A"
+    ],
+    "mutation": {
+        "original": "T-A",
+        "mutated": "G-A",
+        "position": 3
+    }
+}
