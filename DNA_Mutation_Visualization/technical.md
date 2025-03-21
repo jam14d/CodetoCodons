@@ -109,32 +109,3 @@ def create_json(original_sequence, mutated_sequence, mutation_info):
 
 ### 5. **Visualizing DNA with OpenCV**
 The `visualize_dna()` function uses OpenCV to display the sequences in a pop-up window.
-
-#### **Key Features:**
-- Displays **original and mutated sequences**.
-- **Mutated base is shown in red**.
-- Uses a **600x500 pixel canvas**.
-
-#### **Code Snippet:**
-```python
-def visualize_dna(original_sequence, mutated_sequence, mutation_info):
-    img = np.ones((600, 500, 3), dtype=np.uint8) * 255
-    font = cv2.FONT_HERSHEY_SIMPLEX
-    
-    y = 60
-    cv2.putText(img, "Original DNA:", (50, y - 10), font, 0.6, (0, 0, 0), 2, cv2.LINE_AA)
-    for i, pair in enumerate(original_sequence):
-        cv2.putText(img, pair, (50, y), font, 0.6, (0, 0, 0), 2, cv2.LINE_AA)
-        y += 25
-    
-    y += 40
-    cv2.putText(img, "Mutated DNA:", (50, y - 10), font, 0.6, (0, 0, 0), 2, cv2.LINE_AA)
-    for i, pair in enumerate(mutated_sequence):
-        color = (0, 0, 255) if i == mutation_info['position'] else (0, 0, 0)
-        cv2.putText(img, pair, (50, y), font, 0.6, color, 2, cv2.LINE_AA)
-        y += 25
-    
-    cv2.imshow("DNA Mutation Visualization", img)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
-```
