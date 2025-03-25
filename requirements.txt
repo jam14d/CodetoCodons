@@ -1,6 +1,4 @@
 streamlit
 requests
-random
-
-time
-os
+numpy
+pandas
