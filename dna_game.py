@@ -73,8 +73,18 @@ for i, col in enumerate(cols):
                 game.selected = None
                 st.rerun()
 
+# Check answer button
 if st.button("Check Answer"):
     if game.check_answer():
         st.success("Correct! You repaired all mutations!")
+        st.session_state.game_over = True  # Mark game as complete
     else:
         st.error(f"Incorrect! Keep fixing mutations. Correct sequence: `{''.join(game.correct_strand)}`")
+
+# Separate handling for "Play Again" button
+if "game_over" in st.session_state and st.session_state.game_over:
+    if st.button("Play Again!"):
+        # Completely reset the game state
+        st.session_state.dna_game = DNAGame()
+        st.session_state.game_over = False
+        st.rerun()
