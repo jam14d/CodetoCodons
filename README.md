@@ -79,8 +79,3 @@ Ensure you have Streamlit installed and that you are in the correct project dire
 - Enhance the UI with a DNA helix visualization.
 - Expand the DNA mutation app with more real-world mutation simulations.
 
-## Credits
-Developed using Python and Streamlit with custom CSS styling for an engaging experience.
-
-**Code to Codons** aims to bridge biology and programming, making genetic concepts interactive and fun!
-
