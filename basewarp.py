@@ -5,9 +5,9 @@ class DNAGame:
     base_pairing = {"A": "T", "T": "A", "C": "G", "G": "C"}
     nucleotides = ["A", "T", "C", "G"]
 
-    def __init__(self, length=6, mutation_rate=0.3):
+    def __init__(self, length=6):
         self.length = length
-        self.mutation_rate = mutation_rate
+        #self.mutation_rate = mutation_rate
         self.template_strand = self.generate_dna()
         self.correct_strand = [self.base_pairing[base] for base in self.template_strand]
         self.mutated_strand = self.introduce_mutations()
