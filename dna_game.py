@@ -61,11 +61,15 @@ st.markdown('<div style="display:flex;justify-content:center;gap:10px;">' +
             '</div>', unsafe_allow_html=True)
 
 st.header("Complementary Strand:")
+
+# Unique CSS class wrapper
+st.markdown('<div class="complementary-strand">', unsafe_allow_html=True)
+
 cols = st.columns(game.length)
 
 for i, col in enumerate(cols):
     with col:
-        if st.button(game.mutated_strand[i], key=f"btn_{i}"):
+        if st.button(game.mutated_strand[i], key=f"complementary-btn-{i}"):
             if game.selected is None:
                 game.selected = i
             else:
@@ -73,18 +77,60 @@ for i, col in enumerate(cols):
                 game.selected = None
                 st.rerun()
 
-# Check answer button
-if st.button("Check Answer"):
-    if game.check_answer():
-        st.success("Correct! You repaired all mutations!")
-        st.session_state.game_over = True  # Mark game as complete
-    else:
-        st.error(f"Incorrect! Keep fixing mutations. Correct sequence: `{''.join(game.correct_strand)}`")
+st.markdown('</div>', unsafe_allow_html=True)
 
-# Separate handling for "Play Again" button
-if "game_over" in st.session_state and st.session_state.game_over:
-    if st.button("Play Again!"):
-        # Completely reset the game state
-        st.session_state.dna_game = DNAGame()
-        st.session_state.game_over = False
-        st.rerun()
+# Place Check Answer and Play Again in Sidebar
+with st.sidebar:
+    st.header("Game Controls")
+
+    if st.button("Check Answer"):
+        if game.check_answer():
+            st.success("Correct! You repaired all mutations!")
+            st.session_state.game_over = True
+        else:
+            st.error(f"Incorrect! Keep fixing mutations. Correct sequence: `{''.join(game.correct_strand)}`")
+
+    if "game_over" in st.session_state and st.session_state.game_over:
+        if st.button("Play Again!"):
+            st.session_state.dna_game = DNAGame()
+            st.session_state.game_over = False
+            st.rerun()
+
+
+# # Check answer button
+# if st.button("Check Answer"):
+#     if game.check_answer():
+#         st.success("Correct! You repaired all mutations!")
+#         st.session_state.game_over = True  # Mark game as complete
+#     else:
+#         st.error(f"Incorrect! Keep fixing mutations. Correct sequence: `{''.join(game.correct_strand)}`")
+
+# # Separate handling for "Play Again" button
+# if "game_over" in st.session_state and st.session_state.game_over:
+#     if st.button("Play Again!"):
+#         # Completely reset the game state
+#         st.session_state.dna_game = DNAGame()
+#         st.session_state.game_over = False
+#         st.rerun()
+
+st.markdown("""
+<style>
+div.stButton > button {
+    font-size: 30px !important;
+    width: 100px !important;
+    height: 100px !important;
+    border-radius: 10px !important;
+    border: 3px solid #33ccff !important;
+    background-color: #1e1e1e !important;
+    color: #33ccff !important;
+    box-shadow: 0px 0px 15px rgba(0, 204, 255, 0.6) !important;
+    transition: all 0.2s !important;
+}
+div.stButton > button:hover {
+    transform: scale(1.1) !important;
+    box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.9) !important;
+    border-color: #00ffff !important;
+    color: #00ffff !important;
+}
+</style>
+""", unsafe_allow_html=True)
