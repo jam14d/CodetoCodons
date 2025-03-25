@@ -40,16 +40,28 @@ game = st.session_state.dna_game
 
 # UI and interaction logic
 st.markdown("""
-    <div style="background-color: #1e1e1e; padding: 10px; border-radius: 10px; color: #ffffff; text-align: center; box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.5); max-width: 900px; margin: auto;">
-        <h1 style="color: #00e6e6;">BaseWarp</h1>
-        <hr style="border: 1px solid #00e6e6;">
-        <h3 style="color: #00b3b3;">Mutations have occurred!</h3>
-        <p style="color: #00b3b3; font-size: 20px; font-weight: 500;">
-  Click two bases on your complementary strand to swap their positions. Your goal is to correctly pair each nucleotide on your strand with its complement on the template to rebuild the DNA double helix!
-</p>
-
+<div style=\"background-color: #121212; padding: 20px; border-radius: 15px; color: #ffffff; text-align: center; box-shadow: 0px 0px 30px rgba(100, 149, 237, 0.6); max-width: 900px; margin: auto;\">
+    <h1 style=\"font-size:50px; color: #6495ed; text-shadow: 0px 0px 10px #6495ed;\">
+        BaseWarp
+    </h1>
+    <hr style=\"border: 2px solid #6495ed; box-shadow: 0px 0px 10px #6495ed;\">
+    <p style=\"color: #a9c9ff; font-size: 20px; font-weight: 500;\">
+        Your DNA strand has been wraped by mutations! Select two nucleotides on your complementary strand to swap them until your double helix is restored.
+    </p>
 </div>
 """, unsafe_allow_html=True)
+
+# st.markdown("""
+#     <div style="background-color: #1e1e1e; padding: 10px; border-radius: 10px; color: #ffffff; text-align: center; box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.5); max-width: 900px; margin: auto;">
+#         <h1 style="color: #00e6e6;">BaseWarp</h1>
+#         <hr style="border: 1px solid #00e6e6;">
+#         <h3 style="color: #00b3b3;">Mutations have occurred!</h3>
+#         <p style="color: #00b3b3; font-size: 20px; font-weight: 500;">
+#   Click two bases on your complementary strand to swap their positions. Your goal is to correctly pair each nucleotide on your strand with its complement on the template to rebuild the DNA double helix!
+# </p>
+
+# </div>
+# """, unsafe_allow_html=True)
 
 st.header("Template DNA:")
 st.markdown("""
