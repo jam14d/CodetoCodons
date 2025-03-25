@@ -1,4 +1,4 @@
-##Logic for Basewarp game
+### Logic for Basewarp game
 
 <br>Take one base at a time from self.template_strand.</br>
 <br>Example: If self.template_strand = "ATGCTC", the loop goes through "A", "T", "G", etc.</br>
