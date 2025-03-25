@@ -8,6 +8,8 @@
 
 BaseWarp is an interactive DNA repair game built using Streamlit. In this game, a DNA strand has been mutated, and your task is to swap bases on the complementary strand until it correctly pairs with the template strand.
 
+Live App[https://jam14d-codetocodons-basewarp-mlf7o6.streamlit.app/]
+
 ### Features
 - Randomly generated DNA template strand.
 - Complementary strand with shuffled mutations.
