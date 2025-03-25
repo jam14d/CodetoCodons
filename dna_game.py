@@ -18,10 +18,12 @@ class DNAGame:
 
     def introduce_mutations(self):
         mutated_seq = list(self.correct_strand)
-        for i in range(len(mutated_seq)):
-            if random.random() < self.mutation_rate:
-                mutated_seq[i] = random.choice([n for n in self.nucleotides if n != mutated_seq[i]])
+        while True:
+            random.shuffle(mutated_seq)
+            if mutated_seq != self.correct_strand:
+                break
         return mutated_seq
+
 
     def swap_bases(self, idx1, idx2):
         self.mutated_strand[idx1], self.mutated_strand[idx2] = (
