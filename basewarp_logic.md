@@ -1,5 +1,7 @@
-Take one base at a time from self.template_strand.
-Example: If self.template_strand = "ATGCTC", the loop goes through "A", "T", "G", etc.
+##Logic for Basewarp game
+
+<br>Take one base at a time from self.template_strand.</br>
+<br>Example: If self.template_strand = "ATGCTC", the loop goes through "A", "T", "G", etc.</br>
 
 Look up the complementary base using the self.base_pairing dictionary:
 
