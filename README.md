@@ -28,7 +28,7 @@ BaseWarp is an interactive DNA repair game built using Streamlit. In this game, 
 To run BaseWarp locally, install Streamlit and run the script:
 ```sh
 pip install streamlit
-streamlit run dna_game.py
+streamlit run basewarp.py
 ```
 
 ### Game Logic
