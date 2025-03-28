@@ -69,9 +69,9 @@ def query_llm(prompt, retries=3):
             time.sleep(30)
 
         else:
-            return f"❌ Error: API call failed with status code {response.status_code}"
+            return f"Error: API call failed with status code {response.status_code}"
 
-    return "❌ API is currently unavailable. Please try again later."
+    return "API is currently unavailable. Please try again later."
 
 
 
