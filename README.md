@@ -54,13 +54,6 @@ This web application simulates the process of DNA mutation, transcription, and t
 - **Protein Translation:** Translate the RNA sequence into a chain of amino acids, forming a protein.
 - **Hugging Face AI Integration:** Falcon-7B provides real-time explanations of biological processes like DNA replication, RNA transcription, and protein synthesis.
 
-### Running the Application
-To launch the application, run the following command:
-```sh
-streamlit run main.py
-```
-Ensure you have Streamlit installed and that you are in the correct project directory before executing the command.
-
 ### Usage
 1. Input text in the text area.
 2. Adjust the mutation rate using the slider.
@@ -78,4 +71,45 @@ Ensure you have Streamlit installed and that you are in the correct project dire
 - Introduce animations for BaseWarp base swaps.
 - Enhance the UI with a DNA helix visualization.
 - Expand the DNA mutation app with more real-world mutation simulations.
+
+__
+# Environment Setup
+
+## 1. Create a New Conda Environment
+Run the following command to create a new Conda environment named `codetocodons`:
+
+```bash
+conda create --name codetocodons python=3.9
+```
+
+Python 3.9 is recommended to ensure compatibility with `nglview` and `streamlit`.
+
+## 2. Activate the Environment
+Activate the newly created environment:
+
+```bash
+conda activate codetocodons
+```
+
+Once activated, your terminal prompt should display `(codetocodons)` before the command line.
+
+## 3. Install Dependencies
+Install the required packages inside the environment:
+
+```bash
+conda install -c conda-forge streamlit rdkit biopython 
+```
+
+### Installed Packages:
+- **streamlit**: For the web app interface
+- **rdkit**: For 2D molecular visualization
+- **biopython**: For handling protein sequences
+
+
+## 4. Running the Application
+Once the environment is set up, launch the Streamlit application:
+
+```bash
+streamlit run main.py
+```
 

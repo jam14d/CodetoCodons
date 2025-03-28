@@ -1,4 +1,6 @@
 streamlit
+rdkit
+pillow
 requests
 numpy
-pandas
+biopython

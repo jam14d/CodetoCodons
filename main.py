@@ -11,7 +11,14 @@ from character_capitalizer import CharacterCapitalizer
 from dna_base_converter import DNABaseConverter
 from space_remover import SpaceRemover
 from special_characters_remover import SpecialCharactersRemover
+from draw_molecules import generate_amino_acid_image
 from protein_synthesis import translate_rna_to_protein
+
+
+#import streamlit.components.v1 as components
+#from visualizer import show_3d_protein
+
+
 
 
 # Hugging Face API Setup
@@ -189,6 +196,17 @@ if st.button("Let's Transcribe and Translate!"):
             st.text("Translated Protein Sequence:")
             st.code(protein_sequence, language="plaintext")
 
+            if protein_sequence:
+                with st.spinner("Generating 2D molecular structures..."):
+                    image_path = generate_amino_acid_image(protein_sequence)
+                
+                if image_path and os.path.exists(image_path):
+                    st.image(image_path, caption="2D Structure of Amino Acids", use_container_width=True)
+                else:
+                    st.error("Could not generate amino acid structure image.")
+            else:
+                st.error("Please enter a DNA sequence to start the process!")
+
             with st.spinner("Decoding the protein-making process..."):
                 explanation_translation = query_llm(
                     "Describe translation (mRNA to protein). Then, use a factory analogy to explain it in an engaging way."
@@ -198,4 +216,5 @@ if st.button("Let's Transcribe and Translate!"):
             st.write(explanation_translation)
     else:
         st.error("Please enter a DNA sequence to start the process!")
+
 
