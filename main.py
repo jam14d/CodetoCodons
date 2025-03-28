@@ -7,7 +7,7 @@ import basewarp
 PAGES = {
     "Home": home,  # Home page
     "Basewarp Game": basewarp,
-    "Mutation Explorer: Tracking SNPs in Viral Genomes": mutation_explorer,
+    "Mutation Explorer": mutation_explorer,
     "DNA to Protein Simulator": dnatoprotein_simulator,
 }
 
