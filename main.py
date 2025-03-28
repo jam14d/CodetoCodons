@@ -6,7 +6,7 @@ import basewarp
 
 PAGES = {
     "Home": home,  # Home page
-    "Basewarp Game": basewarp,
+    "BaseWarp Game": basewarp,
     "Mutation Explorer": mutation_explorer,
     "DNA to Protein Simulator": dnatoprotein_simulator,
 }
