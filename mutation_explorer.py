@@ -1,3 +1,8 @@
+import streamlit as st
+import matplotlib.pyplot as plt
+import numpy as np
+from Bio import SeqIO
+import io
 
 def app():
     # Apply custom style
@@ -51,6 +56,7 @@ def app():
     st.sidebar.header("Upload Your Own FASTA Files")
     ref_file = st.sidebar.file_uploader("Upload Reference Genome (FASTA)", type=["fasta"])
     var_file = st.sidebar.file_uploader("Upload Variant Genome (FASTA)", type=["fasta"])
+
 
     # Function to load FASTA sequences
     def load_fasta(file):
