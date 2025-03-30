@@ -36,25 +36,38 @@ def app():
 
     # Introduction
     st.markdown("""
+    ## **Welcome to Mutation Explorer**
+    This tool helps you identify **Single Nucleotide Polymorphisms (SNPs)** in viral genomes by comparing a reference genome sequence with a variant genome sequence.
+
+    ### **How to Use This Tool?**
     
-    A FASTA file is a simple text format used to store biological sequences, such as DNA, RNA, or proteins. Each sequence entry in a FASTA file consists of two parts:
-    
-    1. A **header line**, which starts with `>` followed by the sequence name or description.
-    2. The **sequence itself**, made up of letters representing nucleotide or amino acid sequences.
-    
-    FASTA files are widely used in bioinformatics for storing and analyzing genetic data. Researchers use them to study genome sequences, compare mutations, and identify patterns in biological data.
-    
-    ### How to Get a FASTA File?
-    
-    - **Download from Online Databases**: You can obtain FASTA files from genomic databases like [NCBI GenBank](https://www.ncbi.nlm.nih.gov/genbank/), [Ensembl](https://www.ensembl.org/), or [UCSC Genome Browser](https://genome.ucsc.edu/).
-    
-    - **Extract from Sequencing Data**: If you have sequencing data (e.g., from Illumina, Oxford Nanopore, or PacBio), you can use bioinformatics tools like `samtools` or `seqtk` to generate FASTA files.
-    
-    - **Manually Create One**: You can create a simple text file, add sequences in the FASTA format (starting with `>` followed by the sequence name, then the sequence itself), and save it with a `.fasta` extension.
-    
-    ### Understanding SNPs (Single Nucleotide Polymorphisms)
-    
-    SNPs are small genetic variations that occur when a single nucleotide in a DNA sequence differs from the reference sequence.
+    #### **Step 1: Prepare Your FASTA Files**
+    - You need **two FASTA files**:
+      1. **Reference Genome** – The standard genome sequence for comparison.
+      2. **Variant Genome** – The genome you want to analyze for mutations.
+    - If you don’t have FASTA files, you can:
+      - Download them from databases like [NCBI GenBank](https://www.ncbi.nlm.nih.gov/genbank/), [Ensembl](https://www.ensembl.org/), or [UCSC Genome Browser](https://genome.ucsc.edu/).
+      - Generate them from sequencing data using **samtools** or **seqtk**.
+      - Manually create a FASTA file using a text editor.
+
+    #### **Step 2: Upload Your FASTA Files**
+    - Use the **file uploader** on the left panel:
+      - **Upload Reference Genome (FASTA)**
+      - **Upload Variant Genome (FASTA)**
+    - Both files must be in **.fasta** format and under **200MB**.
+
+    #### **Step 3: View SNP Analysis**
+    Once uploaded, the tool will:
+    1. **Compare sequences** and find positions where nucleotides differ.
+    2. **Display SNP statistics**, including the **total number of mutations**.
+    3. **Show the first 10 detected SNPs** in a table format.
+    4. **Visualize SNP distribution** along the genome.
+    5. **Classify SNP types** into **transitions** and **transversions**.
+
+    #### **Step 4: Interpret the Results**
+    - **SNP distribution** graph shows where mutations occur in the genome.
+    - **SNP type pie chart** distinguishes between **transitions (A↔G, C↔T)** and **transversions (A↔C, A↔T, G↔C, G↔T)**.
+    - Use this data to study genetic variations in viral genomes, which can affect **transmissibility, vaccine resistance, and evolution**.
     """)
 
     # Upload FASTA Files
