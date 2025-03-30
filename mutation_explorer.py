@@ -5,7 +5,7 @@ from Bio import SeqIO
 import io
 
 def app():
-    # cyberpunk earth-tone styling
+    # Apply modern earth-tone styling
     st.markdown(
         """
         <style>
@@ -51,6 +51,37 @@ def app():
         unsafe_allow_html=True
     )
     
+    # Title
+    st.markdown("<h1 class='stTitle'>Mutation Explorer: SNP Tracker</h1>", unsafe_allow_html=True)
+
+    # Introduction
+    st.markdown("""
+    ## **Overview**
+    This tool compares a **reference genome** to a **variant genome** and detects **Single Nucleotide Polymorphisms (SNPs)**.
+
+    **Steps to Use:**
+    
+    ### **Step 1: Upload Your FASTA Files**
+    - **Reference Genome:** The baseline genome sequence.
+    - **Variant Genome:** The sequence with potential mutations.
+    
+    **Where to Get FASTA Files?**
+    - [NCBI GenBank](https://www.ncbi.nlm.nih.gov/genbank/)
+    - [Ensembl](https://www.ensembl.org/)
+    - [UCSC Genome Browser](https://genome.ucsc.edu/)
+
+    ### **Step 2: Start SNP Detection**
+    - Compares the reference and variant genome.
+    - Identifies **mutation positions**.
+    - Displays **statistical and visual outputs**.
+
+    ### **Step 3: Analyze the Results**
+    - **Histogram of mutation positions**
+    - **Pie chart of SNP classifications**
+
+    This data can be used to study genome variations, transmissibility, and evolutionary trends.
+    """)
+
     # Upload FASTA Files
     st.sidebar.header("Upload Your Own FASTA Files")
     ref_file = st.sidebar.file_uploader("Upload Reference Genome (FASTA)", type=["fasta"])
