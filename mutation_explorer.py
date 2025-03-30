@@ -57,7 +57,7 @@ def app():
     # Introduction
     st.markdown("""
     
-    Welcome to the Mutation Explorer—your personal genomic gadget! This tool scans two DNA sequences, compares them, and pinpoints Single Nucleotide Polymorphisms (SNPs)—the tiny mutations that make a big difference.
+    Welcome to your personal genomic gadget! The Mutation Explorer scans two DNA sequences, compares them, and pinpoints Single Nucleotide Polymorphisms (SNPs)—the tiny mutations that can make a big difference.
 
     **How to Operate:**
     
