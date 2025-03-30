@@ -65,7 +65,7 @@ def app():
     - **Reference Genome:** The baseline genome sequence.
     - **Variant Genome:** The sequence with potential mutations.
     
-    ***Where to Get FASTA Files?***
+    Where to Get FASTA Files?
     - [NCBI GenBank](https://www.ncbi.nlm.nih.gov/genbank/)
     - [Ensembl](https://www.ensembl.org/)
     - [UCSC Genome Browser](https://genome.ucsc.edu/)
