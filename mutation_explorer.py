@@ -56,10 +56,9 @@ def app():
 
     # Introduction
     st.markdown("""
-    ## **Overview**
     This tool compares a **reference genome** to a **variant genome** and detects **Single Nucleotide Polymorphisms (SNPs)**.
 
-    **Steps to Use:**
+    **How to use the Mutation Explorer:**
     
     ### **Step 1: Upload Your FASTA Files**
     - **Reference Genome:** The baseline genome sequence.
@@ -79,7 +78,7 @@ def app():
     - **Histogram of mutation positions**
     - **Pie chart of SNP classifications**
 
-    This data can be used to study genome variations, transmissibility, and evolutionary trends.
+    This data can be used to study genome variations, transmissibility, and evolutionary trends!
     """)
 
     # Upload FASTA Files
