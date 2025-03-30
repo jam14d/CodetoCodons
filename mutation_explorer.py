@@ -1,10 +1,31 @@
-import streamlit as st
-import matplotlib.pyplot as plt
-import numpy as np
-from Bio import SeqIO
-import io
 
 def app():
+    # Apply custom style
+    st.markdown(
+        """
+        <style>
+        body {
+            background-color: #f5f0e1;
+            color: #5a3e1b;
+            font-family: 'Georgia', serif;
+        }
+        .stApp {
+            background-color: #f5f0e1;
+        }
+        .stTitle {
+            color: #8b5e3b;
+        }
+        .stSidebar {
+            background-color: #e6dbc6;
+        }
+        .stTable {
+            background-color: #fdf6e3;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+    
     # Title
     st.title("Mutation Explorer: Tracking SNPs in Viral Genomes")
 
