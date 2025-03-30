@@ -15,7 +15,7 @@ def app():
     """)
 
     # Upload FASTA Files
-    st.sidebar.header("Upload Your Own FASTA Files (Optional)")
+    st.sidebar.header("Upload Your Own FASTA Files")
     ref_file = st.sidebar.file_uploader("Upload Reference Genome (FASTA)", type=["fasta"])
     var_file = st.sidebar.file_uploader("Upload Variant Genome (FASTA)", type=["fasta"])
 
