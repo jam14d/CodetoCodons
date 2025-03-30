@@ -36,7 +36,6 @@ def app():
 
     # Introduction
     st.markdown("""
-    **What is a FASTA File?**  
     
     A FASTA file is a simple text format used to store biological sequences, such as DNA, RNA, or proteins. Each sequence entry in a FASTA file consists of two parts:
     
@@ -45,8 +44,6 @@ def app():
     
     FASTA files are widely used in bioinformatics for storing and analyzing genetic data. Researchers use them to study genome sequences, compare mutations, and identify patterns in biological data.
     
-    ---
-    
     ### How to Get a FASTA File?
     
     - **Download from Online Databases**: You can obtain FASTA files from genomic databases like [NCBI GenBank](https://www.ncbi.nlm.nih.gov/genbank/), [Ensembl](https://www.ensembl.org/), or [UCSC Genome Browser](https://genome.ucsc.edu/).
@@ -54,8 +51,6 @@ def app():
     - **Extract from Sequencing Data**: If you have sequencing data (e.g., from Illumina, Oxford Nanopore, or PacBio), you can use bioinformatics tools like `samtools` or `seqtk` to generate FASTA files.
     
     - **Manually Create One**: You can create a simple text file, add sequences in the FASTA format (starting with `>` followed by the sequence name, then the sequence itself), and save it with a `.fasta` extension.
-    
-    ---
     
     ### Understanding SNPs (Single Nucleotide Polymorphisms)
     
