@@ -59,9 +59,9 @@ def app():
     
     Welcome to your personal genomic gadget! The Mutation Explorer scans two DNA sequences, compares them, and pinpoints Single Nucleotide Polymorphisms (SNPs)—the tiny mutations that can make a big difference.
 
-    **How to Operate:**
+    ###How to Operate:**
     
-    ### **Step 1: Upload Your FASTA Files**
+    **Step 1: Upload Your FASTA Files**
     - **Reference Genome:** The baseline genome sequence.
     - **Variant Genome:** The sequence with potential mutations.
     
@@ -70,12 +70,12 @@ def app():
     - [Ensembl](https://www.ensembl.org/)
     - [UCSC Genome Browser](https://genome.ucsc.edu/)
 
-    ### **Step 2: Start SNP Detection**
+  **Step 2: Start SNP Detection**
     - Compares the reference and variant genome.
     - Identifies **mutation positions**.
     - Displays **statistical and visual outputs**.
 
-    ### **Step 3: Analyze the Results**
+   **Step 3: Analyze the Results**
     - **Histogram of mutation positions**
     - **Pie chart of SNP classifications**
 
