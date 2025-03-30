@@ -56,9 +56,10 @@ def app():
 
     # Introduction
     st.markdown("""
-    This tool compares a **reference genome** to a **variant genome** and detects **Single Nucleotide Polymorphisms (SNPs)**.
+    
+    Welcome to the Mutation Explorer—your personal genomic gadget! This tool scans two DNA sequences, compares them, and pinpoints Single Nucleotide Polymorphisms (SNPs)—the tiny mutations that make a big difference.
 
-    **How to use the Mutation Explorer:**
+    **How to Operate:**
     
     ### **Step 1: Upload Your FASTA Files**
     - **Reference Genome:** The baseline genome sequence.
