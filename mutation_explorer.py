@@ -38,8 +38,6 @@ def app():
     st.markdown("""
     ## **Welcome to Mutation Explorer**
     This tool helps you identify **Single Nucleotide Polymorphisms (SNPs)** in viral genomes by comparing a reference genome sequence with a variant genome sequence.
-
-    ### **How to Use This Tool?**
     
     #### **Step 1: Prepare Your FASTA Files**
     - You need **two FASTA files**:
