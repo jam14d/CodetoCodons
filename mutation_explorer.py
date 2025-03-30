@@ -5,69 +5,52 @@ from Bio import SeqIO
 import io
 
 def app():
-    # Apply custom style
+    # cyberpunk earth-tone styling
     st.markdown(
         """
         <style>
         body {
-            background-color: #f5f0e1;
-            color: #5a3e1b;
-            font-family: 'Georgia', serif;
+            background-color: #1a1a1a;
+            color: #c9a227;
+            font-family: 'Courier New', monospace;
         }
         .stApp {
-            background-color: #f5f0e1;
+            background-color: #1a1a1a;
         }
-        .stTitle, .stMarkdown, .stTable, .stSidebar, .stMetric {
-            font-family: 'Georgia', serif;
+        .stTitle {
+            color: #ffcc00;
+            text-shadow: 2px 2px 4px #ff6600;
+            font-size: 32px;
+        }
+        .stMarkdown {
+            color: #d4af37;
+            font-size: 16px;
         }
         .stSidebar {
-            background-color: #e6dbc6;
+            background-color: #262626;
+            color: #ffcc00;
+            border-right: 3px solid #ff6600;
+        }
+        .stButton>button {
+            background-color: #ff6600;
+            color: #1a1a1a;
+            border-radius: 5px;
+            font-size: 14px;
         }
         .stTable {
-            background-color: #fdf6e3;
+            background-color: #333333;
+            color: #ffcc00;
+            border: 1px solid #ff6600;
+        }
+        .stMetric {
+            color: #ffcc00;
+            font-size: 18px;
         }
         </style>
         """,
         unsafe_allow_html=True
     )
     
-    # Title
-    st.title("Mutation Explorer: Tracking SNPs in Viral Genomes")
-
-    # Introduction
-    st.markdown("""
-    ## **Welcome to Mutation Explorer**
-    This tool helps you identify **Single Nucleotide Polymorphisms (SNPs)** in viral genomes by comparing a reference genome sequence with a variant genome sequence.
-    
-    #### **Step 1: Prepare Your FASTA Files**
-    - You need **two FASTA files**:
-      1. **Reference Genome** – The standard genome sequence for comparison.
-      2. **Variant Genome** – The genome you want to analyze for mutations.
-    - If you don’t have FASTA files, you can:
-      - Download them from databases like [NCBI GenBank](https://www.ncbi.nlm.nih.gov/genbank/), [Ensembl](https://www.ensembl.org/), or [UCSC Genome Browser](https://genome.ucsc.edu/).
-      - Generate them from sequencing data using **samtools** or **seqtk**.
-      - Manually create a FASTA file using a text editor.
-
-    #### **Step 2: Upload Your FASTA Files**
-    - Use the **file uploader** on the left panel:
-      - **Upload Reference Genome (FASTA)**
-      - **Upload Variant Genome (FASTA)**
-    - Both files must be in **.fasta** format and under **200MB**.
-
-    #### **Step 3: View SNP Analysis**
-    Once uploaded, the tool will:
-    1. **Compare sequences** and find positions where nucleotides differ.
-    2. **Display SNP statistics**, including the **total number of mutations**.
-    3. **Show the first 10 detected SNPs** in a table format.
-    4. **Visualize SNP distribution** along the genome.
-    5. **Classify SNP types** into **transitions** and **transversions**.
-
-    #### **Step 4: Interpret the Results**
-    - **SNP distribution** graph shows where mutations occur in the genome.
-    - **SNP type pie chart** distinguishes between **transitions (A↔G, C↔T)** and **transversions (A↔C, A↔T, G↔C, G↔T)**.
-    - Use this data to study genetic variations in viral genomes, which can affect **transmissibility, vaccine resistance, and evolution**.
-    """)
-
     # Upload FASTA Files
     st.sidebar.header("Upload Your Own FASTA Files")
     ref_file = st.sidebar.file_uploader("Upload Reference Genome (FASTA)", type=["fasta"])
