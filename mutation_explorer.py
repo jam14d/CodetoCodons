@@ -17,8 +17,8 @@ def app():
         .stApp {
             background-color: #f5f0e1;
         }
-        .stTitle {
-            color: #8b5e3b;
+        .stTitle, .stMarkdown, .stTable, .stSidebar, .stMetric {
+            font-family: 'Georgia', serif;
         }
         .stSidebar {
             background-color: #e6dbc6;
@@ -36,19 +36,29 @@ def app():
 
     # Introduction
     st.markdown("""
-    **What’s a FASTA File? Think of It Like a Recipe for Life!**  
-    Imagine you have a secret code that tells your body how to grow, function, and even what color your eyes should be. That’s what DNA is—a long string of biological instructions made up of four chemical letters: **A, T, C, and G**.  
+    **What is a FASTA File?**  
     
-    A **FASTA file** is like a cookbook for these instructions. Instead of recipes for pancakes or pasta, it stores sequences of DNA (or RNA or proteins) in a super simple format. Each entry in a FASTA file has a name (kind of like the title of a recipe), followed by a long string of letters (A, T, C, G for DNA, or different letters for proteins) that make up the genetic code.  
+    A FASTA file is a simple text format used to store biological sequences, such as DNA, RNA, or proteins. Each sequence entry in a FASTA file consists of two parts:
     
-    Scientists use FASTA files to store, share, and analyze genetic data. Whether you're studying how bananas and humans are (surprisingly) similar or trying to understand diseases, FASTA files are the go-to way of organizing this genetic information.
+    1. A **header line**, which starts with `>` followed by the sequence name or description.
+    2. The **sequence itself**, made up of letters representing nucleotide or amino acid sequences.
+    
+    FASTA files are widely used in bioinformatics for storing and analyzing genetic data. Researchers use them to study genome sequences, compare mutations, and identify patterns in biological data.
+    
+    ---
     
     ### How to Get a FASTA File?
+    
     - **Download from Online Databases**: You can obtain FASTA files from genomic databases like [NCBI GenBank](https://www.ncbi.nlm.nih.gov/genbank/), [Ensembl](https://www.ensembl.org/), or [UCSC Genome Browser](https://genome.ucsc.edu/).
+    
     - **Extract from Sequencing Data**: If you have sequencing data (e.g., from Illumina, Oxford Nanopore, or PacBio), you can use bioinformatics tools like `samtools` or `seqtk` to generate FASTA files.
+    
     - **Manually Create One**: You can create a simple text file, add sequences in the FASTA format (starting with `>` followed by the sequence name, then the sequence itself), and save it with a `.fasta` extension.
     
+    ---
+    
     ### Understanding SNPs (Single Nucleotide Polymorphisms)
+    
     SNPs are small genetic variations that occur when a single nucleotide in a DNA sequence differs from the reference sequence.
     """)
 
