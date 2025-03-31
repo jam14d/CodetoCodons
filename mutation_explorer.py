@@ -12,7 +12,6 @@ def app():
         body {
             background-color: #0F0D1A;
             color: #F4D06F;
-            font-family: 'Space Mono', monospace;
         }
         .stApp {
             background-color: #0F0D1A;
@@ -34,7 +33,7 @@ def app():
             background-color: #FF3C00;
             color: #0F0D1A;
             border-radius: 5px;
-            font-size: 14px;
+            font-size: 12px;
             padding: 10px;
             border: none;
             cursor: pointer;
