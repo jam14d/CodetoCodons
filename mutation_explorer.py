@@ -40,7 +40,7 @@ def app():
         }
         .stSidebar {
             background-color: #111111;
-            color: #FFD43C;
+            color: #FF6F3C;
             border-right: 3px solid #FF6F3C;
         }
         .stMetric {
