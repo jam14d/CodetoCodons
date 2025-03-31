@@ -28,7 +28,7 @@ def app():
             font-weight: bold;
             color: #FF3C00;
             text-align: center;
-            animation: cyber-glitch 5s infinite alternate;
+            animation: cyber-glitch 19s infinite alternate;
             letter-spacing: 3px;
         }
         .stButton>button {
