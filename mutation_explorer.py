@@ -4,62 +4,64 @@ import numpy as np
 from Bio import SeqIO
 import io
 
+
 def app():
-    # Apply Retro-Futuristic Radar Aesthetic
+    
     st.markdown(
         """
         <style>
         body {
-            background-color: #0F0D1A;
-            color: #F4D06F;
+            background-color: #0A0A0F;
+            color: #00FFCC;
+            font-family: 'Orbitron', sans-serif;
         }
         .stApp {
-            background-color: #0F0D1A;
+            background-color: #0A0A0F;
         }
-        @keyframes glitch {
-            0% { text-shadow: 2px 2px 0px #FF3C00, -2px -2px 0px #00FFC6; }
-            50% { text-shadow: -2px -2px 0px #FF3C00, 2px 2px 0px #00FFC6; }
-            100% { text-shadow: 2px 2px 0px #FF3C00, -2px -2px 0px #00FFC6; }
+        @keyframes cyber-glitch {
+            0% { text-shadow: 4px 4px 0px #FF3C00, -4px -4px 0px #00FFC6; }
+            50% { text-shadow: -3px -3px 0px #FF3C00, 3px 3px 0px #00FFC6; }
+            100% { text-shadow: 4px -4px 0px #FF3C00, -4px 4px 0px #00FFC6; }
         }
         .glitch-title {
-            font-size: 38px;
+            font-size: 42px;
             font-weight: bold;
-            color: #F4D06F;
+            color: #FF3C00;
             text-align: center;
-            animation: glitch 5.0s infinite alternate;
-            letter-spacing: 2px;
+            animation: cyber-glitch 1s infinite alternate;
+            letter-spacing: 3px;
         }
         .stButton>button {
-            background-color: #FF3C00;
-            color: #0F0D1A;
-            border-radius: 5px;
-            font-size: 12px;
-            padding: 10px;
+            background: linear-gradient(90deg, #FF3C00, #00FFC6);
+            color: #0A0A0F;
+            border-radius: 8px;
+            font-size: 14px;
+            padding: 12px;
             border: none;
             cursor: pointer;
             text-transform: uppercase;
         }
         .stButton>button:hover {
-            background-color: #00FFC6;
-            box-shadow: 0px 0px 10px #FF3C00;
+            background: linear-gradient(90deg, #00FFC6, #FF3C00);
+            box-shadow: 0px 0px 15px #FF3C00;
         }
         .stSidebar {
             background-color: #141222;
-            color: #ede6d3;
+            color: #00FFCC;
             border-right: 3px solid #FF3C00;
         }
         .stMetric {
-            color: #ede6d3;
-            font-size: 16px;
+            color: #00FFCC;
+            font-size: 18px;
         }
         .stTable {
-            background-color: #1D1B33;
+            background-color: #1A1A3A;
             color: #FF3C00;
-            border: 2px solid #ede6d3;
+            border: 2px solid #00FFCC;
         }
-        .radar-box {
-            background: rgba(244, 208, 111, 0.1);
-            border-left: 4px solid #ede6d3;
+        .cyber-box {
+            background: rgba(0, 255, 204, 0.1);
+            border-left: 4px solid #00FFCC;
             padding: 14px;
             border-radius: 5px;
             font-size: 16px;
