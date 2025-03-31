@@ -5,46 +5,59 @@ from Bio import SeqIO
 import io
 
 def app():
-    # Apply modern earth-tone styling
+
     st.markdown(
         """
         <style>
         body {
-            background-color: #1a1a1a;
-            color: #c9a227;
-            font-family: 'Courier New', monospace;
+            background-color: #121212;
+            color: #00FFCC;
+            font-family: 'Orbitron', sans-serif;
         }
         .stApp {
-            background-color: #1a1a1a;
+            background-color: #121212;
         }
-        .stTitle {
-            color: #ffcc00;
-            text-shadow: 2px 2px 4px #7bb8c9;
-            font-size: 32px;
-        }
-        .stMarkdown {
-            color: #d4af37;
-            font-size: 16px;
-        }
-        .stSidebar {
-            background-color: #262626;
-            color: #7bb8c9;
-            border-right: 3px solid #ff6600;
+        .scifi-title {
+            font-size: 40px;
+            font-weight: bold;
+            color: #00FFCC;
+            text-align: center;
+            text-shadow: 0px 0px 15px #00FFAA;
+            letter-spacing: 2px;
         }
         .stButton>button {
-            background-color: #ff6600;
-            color: #1a1a1a;
-            border-radius: 5px;
-            font-size: 14px;
+            background-color: #00CC99;
+            color: #121212;
+            border-radius: 8px;
+            font-size: 16px;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
         }
-        .stTable {
-            background-color: #333333;
-            color: #ffcc00;
-            border: 1px solid #ff6600;
+        .stButton>button:hover {
+            background-color: #009977;
+            box-shadow: 0px 0px 10px #00FFCC;
+        }
+        .stSidebar {
+            background-color: #1a1a2e;
+            color: #00FFCC;
+            border-right: 3px solid #00FFAA;
         }
         .stMetric {
-            color: #ffcc00;
-            font-size: 18px;
+            color: #00FFCC;
+            font-size: 20px;
+        }
+        .stTable {
+            background-color: #222222;
+            color: #00FFCC;
+            border: 1px solid #00FFAA;
+        }
+        .highlight-box {
+            background: rgba(0, 255, 204, 0.1);
+            border-left: 4px solid #00FFCC;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
         }
         </style>
         """,
