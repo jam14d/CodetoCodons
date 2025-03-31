@@ -1,0 +1,19 @@
+from Bio.Seq import Seq
+
+class DNAAnalyzer:
+    def __init__(self, sequence):
+        self.sequence = Seq(sequence.upper())
+    
+    def count_cytosine(self):
+        return self.sequence.count('C')
+    
+    def sequence_length(self):
+        return len(self.sequence)
+    
+    def compute_gc_percentage(self):
+        g_count = self.sequence.count('G')
+        c_count = self.count_cytosine()
+        total_length = self.sequence_length()
+        if total_length == 0:
+            return 0
+        return ((g_count + c_count) / total_length) * 100

@@ -1,55 +1,76 @@
 import streamlit as st
-from Bio.Seq import Seq
 import random
 import time
 
-# Futuristic Research Lab Styling
-st.set_page_config(page_title="STABILITY MATRIX", layout="wide")
+# Futuristic Science Lab Theme with Enhanced Aesthetics
+st.set_page_config(page_title="STABILITY MATRIX", page_icon="🔬", layout="wide")
 
 def set_theme():
     st.markdown(
         """
         <style>
-            body {
-                background-color: #0a1a0a;
-                color: #33FF99;
-                font-family: 'Courier New', monospace;
+            html, body, [class*="st"] {
+                background-color: #101820;
+                color: #A8DADC;
+                font-family: 'Orbitron', sans-serif;
             }
-            .stApp {
-                background: radial-gradient(circle, #042204, #000000);
-                color: #33FF99;
+            * > [data-testid=stHeaderActionElements] {
+                display: none;
             }
-            .css-1d391kg {
-                color: #33FF99 !important;
-            }
-            .stButton > button {
-                background-color: #FF5733;
-                color: white;
+            .big-title-glow {
+                font-size: 50px;
                 font-weight: bold;
-                border-radius: 8px;
-                border: 2px solid #C70039;
-                transition: all 0.3s ease-in-out;
-            }
-            .stButton > button:hover {
-                background-color: #900C3F;
-                color: white;
-                transform: scale(1.05);
-            }
-            .data-box {
-                border: 2px solid #33FF99;
-                padding: 10px;
-                border-radius: 10px;
                 text-align: center;
-                font-size: 18px;
+                color: #ffcc66;
+                text-shadow: 0 0 50px #ff9966, 0 0 50px #ffcc66, 0 0 50px #ff6633;
+                animation: flicker-big 1.5s infinite alternate;
             }
-            .scan-animation {
+            .title-glow {
                 font-size: 20px;
-                color: #FF5733;
+                font-weight: bold;
+                text-align: center;
+                color: #88c0d0;
+                text-shadow: 0 0 10px #88c0d0, 0 0 15px #6fa3bf, 0 0 20px #5790af;
                 animation: flicker 1.5s infinite alternate;
+            }
+            @keyframes flicker-big {
+                from { opacity: 1; }
+                to { opacity: 0.7; }
             }
             @keyframes flicker {
                 from { opacity: 1; }
-                to { opacity: 0.4; }
+                to { opacity: 0.7; }
+            }
+            .stButton > button {
+                background: linear-gradient(135deg, #16A085, #2ECC71);
+                color: white;
+                font-weight: bold;
+                border-radius: 10px;
+                border: none;
+                font-size: 16px;
+                transition: all 0.3s ease-in-out;
+                box-shadow: 0px 4px 10px rgba(46, 204, 113, 0.5);
+            }
+            .stButton > button:hover {
+                background: linear-gradient(135deg, #1ABC9C, #27AE60);
+                transform: scale(1.05);
+                box-shadow: 0px 6px 15px rgba(46, 204, 113, 0.7);
+            }
+            .data-box {
+                border: 2px solid #16A085;
+                padding: 15px;
+                border-radius: 10px;
+                text-align: center;
+                font-size: 18px;
+                background-color: rgba(22, 160, 133, 0.2);
+            }
+            .accent-text {
+                color: #E67E22;
+                font-weight: bold;
+            }
+            .highlight {
+                color: #F39C12;
+                font-weight: bold;
             }
         </style>
         """,
@@ -58,62 +79,81 @@ def set_theme():
 
 set_theme()
 
-# Generate a random DNA sequence of length 50
-def generate_random_dna(length=50):
-    return "".join(random.choices("ATCG", k=length))
+st.markdown("<div class='big-title-glow'>STABILITY MATRIX</div>", unsafe_allow_html=True)
 
+st.write("Welcome to **Stability Matrix**, an advanced bioinformatics terminal where you master **Object-Oriented Programming (OOP)** while analyzing DNA sequences. This system is used in top-secret genetic research facilities worldwide.")
+
+st.markdown("""## <span class='accent-text'>SYSTEM BOOT: CLASS DESIGN OVERVIEW</span>
+### What should be provided when creating a class?
+- Parameters in `__init__` should be things the user will know when creating an object.
+- Example: `sequence` is an input the user will provide.
+
+### What attributes should be derived inside the class?
+- These are calculated from provided data but not required as parameters.
+- Example: `gc_content` is derived after calling a method.
+
+### What should be stored for later use?
+- Define attributes inside `__init__` to make them available throughout the class.
+""", unsafe_allow_html=True)
+
+st.markdown("""
+## <span class='highlight'>STEP 1: CLASS DEFINITION</span>
+- Define functions inside the class using `def`
+- Think about what your class needs when you create `__init__` (like a DNA sequence).
+- Use `self` to store attributes that belong to the object.
+""", unsafe_allow_html=True)
+user_class_code = st.text_area("Write your class definition and `__init__` method:")
+
+st.markdown("""
+## <span class='highlight'>STEP 2: COUNT CYTOSINE BASES</span>
+- Create a method called `count_cytosine`.
+- This function should count the number of 'C' bases in the sequence.
+- Use `.count('C')` to count occurrences.
+""", unsafe_allow_html=True)
+user_count_code = st.text_area("Write your `count_cytosine` function:")
+
+st.markdown("""
+## <span class='highlight'>STEP 3: COUNT GUANINE BASES</span>
+- Create a method called `count_guanine`.
+- This function should count the number of 'G' bases in the sequence.
+- Use `.count('G')` to count occurrences.
+""", unsafe_allow_html=True)
+user_guanine_code = st.text_area("Write your `count_guanine` function:")
+
+st.markdown("""
+## <span class='highlight'>STEP 4: COMPUTE GC CONTENT</span>
+- Create a function `compute_gc_percentage(self)`. 
+- Count the number of 'G' and 'C' bases.
+- Divide their sum by the total length of the sequence.
+- Multiply by 100 to get the percentage.
+""", unsafe_allow_html=True)
+user_gc_code = st.text_area("Write your `compute_gc_percentage` function:")
+
+st.markdown("""
+## <span class='highlight'>STEP 5: DISPLAY RESULTS</span>
+- Print the calculated GC content in a user-friendly way.
+- Use `print(f"GC Content: {gc_content:.2f}%")` for formatted output.
+""", unsafe_allow_html=True)
+user_display_code = st.text_area("Write your display function:")
+
+solution_code = '''
 class DNAAnalyzer:
     def __init__(self, sequence):
-        self.sequence = Seq(sequence.upper())
+        self.sequence = sequence.upper()
     
     def count_cytosine(self):
         return self.sequence.count('C')
     
-    def sequence_length(self):
-        return len(self.sequence)
+    def count_guanine(self):
+        return self.sequence.count('G')
     
     def compute_gc_percentage(self):
-        g_count = self.sequence.count('G')
+        g_count = self.count_guanine()
         c_count = self.count_cytosine()
-        total_length = self.sequence_length()
+        total_length = len(self.sequence)
         if total_length == 0:
             return 0
         return ((g_count + c_count) / total_length) * 100
+'''
 
-
-def app():
-    st.title("STABILITY MATRIX - Secure Genetic Analysis Terminal")
-    
-    st.write("""
-    **Welcome to STABILITY MATRIX.** Please submit a sequence for analysis.
-    System security protocols are engaged. Unauthorized access will be monitored.
-    """)
-    
-    sequence_input = st.text_input("Enter a DNA sequence (or let the system generate one):")
-    if not sequence_input:
-        sequence_input = generate_random_dna()
-        st.info(f"🔍 Scanning Biological Sample... Sequence Extracted: {sequence_input}")
-    
-    dna_analyzer = DNAAnalyzer(sequence_input)
-    
-    if st.button("Begin Genetic Analysis"):
-        with st.spinner("🔎 Analyzing Sample... Please Wait..."):
-            time.sleep(2)  # Simulate processing time
-            gc_content = dna_analyzer.compute_gc_percentage()
-        st.success(f"Analysis Complete: GC Content: {gc_content:.2f}%")
-        st.markdown('<div class="data-box">Stability Threshold: {}</div>'.format(
-            'Stable' if gc_content > 40 else '⚠️ Unstable'), unsafe_allow_html=True)
-    
-    st.markdown("### Research Data Insights:")
-    st.markdown("- **GC Content** affects DNA stability and genetic function.")
-    st.markdown("- **Cytosine & Guanine** pairs strengthen the structure.")
-    st.markdown("- **Genetic anomalies** can be detected through content analysis.")
-    
-    if st.button("Unlock Full Genetic Report"):
-        solution_code = '''from Bio.Seq import Seq\n\nclass DNAAnalyzer:\n    def __init__(self, sequence):\n        self.sequence = Seq(sequence.upper())\n    \n    def count_cytosine(self):\n        return self.sequence.count('C')\n    \n    def sequence_length(self):\n        return len(self.sequence)\n    \n    def compute_gc_percentage(self):\n        g_count = self.sequence.count('G')\n        c_count = self.count_cytosine()\n        total_length = self.sequence_length()\n        if total_length == 0:\n            return 0\n        return ((g_count + c_count) / total_length) * 100\n'''  
-        with open("solution.txt", "w") as f:
-            f.write(solution_code)
-        st.download_button("Download Genetic Report", "solution.txt")
-
-if __name__ == "__main__":
-    app()
+st.download_button("Download Solution Code", solution_code, file_name="oop_gc_analysis_solution.txt", mime="text/plain")
