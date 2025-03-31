@@ -26,7 +26,7 @@ def app():
             font-weight: bold;
             color: #F4D06F;
             text-align: center;
-            animation: glitch 1.0s infinite alternate;
+            animation: glitch 5.0s infinite alternate;
             letter-spacing: 2px;
         }
         .stButton>button {
