@@ -14,9 +14,62 @@ from special_characters_remover import SpecialCharactersRemover
 from draw_molecules import generate_amino_acid_image
 from protein_synthesis import translate_rna_to_protein
 
+API_URL = "https://api-inference.huggingface.co/models/tiiuae/falcon-7b-instruct"
+HF_TOKEN = os.getenv("HUGGINGFACE_TOKEN")
+
+if HF_TOKEN is None:
+    raise ValueError("❌ Error: Hugging Face API token is missing! Set it as an environment variable.")
+
+headers = {"Authorization": f"Bearer {HF_TOKEN}"}
+
+def query_llm(prompt, retries=3):
+    for attempt in range(retries):
+        response = requests.post(API_URL, headers=headers, json={"inputs": prompt})
+
+        if response.status_code == 200:
+            try:
+                data = response.json()
+                full_response = data[0].get("generated_text", "No response text.") if isinstance(data, list) else data.get("generated_text", "No response text.")
+                cleaned_response = re.sub(r'[^\x00-\x7F]+', '', full_response.replace(prompt, "").strip())
+                return cleaned_response
+            except requests.exceptions.JSONDecodeError:
+                return "Error: Response was not in JSON format."
+
+        elif response.status_code in [503, 429]:
+            wait_time = 10 if response.status_code == 503 else 30
+            time.sleep(wait_time)
+
+    return "API is currently unavailable. Please try again later."
+
+def mutate_dna(dna_sequence, mutation_rate):
+    dna_list = list(dna_sequence)
+    mutations_occurred = False
+    for i in range(len(dna_list)):
+        if random.random() < mutation_rate:
+            mutations = {'A': 'CGT', 'C': 'AGT', 'G': 'ACT', 'T': 'ACG'}
+            dna_list[i] = random.choice(mutations[dna_list[i]])
+            mutations_occurred = True
+    return ''.join(dna_list), mutations_occurred
+
+def transcribe_dna_to_rna(dna_sequence):
+    return dna_sequence.replace('T', 'U')
+
+def run_pipeline(input_string, mutation_rate=0, prepend_start_codon=False):
+    pipeline = Pipeline()
+    pipeline.add(StringReader())
+    pipeline.add(CharacterCapitalizer())
+    pipeline.add(DNABaseConverter())
+    pipeline.add(SpaceRemover())
+    pipeline.add(SpecialCharactersRemover())
+
+    original_dna_output = pipeline.execute(input_string)
+    if prepend_start_codon:
+        original_dna_output = 'ATG' + original_dna_output
+
+    mutated_dna_output, mutations_occurred = mutate_dna(original_dna_output, mutation_rate)
+    return original_dna_output, mutated_dna_output, mutations_occurred
 
 def app():
-    # Inject Custom CSS
     st.markdown("""
     <style>
     html, body, [class*="st"] {
@@ -67,65 +120,7 @@ def app():
     }
     </style>
     """, unsafe_allow_html=True)
-
-
-API_URL = "https://api-inference.huggingface.co/models/tiiuae/falcon-7b-instruct"
-HF_TOKEN = os.getenv("HUGGINGFACE_TOKEN")
-
-if HF_TOKEN is None:
-    raise ValueError("❌ Error: Hugging Face API token is missing! Set it as an environment variable.")
-
-headers = {"Authorization": f"Bearer {HF_TOKEN}"}
-
-def query_llm(prompt, retries=3):
-    for attempt in range(retries):
-        response = requests.post(API_URL, headers=headers, json={"inputs": prompt})
-
-        if response.status_code == 200:
-            try:
-                data = response.json()
-                full_response = data[0].get("generated_text", "No response text.") if isinstance(data, list) else data.get("generated_text", "No response text.")
-                cleaned_response = re.sub(r'[^\x00-\x7F]+', '', full_response.replace(prompt, "").strip())
-                return cleaned_response
-            except requests.exceptions.JSONDecodeError:
-                return "Error: Response was not in JSON format."
-
-        elif response.status_code in [503, 429]:
-            wait_time = 10 if response.status_code == 503 else 30
-            time.sleep(wait_time)
-
-    return "API is currently unavailable. Please try again later."
-
-
-def mutate_dna(dna_sequence, mutation_rate):
-    dna_list = list(dna_sequence)
-    mutations_occurred = False
-    for i in range(len(dna_list)):
-        if random.random() < mutation_rate:
-            mutations = {'A': 'CGT', 'C': 'AGT', 'G': 'ACT', 'T': 'ACG'}
-            dna_list[i] = random.choice(mutations[dna_list[i]])
-            mutations_occurred = True
-    return ''.join(dna_list), mutations_occurred
-
-def transcribe_dna_to_rna(dna_sequence):
-    return dna_sequence.replace('T', 'U')
-
-def run_pipeline(input_string, mutation_rate=0, prepend_start_codon=False):
-    pipeline = Pipeline()
-    pipeline.add(StringReader())
-    pipeline.add(CharacterCapitalizer())
-    pipeline.add(DNABaseConverter())
-    pipeline.add(SpaceRemover())
-    pipeline.add(SpecialCharactersRemover())
-
-    original_dna_output = pipeline.execute(input_string)
-    if prepend_start_codon:
-        original_dna_output = 'ATG' + original_dna_output
-
-    mutated_dna_output, mutations_occurred = mutate_dna(original_dna_output, mutation_rate)
-    return original_dna_output, mutated_dna_output, mutations_occurred
-
-def app():
+    # st.title('DNA to Protein Simulator')
         # App Title
     st.markdown("""
     <div class="neon-box">
