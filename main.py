@@ -8,9 +8,9 @@ import stability_matrix
 PAGES = {
     "Home": home,  # Home page
     "BaseWarp Game": basewarp,
-    "Stability Matrix": stability_matrix,
     "Mutation Explorer": mutation_explorer,
     "DNA to Protein Simulator": dnatoprotein_simulator,
+    "Stability Matrix": stability_matrix,
 }
 
 st.sidebar.title("Navigation")
