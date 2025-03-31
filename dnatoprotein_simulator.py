@@ -71,19 +71,52 @@ def run_pipeline(input_string, mutation_rate=0, prepend_start_codon=False):
 
 def app():
     
-    # Title Section
-    st.markdown("""
-    <div style="background-color: #0D0D0D; padding: 20px; border-radius: 15px; color: #00FFD1; text-align: center; 
-        box-shadow: 0px 0px 30px rgba(0, 255, 209, 0.6); max-width: 900px; margin: auto; font-family: 'Orbitron', sans-serif;">
-        <h1 style="font-size:55px; color: #00FFA3; text-shadow: 0px 0px 15px #00FFAA, 0px 0px 25px #00FFD1; letter-spacing: 3px;">
-            DNA to Protein Simulator
-        </h1>
-        <hr style="border: 2px solid #00FFD1; box-shadow: 0px 0px 15px #00FFD1;">
-        <p style="color: #00FFA3; font-size: 22px; font-weight: bold;">
-            Ever wondered how your genetic code transforms into the building blocks of life?
-        </p>
-    </div>
-    """, unsafe_allow_html=True)
+       
+    st.markdown(
+        """
+        <style>
+        body {
+            background-color: #1a1a1a;
+            color: #c9a227;
+            font-family: 'Courier New', monospace;
+        }
+        .stApp {
+            background-color: #1a1a1a;
+        }
+        .stTitle {
+            color: #ffcc00;
+            text-shadow: 2px 2px 4px #ff6600;
+            font-size: 32px;
+        }
+        .stMarkdown {
+            color: #d4af37;
+            font-size: 16px;
+        }
+        .stSidebar {
+            background-color: #262626;
+            color: #ffcc00;
+            border-right: 3px solid #ff6600;
+        }
+        .stButton>button {
+            background-color: #ff6600;
+            color: #1a1a1a;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .stTable {
+            background-color: #333333;
+            color: #ffcc00;
+            border: 1px solid #ff6600;
+        }
+        .stMetric {
+            color: #ffcc00;
+            font-size: 18px;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+    st.markdown("<h1 class='stTitle'>DNA to Protein Simulator</h1>", unsafe_allow_html=True)
     # st.title('DNA to Protein Simulator')
 
     user_input = st.text_area("Enter your text to convert into DNA:", "Type your text here...")
