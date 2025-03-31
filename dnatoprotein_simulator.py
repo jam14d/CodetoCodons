@@ -75,6 +75,28 @@ def app():
     st.markdown(
         """
         <style>
+            @keyframes wave {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .wave-title {
+            display: inline-block;
+            font-size: 36px;
+            font-weight: bold;
+            color: #d9ca80;
+            text-shadow: 2px 2px 4px #ff6600;
+            text-align: center;
+        }
+
+        .wave-title span {
+            display: inline-block;
+            animation: wave 1.5s infinite ease-in-out;
+        }
+
+        .wave-title span:nth-child(odd) {
+            animation-delay: 0.2s;
+        }
         body {
             background-color: #1a1a1a;
             color: #c9a227;
@@ -116,7 +138,13 @@ def app():
         """,
         unsafe_allow_html=True
     )
-    st.markdown("<h1 class='stTitle'>DNA to Protein Simulator</h1>", unsafe_allow_html=True)
+    
+    title_text = "DNA to Protein Simulator"
+    wavy_title = "".join(f"<span>{char}</span>" for char in title_text)
+
+    st.markdown(f"<h1 class='wave-title'>{wavy_title}</h1>", unsafe_allow_html=True)
+
+    #st.markdown("<h1 class='stTitle'>DNA to Protein Simulator</h1>", unsafe_allow_html=True)
     # st.title('DNA to Protein Simulator')
 
     user_input = st.text_area("Enter your text to convert into DNA:", "Type your text here...")
