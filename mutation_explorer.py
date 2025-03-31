@@ -45,21 +45,21 @@ def app():
         }
         .stSidebar {
             background-color: #141222;
-            color: #F4D06F;
+            color: #ede6d3;
             border-right: 3px solid #FF3C00;
         }
         .stMetric {
-            color: #F4D06F;
+            color: #ede6d3;
             font-size: 16px;
         }
         .stTable {
             background-color: #1D1B33;
             color: #FF3C00;
-            border: 2px solid #F4D06F;
+            border: 2px solid #ede6d3;
         }
         .radar-box {
             background: rgba(244, 208, 111, 0.1);
-            border-left: 4px solid #F4D06F;
+            border-left: 4px solid #ede6d3;
             padding: 14px;
             border-radius: 5px;
             font-size: 16px;
