@@ -95,7 +95,7 @@ def app():
         .stSidebar {
             background-color: #262626;
             color: #ffcc00;
-            border-right: 3px solid #ff6600;
+            border-right: 3px solid #262626;
         }
         .stButton>button {
             background-color: #262626;
