@@ -70,103 +70,97 @@ def run_pipeline(input_string, mutation_rate=0, prepend_start_codon=False):
     return original_dna_output, mutated_dna_output, mutations_occurred
 
 def app():
+    # Inject Custom CSS
     st.markdown("""
     <style>
     html, body, [class*="st"] {
-        background-color: #282425;
-        color: #a8e6cf;
-        font-family: 'Orbitron', sans-serif;
+        background: linear-gradient(135deg, #e0f7fa 0%, #80deea 100%);
+        font-family: 'Poppins', sans-serif;
+        color: #37474f;
     }
 
-    .big-title-glow {
-        font-size: 50px;
-        font-weight: bold;
-        text-align: center;
-        color: #ffcc66;
-        text-shadow: 0 0 50px #ff9966, 0 0 50px #ffcc66, 0 0 50px #ff6633;
-        animation: flicker-big 1.5s infinite alternate;
-    }
-
-    .title-glow {
-        font-size: 20px;
-        font-weight: bold;
-        text-align: center;
-        color: #88c0d0;
-        text-shadow: 0 0 10px #88c0d0, 0 0 15px #6fa3bf, 0 0 20px #5790af;
-        animation: flicker 1.5s infinite alternate;
-    }
-
-    @keyframes flicker-big {
-        0% { opacity: 1; text-shadow: 0 0 25px #ff9966; }
-        50% { opacity: 0.9; text-shadow: 0 0 40px #ffcc66; }
-        100% { opacity: 1; text-shadow: 0 0 25px #ff9966; }
-    }
-
-    @keyframes flicker {
-        0% { opacity: 1; text-shadow: 0 0 20px #88c0d0; }
-        50% { opacity: 0.9; text-shadow: 0 0 25px #6fa3bf; }
-        100% { opacity: 1; text-shadow: 0 0 20px #88c0d0; }
-    }
-
-    .neon-box {
-        background-color: rgba(38, 34, 35, 0.9);
-        border: 2px solid #88c0d0;
-        border-radius: 10px;
+    .glass-box {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
         padding: 20px;
-        box-shadow: 0px 0px 15px #88c0d0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         margin: auto;
-        max-width: 900px;
+        max-width: 850px;
         text-align: center;
+    }
+
+    .futuristic-title {
+        font-size: 45px;
+        font-weight: 700;
+        text-align: center;
+        color: #006064;
+        text-shadow: 0px 0px 10px #80deea;
+        letter-spacing: 1px;
+    }
+
+    .section-title {
+        font-size: 22px;
+        font-weight: 600;
+        color: #004d40;
+    }
+
+    .monospace-code {
+        font-family: 'Courier New', monospace;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        padding: 8px;
+    }
+
+    .button-glass:hover {
+        transform: scale(1.05);
+        transition: 0.3s;
     }
     </style>
     """, unsafe_allow_html=True)
-    # st.title('DNA to Protein Simulator')
-        # App Title
+
+    # Header Section
     st.markdown("""
-    <div class="neon-box">
-        <h1 class="big-title-glow">DNA to Protein Simulator</h1>
-        <hr style="border: 2px solid #ffcc66; box-shadow: 0px 0px 50px #ffcc66;">
-        <p class="title-glow">Transcribe, Translate & Visualize Genetic Sequences</p>
+    <div class="glass-box">
+        <h1 class="futuristic-title">DNA to Protein Simulator</h1>
+        <hr style="border: 2px solid #006064; box-shadow: 0px 0px 10px #80deea;">
+        <p class="section-title">Transcribe, Translate & Visualize Genetic Sequences</p>
     </div>
     """, unsafe_allow_html=True)
 
+    # User Inputs
     user_input = st.text_area("Enter your text to convert into DNA:", "Type your text here...")
     mutation_rate = st.slider("Mutation rate (in percentage):", min_value=0.0, max_value=100.0, value=0.0, step=0.1) / 100
     prepend_start_codon = st.checkbox("Prepend 'ATG' to DNA sequence", value=False)
 
-    if st.button("Let's Transcribe and Translate!"):
+    if st.button("Let's Transcribe and Translate!", key="process", help="Click to start the DNA transcription and translation process"):
         if user_input:
             original_dna, mutated_dna, mutations_occurred = run_pipeline(user_input, mutation_rate, prepend_start_codon)
 
-            st.subheader("Your DNA Adventure Begins!")
-            st.code(original_dna, language="plaintext")
+            st.markdown("### Your DNA Adventure Begins!")
+            st.markdown(f"<div class='monospace-code'>{original_dna}</div>", unsafe_allow_html=True)
 
-            with st.spinner("Thinking of a cool explanation..."):
+            with st.spinner("Generating insights on DNA..."):
                 explanation_dna = query_llm("Explain DNA in a fun and simple way.")
-            st.markdown("**DNA: The Blueprint**")
+            st.markdown("### 🧬 DNA: The Blueprint")
             st.write(explanation_dna)
 
-            st.code(mutated_dna, language="plaintext")
+            st.markdown(f"<div class='monospace-code'>{mutated_dna}</div>", unsafe_allow_html=True)
 
             with st.spinner("Unraveling the mystery of mutations..."):
                 explanation_mutation = query_llm("Describe DNA mutations using a construction blueprint analogy.")
-            st.markdown("**Mutations: Altering The Blueprint**")
+            st.markdown("### 🔬 Mutations: Altering The Blueprint")
             st.write(explanation_mutation)
 
             rna_output = transcribe_dna_to_rna(mutated_dna)
-            st.code(rna_output, language="plaintext")
-
-            with st.spinner("Writing the script for transcription..."):
-                explanation_transcription = query_llm("Explain DNA transcription using a copy machine analogy.")
-            st.markdown("**Transcription: A Copy Machine**")
-            st.write(explanation_transcription)
+            st.markdown(f"<div class='monospace-code'>{rna_output}</div>", unsafe_allow_html=True)
 
             if not original_dna.startswith("ATG"):
                 st.warning("⚠️ Your original DNA doesn't start with 'ATG'. No translation will happen.")
                 return
 
             protein_sequence, stop_codon_present = translate_rna_to_protein(rna_output)
-            st.code(protein_sequence, language="plaintext")
+            st.markdown(f"<div class='monospace-code'>{protein_sequence}</div>", unsafe_allow_html=True)
 
             if protein_sequence:
                 with st.spinner("Generating 2D molecular structures..."):
@@ -178,7 +172,7 @@ def app():
 
             with st.spinner("Decoding the protein-making process..."):
                 explanation_translation = query_llm("Describe translation (mRNA to protein) using a factory analogy.")
-            st.markdown("**Translation: The Protein Factory!**")
+            st.markdown("### 🏭 Translation: The Protein Factory")
             st.write(explanation_translation)
 
         else:
