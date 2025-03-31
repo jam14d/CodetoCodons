@@ -84,7 +84,7 @@ def app():
             background-color: #1a1a1a;
         }
         .stTitle {
-            color: #ffcc00;
+            color: #d9ca80;
             text-shadow: 2px 2px 4px #ff6600;
             font-size: 32px;
         }
@@ -99,7 +99,7 @@ def app():
         }
         .stButton>button {
             background-color: #262626;
-            color: #ffcc00;
+            color: #d9ca80;
             border-radius: 5px;
             font-size: 14px;
         }
