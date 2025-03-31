@@ -19,7 +19,7 @@ def app():
         }
         .stTitle {
             color: #ffcc00;
-            text-shadow: 2px 2px 4px #ff6600;
+            text-shadow: 2px 2px 4px #7bb8c9;
             font-size: 32px;
         }
         .stMarkdown {
@@ -28,7 +28,7 @@ def app():
         }
         .stSidebar {
             background-color: #262626;
-            color: #ffcc00;
+            color: #7bb8c9;
             border-right: 3px solid #ff6600;
         }
         .stButton>button {
