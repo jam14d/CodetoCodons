@@ -104,8 +104,8 @@ def app():
             font-size: 14px;
         }
         .stTable {
-            background-color: #262626;
-            color: #000000;
+            background-color: #333333;
+            color: #ffcc00;
             border: 1px solid #ff6600;
         }
         .stMetric {
