@@ -10,54 +10,55 @@ def app():
         """
         <style>
         body {
-            background-color: #121212;
-            color: #00FFCC;
-            font-family: 'Orbitron', sans-serif;
+            background-color: #1a1a2e;
+            color: #F8E71C;
+            font-family: 'Press Start 2P', cursive;
         }
         .stApp {
-            background-color: #121212;
+            background-color: #1a1a2e;
         }
-        .scifi-title {
-            font-size: 40px;
+        .retro-title {
+            font-size: 36px;
             font-weight: bold;
-            color: #00FFCC;
+            color: #FF41B4;
             text-align: center;
-            text-shadow: 0px 0px 15px #00FFAA;
+            text-shadow: 0px 0px 10px #F8E71C, 0px 0px 20px #FF41B4;
             letter-spacing: 2px;
         }
         .stButton>button {
-            background-color: #00CC99;
-            color: #121212;
+            background-color: #FF41B4;
+            color: #1a1a2e;
             border-radius: 8px;
-            font-size: 16px;
+            font-size: 14px;
             padding: 10px;
             border: none;
             cursor: pointer;
+            font-family: 'Press Start 2P', cursive;
         }
         .stButton>button:hover {
-            background-color: #009977;
-            box-shadow: 0px 0px 10px #00FFCC;
+            background-color: #F8E71C;
+            box-shadow: 0px 0px 15px #FF41B4;
         }
         .stSidebar {
-            background-color: #1a1a2e;
-            color: #00FFCC;
-            border-right: 3px solid #00FFAA;
+            background-color: #000000;
+            color: #F8E71C;
+            border-right: 3px solid #FF41B4;
         }
         .stMetric {
-            color: #00FFCC;
-            font-size: 20px;
+            color: #F8E71C;
+            font-size: 16px;
         }
         .stTable {
             background-color: #222222;
-            color: #00FFCC;
-            border: 1px solid #00FFAA;
+            color: #FF41B4;
+            border: 2px solid #F8E71C;
         }
         .highlight-box {
-            background: rgba(0, 255, 204, 0.1);
-            border-left: 4px solid #00FFCC;
-            padding: 10px;
+            background: rgba(255, 65, 180, 0.1);
+            border-left: 4px solid #FF41B4;
+            padding: 12px;
             border-radius: 5px;
-            font-size: 16px;
+            font-size: 14px;
         }
         </style>
         """,
