@@ -1,7 +1,6 @@
 import streamlit as st
 
 def app():
-    st.set_page_config(page_title="STABILITY MATRIX", layout="wide")
 
     st.title("STABILITY MATRIX")
 
