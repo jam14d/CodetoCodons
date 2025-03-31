@@ -10,7 +10,7 @@ def app():
             STABILITY MATRIX
         </h1>
         <hr style="border: 2px solid #00FFD1; box-shadow: 0px 0px 15px #00FFD1;">
-        <p style="color: #00FFA3; font-size: 22px; font-weight: bold;">
+        <p style="color: #00FFA3; font-size: 18px; font-weight: bold;">
             A Next-Gen Terminal for DNA Analysis & OOP Learning
         </p>
     </div>
@@ -23,7 +23,7 @@ def app():
         <div style="background-color: #1A1A1A; padding: 20px; border-radius: 10px; color: #00FFA3; 
                     font-family: 'Orbitron', monospace; text-align: left; 
                     box-shadow: 0px 0px 20px rgba(0, 255, 209, 0.4); max-width: 900px; margin: auto; padding: 20px;">
-            <h2>How Can We Measure DNA Stability?</h2>
+            <h3>How Can We Measure DNA Stability?</h3>
             
         GC content—the proportion of guanine (G) and cytosine (C) bases in a DNA sequence—plays a critical role in DNA stability. Higher GC content enhances stability due to the stronger triple hydrogen bonding between G and C pairs, making the DNA more resistant to denaturation.
         </div>
