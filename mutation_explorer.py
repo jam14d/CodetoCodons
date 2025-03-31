@@ -142,7 +142,7 @@ def app():
 
     # SNP Distribution Histogram
     with col1:
-        st.markdown("SNP Distribution")
+        st.markdown("#### SNP Distribution")
         fig, ax = plt.subplots()
         ax.hist(snp_positions, bins=50, color='#E06C2D', alpha=0.9)
         ax.set_xlabel("Genome Position")
