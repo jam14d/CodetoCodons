@@ -7,65 +7,67 @@ import io
 def app():
 
     st.markdown(
-        """
-        <style>
-        body {
-            background-color: #0D0D0D;
-            color: #FF6F3C;
-            font-family: 'Orbitron', sans-serif;
-        }
-        .stApp {
-            background-color: #0D0D0D;
-        }
-        .hud-title {
-            font-size: 38px;
-            font-weight: bold;
-            color: #FF6F3C;
-            text-align: center;
-            text-shadow: 0px 0px 8px #FF9A3C, 0px 0px 12px #FFD43C;
-            letter-spacing: 2px;
-        }
-        .stButton>button {
-            background-color: #FF6F3C;
-            color: #0D0D0D;
-            border-radius: 5px;
-            font-size: 14px;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-        }
-        .stButton>button:hover {
-            background-color: #FFD43C;
-            box-shadow: 0px 0px 10px #FF6F3C;
-        }
-        .stSidebar {
-            background-color: #111111;
-            color: #FF6F3C;
-            border-right: 3px solid #FF6F3C;
-        }
-        .stMetric {
-            color: #FFD43C;
-            font-size: 16px;
-        }
-        .stTable {
-            background-color: #222222;
-            color: #FF6F3C;
-            border: 2px solid #FFD43C;
-        }
-        .hud-box {
-            background: rgba(255, 111, 60, 0.1);
-            border-left: 4px solid #FF6F3C;
-            padding: 12px;
-            border-radius: 5px;
-            font-size: 14px;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
+    """
+    <style>
+    body {
+        background-color: #0A0A1F;
+        color: #00FFF7;
+        font-family: 'Orbitron', sans-serif;
+    }
+    .stApp {
+        background-color: #0A0A1F;
+    }
+    .cyber-title {
+        font-size: 38px;
+        font-weight: bold;
+        color: #FF00FF;
+        text-align: center;
+        text-shadow: 0px 0px 10px #00FFF7, 0px 0px 15px #FF00FF;
+        letter-spacing: 3px;
+    }
+    .stButton>button {
+        background: linear-gradient(90deg, #FF00FF, #00FFF7);
+        color: #0A0A1F;
+        border-radius: 8px;
+        font-size: 14px;
+        padding: 12px;
+        border: none;
+        cursor: pointer;
+        text-transform: uppercase;
+        box-shadow: 0px 0px 10px #00FFF7;
+    }
+    .stButton>button:hover {
+        background: linear-gradient(90deg, #00FFF7, #FF00FF);
+        box-shadow: 0px 0px 15px #FF00FF;
+    }
+    .stSidebar {
+        background-color: #111133;
+        color: #00FFF7;
+        border-right: 3px solid #FF00FF;
+    }
+    .stMetric {
+        color: #00FFF7;
+        font-size: 16px;
+    }
+    .stTable {
+        background-color: #1A1A3A;
+        color: #FF00FF;
+        border: 2px solid #00FFF7;
+    }
+    .cyber-box {
+        background: rgba(0, 255, 247, 0.1);
+        border-left: 4px solid #00FFF7;
+        padding: 14px;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
     
     # Title
-    st.markdown("<h1 class='hud-title'>Mutation Explorer: SNP Tracker</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 class='hud-title'>Mutation Explorer</h1>", unsafe_allow_html=True)
 
     # Introduction
     st.markdown("""
