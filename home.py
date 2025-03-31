@@ -93,6 +93,13 @@ def app():
     """, unsafe_allow_html=True)
 
     # Sci-Fi Sections with subtle animation
+    st.markdown("""
+    <div class="neon-box sci-fi-section">
+        <h4 class="title-glow">BaseWarp Game</h4>
+        <p class="cyber-text">Fix mutations in a DNA strand by swapping base pairs in this neon-lit arcade challenge!</p>
+    </div>
+    """, unsafe_allow_html=True)
+
     col1, col2 = st.columns(2)
     with col1:
         st.markdown("""
@@ -112,7 +119,7 @@ def app():
 
     st.markdown("""
     <div class="neon-box sci-fi-section">
-        <h4 class="title-glow">BaseWarp Game</h4>
-        <p class="cyber-text">Fix mutations in a DNA strand by swapping base pairs in this neon-lit arcade challenge!</p>
+        <h4 class="title-glow">Stability Matrix</h4>
+        <p class="cyber-text">Decode DNA like never before!</p>
     </div>
     """, unsafe_allow_html=True)
