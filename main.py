@@ -8,8 +8,8 @@ import stability_matrix
 PAGES = {
     "Home": home,  # Home page
     "BaseWarp Game": basewarp,
-    "Mutation Explorer": mutation_explorer,
     "DNA to Protein Simulator": dnatoprotein_simulator,
+    "Mutation Explorer": mutation_explorer,
     "Stability Matrix": stability_matrix,
 }
 
