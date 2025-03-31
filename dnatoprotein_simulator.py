@@ -74,7 +74,7 @@ def app():
     # Title Section
     st.markdown("""
     <div style="background-color: #0D0D0D; padding: 20px; border-radius: 15px; color: #00FFD1; text-align: center; 
-        box-shadow: 0px 0px 30px rgba(0, 255, 209, 0.6); max-width: 900px; margin: auto; font-family: 'Orbitron', sans-serif; text-transform: uppercase;">
+        box-shadow: 0px 0px 30px rgba(0, 255, 209, 0.6); max-width: 900px; margin: auto; font-family: 'Orbitron', sans-serif;">
         <h1 style="font-size:55px; color: #00FFA3; text-shadow: 0px 0px 15px #00FFAA, 0px 0px 25px #00FFD1; letter-spacing: 3px;">
             DNA to Protein Simulator
         </h1>
