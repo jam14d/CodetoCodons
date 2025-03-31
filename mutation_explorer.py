@@ -25,7 +25,7 @@ def app():
         .glitch-title {
             font-size: 38px;
             font-weight: bold;
-            color: #FF3C00;
+            color: #F4D06F;
             text-align: center;
             animation: glitch 0.8s infinite alternate;
             letter-spacing: 2px;
