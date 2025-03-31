@@ -20,7 +20,7 @@ def app():
         }
         @keyframes cyber-glitch {
             0% { text-shadow: 4px 4px 0px #FF3C00, -4px -4px 0px #00FFC6; }
-            10% { text-shadow: -3px -3px 0px #FF3C00, 3px 3px 0px #00FFC6; }
+            50% { text-shadow: -3px -3px 0px #FF3C00, 3px 3px 0px #00FFC6; }
             100% { text-shadow: 4px -4px 0px #FF3C00, -4px 4px 0px #00FFC6; }
         }
         .glitch-title {
