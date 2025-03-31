@@ -96,6 +96,7 @@ def query_llm(prompt, retries=3):
 
     return "API is currently unavailable. Please try again later."
 
+
 def mutate_dna(dna_sequence, mutation_rate):
     dna_list = list(dna_sequence)
     mutations_occurred = False
@@ -125,7 +126,14 @@ def run_pipeline(input_string, mutation_rate=0, prepend_start_codon=False):
     return original_dna_output, mutated_dna_output, mutations_occurred
 
 def app():
-    st.title('DNA to Protein Simulator')
+        # App Title
+    st.markdown("""
+    <div class="neon-box">
+        <h1 class="big-title-glow">DNA to Protein Simulator</h1>
+        <hr style="border: 2px solid #ffcc66; box-shadow: 0px 0px 50px #ffcc66;">
+        <p class="title-glow">Transcribe, Translate & Visualize Genetic Sequences</p>
+    </div>
+    """, unsafe_allow_html=True)
 
     user_input = st.text_area("Enter your text to convert into DNA:", "Type your text here...")
     mutation_rate = st.slider("Mutation rate (in percentage):", min_value=0.0, max_value=100.0, value=0.0, step=0.1) / 100
