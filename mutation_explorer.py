@@ -149,10 +149,19 @@ def app():
         ax.set_ylabel("Mutation Frequency")
         ax.set_title("SNP Spread")
         st.pyplot(fig)
+        
+    # SNP Classification Pie Chart
+    with col2:
+        st.markdown("#### SNP Type Proportion")
+        fig2, ax2 = plt.subplots()
+        ax2.pie([60, 40], labels=["Transitions", "Transversions"], autopct='%1.1f%%', colors=['#00FFCC', '#006666'])
+        ax2.set_title("SNP Types")
+        st.pyplot(fig2)
+
 
     # Conclusion
     st.markdown("""
     <div class='radar-box'>
-    Mutation patterns mapped successfully. High-frequency mutations indicate key areas of variation in the genome.
+    Mutation patterns mapped successfully.
     </div>
     """, unsafe_allow_html=True)
