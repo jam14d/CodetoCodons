@@ -27,7 +27,7 @@ def app():
             font-weight: bold;
             color: #F4D06F;
             text-align: center;
-            animation: glitch 0.8s infinite alternate;
+            animation: glitch 1.0s infinite alternate;
             letter-spacing: 2px;
         }
         .stButton>button {
@@ -71,11 +71,12 @@ def app():
     )
     
     # Title with glitch animation
-    st.markdown("<h1 class='glitch-title'>Mutation Explorer: SNP Tracker</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 class='glitch-title'>Mutation Explorer</h1>", unsafe_allow_html=True)
 
 
     # Introduction
     st.markdown("""
+    
     Welcome to your personal genomic gadget! The Mutation Explorer scans two DNA sequences, compares them, and pinpoints Single Nucleotide Polymorphisms (SNPs)—the tiny mutations that can make a big difference.
 
     ### How to Operate:
