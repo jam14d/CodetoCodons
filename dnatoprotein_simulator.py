@@ -98,8 +98,8 @@ def app():
             border-right: 3px solid #ff6600;
         }
         .stButton>button {
-            background-color: #ff6600;
-            color: #1a1a1a;
+            background-color: #262626;
+            color: #ffcc00;
             border-radius: 5px;
             font-size: 14px;
         }
