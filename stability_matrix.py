@@ -1,8 +1,6 @@
 import streamlit as st
 
 def app():
-    # Set Streamlit Page Configuration
-    st.set_page_config(page_title="STABILITY MATRIX", layout="wide")
 
     # Title Section
     st.markdown("""
