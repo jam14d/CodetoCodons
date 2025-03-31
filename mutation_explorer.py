@@ -10,52 +10,51 @@ def app():
         """
         <style>
         body {
-            background-color: #1a1a2e;
-            color: #F8E71C;
-            font-family: 'Press Start 2P', cursive;
+            background-color: #0D0D0D;
+            color: #FF6F3C;
+            font-family: 'Orbitron', sans-serif;
         }
         .stApp {
-            background-color: #1a1a2e;
+            background-color: #0D0D0D;
         }
-        .retro-title {
-            font-size: 36px;
+        .hud-title {
+            font-size: 38px;
             font-weight: bold;
-            color: #FF41B4;
+            color: #FF6F3C;
             text-align: center;
-            text-shadow: 0px 0px 10px #F8E71C, 0px 0px 20px #FF41B4;
+            text-shadow: 0px 0px 8px #FF9A3C, 0px 0px 12px #FFD43C;
             letter-spacing: 2px;
         }
         .stButton>button {
-            background-color: #FF41B4;
-            color: #1a1a2e;
-            border-radius: 8px;
+            background-color: #FF6F3C;
+            color: #0D0D0D;
+            border-radius: 5px;
             font-size: 14px;
             padding: 10px;
             border: none;
             cursor: pointer;
-            font-family: 'Press Start 2P', cursive;
         }
         .stButton>button:hover {
-            background-color: #F8E71C;
-            box-shadow: 0px 0px 15px #FF41B4;
+            background-color: #FFD43C;
+            box-shadow: 0px 0px 10px #FF6F3C;
         }
         .stSidebar {
-            background-color: #000000;
-            color: #F8E71C;
-            border-right: 3px solid #FF41B4;
+            background-color: #111111;
+            color: #FFD43C;
+            border-right: 3px solid #FF6F3C;
         }
         .stMetric {
-            color: #F8E71C;
+            color: #FFD43C;
             font-size: 16px;
         }
         .stTable {
             background-color: #222222;
-            color: #FF41B4;
-            border: 2px solid #F8E71C;
+            color: #FF6F3C;
+            border: 2px solid #FFD43C;
         }
-        .highlight-box {
-            background: rgba(255, 65, 180, 0.1);
-            border-left: 4px solid #FF41B4;
+        .hud-box {
+            background: rgba(255, 111, 60, 0.1);
+            border-left: 4px solid #FF6F3C;
             padding: 12px;
             border-radius: 5px;
             font-size: 14px;
@@ -66,7 +65,7 @@ def app():
     )
     
     # Title
-    st.markdown("<h1 class='stTitle'>Mutation Explorer: SNP Tracker</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 class='hud-title'>Mutation Explorer: SNP Tracker</h1>", unsafe_allow_html=True)
 
     # Introduction
     st.markdown("""
