@@ -71,7 +71,20 @@ def run_pipeline(input_string, mutation_rate=0, prepend_start_codon=False):
 
 def app():
     
-    st.title('DNA to Protein Simulator')
+    # Title Section
+    st.markdown("""
+    <div style="background-color: #0D0D0D; padding: 20px; border-radius: 15px; color: #00FFD1; text-align: center; 
+        box-shadow: 0px 0px 30px rgba(0, 255, 209, 0.6); max-width: 900px; margin: auto; font-family: 'Orbitron', sans-serif; text-transform: uppercase;">
+        <h1 style="font-size:55px; color: #00FFA3; text-shadow: 0px 0px 15px #00FFAA, 0px 0px 25px #00FFD1; letter-spacing: 3px;">
+            DNA to Protein Simulator
+        </h1>
+        <hr style="border: 2px solid #00FFD1; box-shadow: 0px 0px 15px #00FFD1;">
+        <p style="color: #00FFA3; font-size: 22px; font-weight: bold;">
+            Ever wondered how your genetic code transforms into the building blocks of life?
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+    # st.title('DNA to Protein Simulator')
 
     user_input = st.text_area("Enter your text to convert into DNA:", "Type your text here...")
     mutation_rate = st.slider("Mutation rate (in percentage):", min_value=0.0, max_value=100.0, value=0.0, step=0.1) / 100
