@@ -3,10 +3,12 @@ import home  # Import home page
 import mutation_explorer  
 import dnatoprotein_simulator 
 import basewarp
+import stability_matrix
 
 PAGES = {
     "Home": home,  # Home page
     "BaseWarp Game": basewarp,
+    "Stability Matrix": stability_matrix,
     "Mutation Explorer": mutation_explorer,
     "DNA to Protein Simulator": dnatoprotein_simulator,
 }
