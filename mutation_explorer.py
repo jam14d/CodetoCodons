@@ -5,77 +5,74 @@ from Bio import SeqIO
 import io
 
 def app():
-
+    # Apply Retro-Futuristic Radar Aesthetic
     st.markdown(
-    """
-    <style>
-    body {
-        background-color: #0A0A1F;
-        color: #00FFF7;
-        font-family: 'Orbitron', sans-serif;
-    }
-    .stApp {
-        background-color: #0A0A1F;
-    }
-    .cyber-title {
-        font-size: 38px;
-        font-weight: bold;
-        color: #FF00FF;
-        text-align: center;
-        text-shadow: 0px 0px 10px #00FFF7, 0px 0px 15px #FF00FF;
-        letter-spacing: 3px;
-    }
-    .stButton>button {
-        background: linear-gradient(90deg, #FF00FF, #00FFF7);
-        color: #0A0A1F;
-        border-radius: 8px;
-        font-size: 14px;
-        padding: 12px;
-        border: none;
-        cursor: pointer;
-        text-transform: uppercase;
-        box-shadow: 0px 0px 10px #00FFF7;
-    }
-    .stButton>button:hover {
-        background: linear-gradient(90deg, #00FFF7, #FF00FF);
-        box-shadow: 0px 0px 15px #FF00FF;
-    }
-    .stSidebar {
-        background-color: #111133;
-        color: #00FFF7;
-        border-right: 3px solid #FF00FF;
-    }
-    .stMetric {
-        color: #00FFF7;
-        font-size: 16px;
-    }
-    .stTable {
-        background-color: #1A1A3A;
-        color: #FF00FF;
-        border: 2px solid #00FFF7;
-    }
-    .cyber-box {
-        background: rgba(0, 255, 247, 0.1);
-        border-left: 4px solid #00FFF7;
-        padding: 14px;
-        border-radius: 5px;
-        font-size: 16px;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+        """
+        <style>
+        body {
+            background-color: #12101C;
+            color: #E0C078;
+            font-family: 'Space Mono', monospace;
+        }
+        .stApp {
+            background-color: #12101C;
+        }
+        .radar-title {
+            font-size: 38px;
+            font-weight: bold;
+            color: #E06C2D;
+            text-align: center;
+            text-shadow: 0px 0px 8px #E0C078;
+            letter-spacing: 2px;
+        }
+        .stButton>button {
+            background-color: #E06C2D;
+            color: #12101C;
+            border-radius: 5px;
+            font-size: 14px;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+        .stButton>button:hover {
+            background-color: #E0C078;
+            box-shadow: 0px 0px 10px #E06C2D;
+        }
+        .stSidebar {
+            background-color: #1C1A2A;
+            color: #E0C078;
+            border-right: 3px solid #E06C2D;
+        }
+        .stMetric {
+            color: #E0C078;
+            font-size: 16px;
+        }
+        .stTable {
+            background-color: #23202F;
+            color: #E06C2D;
+            border: 2px solid #E0C078;
+        }
+        .radar-box {
+            background: rgba(224, 192, 120, 0.1);
+            border-left: 4px solid #E0C078;
+            padding: 14px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
     
     # Title
-    st.markdown("<h1 class='hud-title'>Mutation Explorer</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 class='radar-title'>Mutation Explorer: SNP Tracker</h1>", unsafe_allow_html=True)
 
     # Introduction
     st.markdown("""
-    
     Welcome to your personal genomic gadget! The Mutation Explorer scans two DNA sequences, compares them, and pinpoints Single Nucleotide Polymorphisms (SNPs)—the tiny mutations that can make a big difference.
 
-   ### How to Operate:
-    
+    ### How to Operate:
     **Step 1: Upload Your FASTA Files**
     - **Reference Genome:** The baseline genome sequence.
     - **Variant Genome:** The sequence with potential mutations.
@@ -85,12 +82,12 @@ def app():
     - [Ensembl](https://www.ensembl.org/)
     - [UCSC Genome Browser](https://genome.ucsc.edu/)
 
-  **Step 2: Start SNP Detection**
+    **Step 2: Start SNP Detection**
     - Compares the reference and variant genome.
     - Identifies **mutation positions**.
     - Displays **statistical and visual outputs**.
 
-   **Step 3: Analyze the Results**
+    **Step 3: Analyze the Results**
     - **Histogram of mutation positions**
     - **Pie chart of SNP classifications**
 
@@ -98,26 +95,24 @@ def app():
     """)
 
     # Upload FASTA Files
-    st.sidebar.header("Upload Your Own FASTA Files")
-    ref_file = st.sidebar.file_uploader("Upload Reference Genome (FASTA)", type=["fasta"])
-    var_file = st.sidebar.file_uploader("Upload Variant Genome (FASTA)", type=["fasta"])
-
+    st.sidebar.header("Upload Your FASTA Files")
+    ref_file = st.sidebar.file_uploader("Reference Genome (FASTA)", type=["fasta"])
+    var_file = st.sidebar.file_uploader("Variant Genome (FASTA)", type=["fasta"])
 
     # Function to load FASTA sequences
     def load_fasta(file):
         return str(SeqIO.read(io.StringIO(file.getvalue().decode("utf-8")), "fasta").seq)
 
-    # Load sequences
     if ref_file and var_file:
         reference_seq = load_fasta(ref_file)
         variant_seq = load_fasta(var_file)
-        st.sidebar.success("Using uploaded FASTA files!")
+        st.sidebar.success("Files Uploaded Successfully")
     else:
-        st.sidebar.warning("Please upload both reference and variant genome FASTA files.")
-        return  # Exit the function if no files are uploaded
+        st.sidebar.warning("Upload Reference and Variant FASTA Files.")
+        return
 
     # Display genome lengths
-    st.subheader("Genome Information")
+    st.subheader("Genome Data")
     col1, col2 = st.columns(2)
     col1.metric("Reference Genome Length", f"{len(reference_seq)} bp")
     col2.metric("Variant Genome Length", f"{len(variant_seq)} bp")
@@ -129,71 +124,29 @@ def app():
     snps = find_snps(reference_seq, variant_seq)
 
     # Show SNP summary
-    st.subheader("SNP Detection Results")
-    st.write(f"**Total SNPs Found:** {len(snps)}")
-
-    # Display first 10 SNPs
-    if snps:
-        st.write("**First 10 SNPs Detected:**")
-        snp_table = {"Position": [], "Reference Nucleotide": [], "Variant Nucleotide": []}
-        for pos, ref_nuc, var_nuc in snps[:10]:
-            snp_table["Position"].append(pos)
-            snp_table["Reference Nucleotide"].append(ref_nuc)
-            snp_table["Variant Nucleotide"].append(var_nuc)
-        st.table(snp_table)
+    st.subheader("SNP Detection")
+    st.write(f"Total SNPs Found: {len(snps)}")
 
     # Extract SNP positions
     snp_positions = [pos for pos, _, _ in snps]
 
-    # Function to classify SNP types
-    def classify_snp_types(snps):
-        transitions = {"A": "G", "G": "A", "C": "T", "T": "C"}
-        transversions = {"A": ["C", "T"], "G": ["C", "T"], "C": ["A", "G"], "T": ["A", "G"]}
-        counts = {"Transitions": 0, "Transversions": 0}
-        for _, ref_nuc, var_nuc in snps:
-            if transitions.get(ref_nuc) == var_nuc:
-                counts["Transitions"] += 1
-            elif var_nuc in transversions.get(ref_nuc, []):
-                counts["Transversions"] += 1
-        return counts
-
-    # Classify SNPs
-    snp_classification = classify_snp_types(snps)
-
-    # Data Visualization
+    # Visualizations
     st.subheader("Data Analysis")
     col1, col2 = st.columns(2)
 
-    # SNP Distribution Histogram (Left)
+    # SNP Distribution Histogram
     with col1:
-        st.markdown("#### SNP Distribution Across the Genome")
-        fig, ax = plt.subplots(figsize=(4, 2))
-        ax.hist(snp_positions, bins=75, color='purple', alpha=0.7)
-        ax.set_xlabel("Genome Position", fontsize=8)
-        ax.set_ylabel("SNP Frequency", fontsize=8)
-        ax.set_title("SNP Distribution", fontsize=10)
-        ax.tick_params(axis='both', labelsize=6)
+        st.markdown("SNP Distribution")
+        fig, ax = plt.subplots()
+        ax.hist(snp_positions, bins=50, color='#E06C2D', alpha=0.9)
+        ax.set_xlabel("Genome Position")
+        ax.set_ylabel("Mutation Frequency")
+        ax.set_title("SNP Spread")
         st.pyplot(fig)
-
-    # SNP Classification Pie Chart (Right)
-    with col2:
-        st.markdown("#### SNP Type Proportion")
-        fig2, ax2 = plt.subplots(figsize=(3, 3))
-        ax2.pie(
-            snp_classification.values(),
-            labels=snp_classification.keys(),
-            autopct='%1.1f%%',
-            colors=['blue', 'orange'],
-            textprops={'fontsize': 6}
-        )
-        ax2.set_title("SNP Types", fontsize=8)
-        st.pyplot(fig2)
 
     # Conclusion
     st.markdown("""
-    ### Key Takeaways:
-    - **SNPs (mutations) are common in viral genomes** and can affect **viral transmissibility and vaccine resistance**.
-    - **Transitions (A↔G, C↔T) are more frequent** because they preserve chemical structure.
-    - **Transversions (A↔C, A↔T, G↔C, G↔T) are less common** but may have stronger functional effects.
-    """)
-
+    <div class='radar-box'>
+    Mutation patterns mapped successfully. High-frequency mutations indicate key areas of variation in the genome.
+    </div>
+    """, unsafe_allow_html=True)
