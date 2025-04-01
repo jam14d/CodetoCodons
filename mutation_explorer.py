@@ -47,7 +47,7 @@ def app():
         }
 
         .stSidebar button {
-            background: linear-gradient(90deg, #00FFC6, #FF3C00);
+            background: linear-gradient(180deg, #00FFC6, #7a9ccf);
             color: #0A0A0F;
 
             
@@ -57,12 +57,12 @@ def app():
             padding: 5px 10px;
             cursor: pointer;
             transition: 1s ease;
-            box-shadow: 0 0 8px rgba(255, 60, 0, 0.6);
+            box-shadow: 0 0 20px rgba(255, 60, 0, 0.6);
         }
 
         .stSidebar button:hover {
-            background: linear-gradient(90deg, #FF3C00, #00FFC6);
-            box-shadow: 0 0 15px #FF3C00;
+            background: linear-gradient(180deg, #EFBF04, #FF3C00);
+            box-shadow: 0 0 35px #FF3C00;
         }
         </style>
 
