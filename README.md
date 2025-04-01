@@ -36,7 +36,7 @@ BaseWarp is an interactive DNA repair game built using Streamlit. In this game, 
 
 ---
 
-## DNA Mutation & Protein Synthesis App
+## DNA to Protein Simulator
 
 This web application simulates the process of DNA mutation, transcription, and translation into proteins. Users can input text, which is then converted into a DNA sequence, potentially mutated, transcribed into RNA, and finally translated into a protein sequence.
 
