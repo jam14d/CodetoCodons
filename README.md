@@ -26,13 +26,6 @@ BaseWarp is an interactive DNA repair game built using Streamlit. In this game, 
 6. If correct, you win! Otherwise, try again.
 7. Click **Play Again** to restart with a new DNA sequence.
 
-### Installation
-To run BaseWarp locally, install Streamlit and run the script:
-```sh
-pip install streamlit
-streamlit run basewarp.py
-```
-
 ### Game Logic
 - The template strand is randomly generated.
 - The correct complementary strand is derived using base-pairing rules:
@@ -89,16 +82,6 @@ The **Mutation Explorer** is an interactive Streamlit tool for detecting and vis
 - Educational exploration of genome variation.
 - Small-scale mutation analysis.
 - Introductory bioinformatics teaching tool.
-
-### Where to Get FASTA Files
-- [NCBI GenBank](https://www.ncbi.nlm.nih.gov/genbank/)
-- [Ensembl Genome Browser](https://www.ensembl.org/)
-- [UCSC Genome Browser](https://genome.ucsc.edu/)
-
-### Run the App Locally
-```bash
-streamlit run mutation_explorer.py
-```
 
 ---
 
