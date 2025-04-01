@@ -4,9 +4,12 @@ def app():
 
     # Title Section
     st.markdown("""
+    <div style="text-align: center;">
     <h1 class="typewriter">
-    STABILITY MATRIX<span class="cursor">|</span>
-</h1>
+        STABILITY MATRIX<span class="cursor">|</span>
+    </h1>
+</div>
+
 
 <style>
 @keyframes typing {
