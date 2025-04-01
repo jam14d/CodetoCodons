@@ -4,16 +4,37 @@ def app():
 
     # Title Section
     st.markdown("""
-    <div style="background-color: #0D0D0D; padding: 20px; border-radius: 15px; color: #00FFD1; text-align: center; 
-        box-shadow: 0px 0px 30px rgba(0, 255, 209, 0.6); max-width: 800px; margin: auto; font-family: 'Orbitron', sans-serif;">
-        <h1 style="font-size:55px; color: #00FFA3; text-shadow: 0px 0px 15px #00FFAA, 0px 0px 25px #00FFD1; letter-spacing: 3px;">
-            STABILITY MATRIX
-        </h1>
-        <hr style="border: 2px solid #00FFD1; box-shadow: 0px 0px 15px #00FFD1;">
-        <p style="color: #00FFA3; font-size: 18px; font-weight: bold;">
-            A Next-Gen Terminal for DNA Analysis & OOP Learning
-        </p>
-    </div>
+    <h1 class="typewriter">
+    STABILITY MATRIX<span class="cursor">|</span>
+</h1>
+
+<style>
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+@keyframes blink {
+  0%, 100% { opacity: 1 }
+  50% { opacity: 0 }
+}
+.typewriter {
+  font-size: 70px;
+  color: #00FFA3;
+  text-shadow: 0px 0px 15px #00FFAA, 0px 0px 25px #00FFD1;
+  letter-spacing: 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: .05em solid #00FFAA1;
+  width: 0;
+  animation: typing 5s steps(30, end) forwards;
+  display: inline-block;
+}
+.cursor {
+  animation: blink 1s infinite;
+  color: #00FFD1;
+}
+</style>
+
     """, unsafe_allow_html=True)
 
     st.markdown("<br><br>", unsafe_allow_html=True)  # Adds spacing before the next section
