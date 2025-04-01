@@ -1,6 +1,6 @@
 # Code to Codons: Interactive Biology with Python
 
-**Code to Codons** is a project dedicated to making biology concepts more accessible through interactive programming. This project consists of multiple Streamlit applications that explore different aspects of genetics, DNA mutations, and protein synthesis. Below are the two key applications in this project:
+**Code to Codons** is a project dedicated to making biology concepts more accessible. This project consists of a Streamlit application that explores different aspects of genetics, DNA mutations, and protein synthesis. Below are key pages in this project:
 
 Live App [https://codetocodons.streamlit.app/]
 
@@ -9,7 +9,6 @@ Live App [https://codetocodons.streamlit.app/]
 ## BaseWarp
 
 BaseWarp is an interactive DNA repair game built using Streamlit. In this game, a DNA strand has been mutated, and your task is to swap bases on the complementary strand until it correctly pairs with the template strand.
-
 
 ### Features
 - Randomly generated DNA template strand.
@@ -66,6 +65,43 @@ This web application simulates the process of DNA mutation, transcription, and t
 
 ---
 
+## Mutation Explorer
+
+The **Mutation Explorer** is an interactive Streamlit tool for detecting and visualizing mutations in genome sequences. It compares two FASTA files — a reference genome and a variant genome — to identify **Single Nucleotide Polymorphisms (SNPs)** and displays them.
+
+### Features
+- Upload **FASTA** files for both reference and variant genomes.
+- Detect SNPs through base-by-base comparison.
+- View genome lengths and total mutation count.
+- Explore SNP data through:
+  - **Histogram** of mutation positions.
+  - **Pie chart** showing transitions vs transversions.
+
+### How to Use
+1. Upload your **Reference Genome** and **Variant Genome** FASTA files using the sidebar.
+2. Once uploaded, the app:
+   - Parses and compares the sequences.
+   - Highlights mismatches as SNPs.
+   - Displays results interactively.
+3. Use the visualizations to analyze mutation distribution and classification.
+
+### Applications
+- Educational exploration of genome variation.
+- Small-scale mutation analysis.
+- Introductory bioinformatics teaching tool.
+
+### Where to Get FASTA Files
+- [NCBI GenBank](https://www.ncbi.nlm.nih.gov/genbank/)
+- [Ensembl Genome Browser](https://www.ensembl.org/)
+- [UCSC Genome Browser](https://genome.ucsc.edu/)
+
+### Run the App Locally
+```bash
+streamlit run mutation_explorer.py
+```
+
+---
+
 ## Future Enhancements
 - Add difficulty levels to BaseWarp with different mutation rates.
 - Implement a scoring system for BaseWarp based on swap count.
@@ -73,7 +109,8 @@ This web application simulates the process of DNA mutation, transcription, and t
 - Enhance the UI with a DNA helix visualization.
 - Expand the DNA mutation app with more real-world mutation simulations.
 
-__
+---
+
 # Environment Setup
 
 ## 1. Create a New Conda Environment
@@ -82,8 +119,6 @@ Run the following command to create a new Conda environment named `codetocodons`
 ```bash
 conda create --name codetocodons python=3.9
 ```
-
-Python 3.9 is recommended to ensure compatibility with `nglview` and `streamlit`.
 
 ## 2. Activate the Environment
 Activate the newly created environment:
@@ -106,11 +141,9 @@ conda install -c conda-forge streamlit rdkit biopython
 - **rdkit**: For 2D molecular visualization
 - **biopython**: For handling protein sequences
 
-
 ## 4. Running the Application
 Once the environment is set up, launch the Streamlit application:
 
 ```bash
 streamlit run main.py
 ```
-
