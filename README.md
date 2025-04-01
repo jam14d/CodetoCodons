@@ -60,7 +60,7 @@ This web application simulates the process of DNA mutation, transcription, and t
 
 ## Mutation Explorer
 
-The **Mutation Explorer** is an interactive Streamlit tool for detecting and visualizing mutations in genome sequences. It compares two FASTA files — a reference genome and a variant genome — to identify **Single Nucleotide Polymorphisms (SNPs)** and displays them.
+The **Mutation Explorer** is for detecting and visualizing mutations in genome sequences. It compares two FASTA files — a reference genome and a variant genome — to identify **Single Nucleotide Polymorphisms (SNPs)** and displays them.
 
 ### Features
 - Upload **FASTA** files for both reference and variant genomes.
