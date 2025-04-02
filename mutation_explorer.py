@@ -43,7 +43,7 @@ def app():
             font-size: 16px;
             line-height: 1.6;
             color: #eeeeff;
-            box-shadow: 0 0 10px rgba(0, 100, 100, 0.2);
+            box-shadow: 0 0 20px rgba(255, 60, 0, 0.6);
         }
 
         .stSidebar button {
@@ -97,7 +97,7 @@ def app():
             margin-top: 30px;
             font-family: 'Chakra Petch', monospace;
             color: #eeeeff;
-            box-shadow: 0 0 10px rgba(0, 255, 204, 0.2);
+            box-shadow: 0 0 20px rgba(255, 60, 0, 0.6);
         }
         </style>
 
