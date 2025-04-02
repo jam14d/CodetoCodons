@@ -21,7 +21,7 @@ def app():
   50% { opacity: 0 }
 }
 .typewriter {
-  font-size: 70px;
+  font-size: 90px;
   color: #00ffea;
   text-shadow: 0px 0px 15px #00FFAA, 0px 0px 25px #00FFD1;
   letter-spacing: 8px;
