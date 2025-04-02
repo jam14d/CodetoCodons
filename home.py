@@ -112,8 +112,8 @@ def app():
     with col2:
         st.markdown("""
         <div class="neon-box sci-fi-section">
-            <h4 class="title-glow">DNA to Protein Simulator</h4>
-            <p class="cyber-text">Convert DNA sequences into proteins through transcription and translation.</p>
+            <h4 class="title-glow">Bio-Synthesis Simulator</h4>
+            <p class="cyber-text">Transform character input to DNA to protein.</p>
         </div>
         """, unsafe_allow_html=True)
 
