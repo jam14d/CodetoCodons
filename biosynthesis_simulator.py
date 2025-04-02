@@ -79,6 +79,15 @@ def app():
             background-color: #000000 !important;
             color: #00fff7 !important;
             font-family: 'Orbitron', sans-serif !important;
+            background-image:
+              repeating-linear-gradient(0deg, rgba(255,255,255,0.01), rgba(255,255,255,0.01) 1px, transparent 1px, transparent 2px),
+              radial-gradient(circle at 50% 0%, #111 0%, #000 100%);
+            animation: bgScroll 20s linear infinite;
+        }
+
+        @keyframes bgScroll {
+            0% { background-position: 0 0, center top; }
+            100% { background-position: 0 100px, center top; }
         }
 
         .fantasy-title {
@@ -127,11 +136,17 @@ def app():
             border: 2px solid #ff00cc;
             border-radius: 10px;
             padding: 20px;
-            font-size: 16px;
+            font-size: 14px;
             color: #ff00cc;
             text-shadow: 0 0 5px #ff00cc;
             box-shadow: 0 0 20px #ff00cc;
             text-align: center;
+        }
+
+        .stTextArea textarea, .stSlider, .stCheckbox {
+            background-color: #111 !important;
+            color: #00fff7 !important;
+            border: 1px solid #00fff7 !important;
         }
 
         .stButton > button {
