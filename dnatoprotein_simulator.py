@@ -147,6 +147,19 @@ def app():
     #st.markdown("<h1 class='stTitle'>DNA to Protein Simulator</h1>", unsafe_allow_html=True)
     # st.title('DNA to Protein Simulator')
 
+
+    st.markdown("""
+<div style='text-align: center; color: #d4af37; font-size: 18px; padding: 10px;'>
+    <strong>Welcome to the DNA to Protein Simulator!</strong><br>
+    This tool lets you explore the central dogma of molecular biology: <em>DNA → RNA → Protein</em>. 
+    Input any text, and we’ll convert it into a simulated DNA sequence, introduce random mutations, transcribe it into RNA, 
+    and translate it into a chain of amino acids — the building blocks of proteins. Along the way, 
+    you'll get explanations of key biological processes and even a visualization of the resulting protein structure. 
+    Whether you're a student, researcher, or just curious, dive in and see your message come to life — molecule by molecule.
+</div>
+""", unsafe_allow_html=True)
+
+
     user_input = st.text_area("Enter your text to convert into DNA:", "Type your text here...")
     mutation_rate = st.slider("Mutation rate (in percentage):", min_value=0.0, max_value=100.0, value=0.0, step=0.1) / 100
     prepend_start_codon = st.checkbox("Prepend 'ATG' to DNA sequence", value=False)
