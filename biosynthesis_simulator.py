@@ -115,7 +115,7 @@ def app():
             font-size: 20px;
             color: #ff5e00;
             text-align: center;
-            text-shadow: 0 0 3px #ff5e00;
+            text-shadow: 0 0 1px #ff5e00;
             box-shadow: inset 0 0 10px #ff5e00;
         }
 
