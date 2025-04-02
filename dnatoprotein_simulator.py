@@ -104,10 +104,9 @@ def app():
             border-radius: 10px;
             margin: 40px 0 60px 0;
             color: #e6c56a;
-            text-align: center;
             font-size: 18px;
             line-height: 1.6;
-            box-shadow: 0 0 10px rgba(255, 215, 120, 0.3);
+            box-shadow: 0 0 20px rgba(255, 215, 120, 0.3);
         }
 
         .stTextArea, .stSlider, .stCheckbox {
