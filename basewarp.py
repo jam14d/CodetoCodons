@@ -181,7 +181,14 @@ def app():
     """, unsafe_allow_html=True)
 
     # Template DNA
-    st.markdown('<h3 class="section-title">Template DNA:</h3>', unsafe_allow_html=True)
+    st.markdown("""
+    <div class="crt-box">
+        <h4 class="animated-title">Template DNA</h4>
+        <hr style="border: 2px solid #6495ed; box-shadow: 0px 0px 10px #6495ed;">
+    </div>
+    """, unsafe_allow_html=True)
+
+    #st.markdown('<h3 class="section-title">Template DNA:</h3>', unsafe_allow_html=True)
     st.markdown('<div style="display:flex;justify-content:center;gap:10px;">' +
                 ''.join(f'<div class="dna-box">{b}</div>' for b in game.template_strand) +
                 '</div>', unsafe_allow_html=True)
