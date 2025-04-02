@@ -145,7 +145,7 @@ def app():
     st.markdown(
         """
         <div class="intro-scroll">
-           <br>Input any phrase and watch it transform — from alphabet to DNA,
+           Input any phrase and watch it transform — from alphabet to DNA,
             from transcription into RNA, and onward to the construction of proteins.
         </div>
         """,
