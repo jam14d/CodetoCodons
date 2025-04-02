@@ -83,7 +83,7 @@ def app():
                 linear-gradient(to bottom, rgba(255, 0, 0, 0.05) 1px, transparent 1px),
                 linear-gradient(to right, rgba(255, 0, 0, 0.05) 1px, transparent 1px);
             background-size: 20px 20px;
-            animation: flicker 4s infinite alternate;
+            animation: flicker 10s infinite alternate;
         }
 
         @keyframes flicker {
@@ -101,10 +101,11 @@ def app():
             color: #ffc72c;
             text-align: center;
             padding: 12px;
-            border: 3px double #ffc72c;
+            border: 10px double #ffc72c;
             background-color: #1b1b1b;
-            text-shadow: 0 0 3px #ff5e00, 0 0 6px #ff5e00;
+            text-shadow: 0 0 20px #ff5e00, 0 0 6px #ff5e00;
             letter-spacing: 2px;
+            box-shadow: inset 0 0 10px #ffc72c;
         }
 
         .intro-scroll {
@@ -117,12 +118,12 @@ def app():
             color: #ff5e00;
             text-align: center;
             text-shadow: 0 0 3px #ff5e00;
+            box-shadow: inset 0 0 10px #ff5e00;
         }
 
         .stTextArea textarea, .stSlider, .stCheckbox {
             background-color: #101010 !important;
             color: #ffc72c !important;
-            border: 1px solid #ffc72c !important;
         }
 
         .stButton > button {
