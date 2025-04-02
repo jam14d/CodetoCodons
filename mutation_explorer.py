@@ -25,7 +25,7 @@ def app():
             content: "MUTATION EXPLORER";
             font-family: 'Share Tech Mono', monospace;
             font-size: 70px;
-            color: #00FFCC;
+            color: #eeeeff;
             letter-spacing: 3px;
             display: block;
             text-align: center;
@@ -42,7 +42,7 @@ def app():
             font-family: 'Chakra Petch', monospace;
             font-size: 16px;
             line-height: 1.6;
-            color: #00FFCC;
+            color: #eeeeff;
             box-shadow: 0 0 10px rgba(0, 255, 204, 0.2);
         }
 
