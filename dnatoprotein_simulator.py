@@ -70,54 +70,66 @@ def run_pipeline(input_string, mutation_rate=0, prepend_start_codon=False):
     return original_dna_output, mutated_dna_output, mutations_occurred
 
 def app():
+    # Custom Dark Fantasy Styles
     st.markdown(
         """
         <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet">
 
         <style>
-        @keyframes wave {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-6px); }
+        body, .stApp {
+            background-color: #0c1021 !important;
+            background-image: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.05), transparent 60%), 
+                              radial-gradient(circle at 80% 70%, rgba(255,255,255,0.03), transparent 60%);
+            font-family: 'IM Fell English SC', serif;
+            color: #e6c56a;
         }
 
-        .davinci-title {
-            display: inline-block;
-            font-size: 44px;
+        .fantasy-title {
+            font-size: 48px;
             font-family: 'IM Fell English SC', serif;
-            color: #2c1f0f;
-            background: linear-gradient(135deg, #f3eac2 0%, #e0d4a3 100%);
-            padding: 12px 28px;
+            color: #e6c56a;
+            text-align: center;
+            padding: 10px 20px;
+            border: 2px solid #e6c56a;
             border-radius: 12px;
-            border: 3px double #c9a227;
-            box-shadow: 6px 6px 10px rgba(0,0,0,0.3);
-            transform: rotate(-0.6deg);
-            margin-bottom: 20px;
-            letter-spacing: 1px;
+            background-color: #111a33;
+            box-shadow: 0 0 12px rgba(230, 197, 106, 0.4);
+            margin-bottom: 30px;
         }
 
-        .davinci-title span {
-            display: inline-block;
-            animation: wave 2.3s infinite ease-in-out;
-            color: #1f2e79;
-        }
-
-        .davinci-title span:nth-child(odd) {
-            color: #c1440e;
-            animation-delay: 0.15s;
-        }
-
-        .davinci-intro {
-            background: linear-gradient(135deg, #f3eac2 0%, #e0d4a3 100%);
-            border: 2px solid #5a3e1b;
-            padding: 20px;
+        .intro-scroll {
+            background: #111a33;
+            border: 2px solid #e6c56a;
+            padding: 24px;
             border-radius: 10px;
-            margin-top: 30px;
-            font-family: 'IM Fell English SC', serif;
-            color: #3e2f1c;
-            box-shadow: 4px 4px 12px rgba(0,0,0,0.4);
-            font-size: 17px;
-            line-height: 1.7;
-            transform: rotate(-0.3deg);
+            margin: 40px 0 60px 0;
+            color: #e6c56a;
+            font-size: 18px;
+            line-height: 1.6;
+            box-shadow: 0 0 10px rgba(255, 215, 120, 0.3);
+        }
+
+        .stTextArea, .stSlider, .stCheckbox {
+            margin-top: 20px;
+        }
+
+        .stButton>button {
+            background-color: #1d2340 !important;
+            color: #e6c56a !important;
+            border: 1px solid #e6c56a !important;
+            border-radius: 8px !important;
+            font-size: 16px !important;
+            box-shadow: 0 0 6px rgba(230, 197, 106, 0.3);
+        }
+
+        .stButton>button:hover {
+            background-color: #283156 !important;
+            box-shadow: 0 0 10px rgba(230, 197, 106, 0.5);
+        }
+
+        .stCodeBlock, .stCode {
+            background-color: #1a1f38 !important;
+            color: #e6c56a !important;
         }
         </style>
         """,
@@ -125,25 +137,20 @@ def app():
     )
 
     # Title
-    title_text = "DNA to Protein Simulator"
-    wavy_davinci_title = "".join(f"<span>{char}</span>" for char in title_text)
-    st.markdown(f"<h1 class='davinci-title'>{wavy_davinci_title}</h1>", unsafe_allow_html=True)
+    st.markdown("<div class='fantasy-title'>DNA to Protein Simulator</div>", unsafe_allow_html=True)
 
-    # Intro
+    # Intro Box
     st.markdown(
         """
-        <div class="davinci-intro">
-            Within every cell lies a script more intricate than any machine — the central dogma of biology: 
-            <strong>DNA → RNA → Protein</strong>.<br><br>
-            Use this device to transcribe your thoughts into synthetic genetic code, simulate mutations like nature's editor, 
-            and observe how strands of letters become the molecules of life. Along the journey, you shall uncover insights 
-            into transcription, translation, and amino acid chains — illuminated with scroll-like elegance.
+        <div class="intro-scroll">
+            <strong>Begin your journey through the language of life:</strong><br><br>
+            Input any phrase and watch it transform — from alphabet to synthetic DNA,
+            from transcription into RNA, and onward to the construction of proteins.<br><br>
+            Every step includes molecular logic and just a hint of magic.
         </div>
         """,
         unsafe_allow_html=True
     )
-
-    # 🔬 Continue your app logic below...
 
 
 
