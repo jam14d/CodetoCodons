@@ -174,7 +174,8 @@ def app():
     # Title box
     st.markdown("""
     <div class="crt-box">
-        <h1 class="animated-title">BASEWARP</h1>
+        <h4 class="animated-title">Your DNA strand has been warped by mutations!<br>
+            Select two nucleotides on your complementary strand to swap them until your double helix is restored.</h4>
         <hr style="border: 2px solid #6495ed; box-shadow: 0px 0px 10px #6495ed;">
         <p style="color: #a9c9ff; font-size: 18px;">
             Your DNA strand has been warped by mutations!<br>
