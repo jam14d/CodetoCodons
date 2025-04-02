@@ -111,13 +111,13 @@ def app():
         .intro-scroll {
             background-color: #1b1b1b;
             font-family: "Lucida Console", Monaco, monospace;
-            padding: 10px;
+            padding: 20px;
             margin: 20px 0;
             font-size: 16px;
             color: #ff5e00;
             text-align: center;
             text-shadow: 0 0 1px #ff5e00;
-            box-shadow: inset 0 0 20px #ff5e00;
+            box-shadow: inset 0 0 15px #ff5e00;
         }
 
         .stTextArea textarea, .stSlider, .stCheckbox {
