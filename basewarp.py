@@ -178,8 +178,6 @@ def app():
         Your DNA strand has been warped by mutations!<br>
         Select two nucleotides on your complementary strand to swap them until your double helix is restored.
     </p>
-
-        <hr style="border: 2px solid #6495ed; box-shadow: 0px 0px 10px #6495ed;">
     </div>
     """, unsafe_allow_html=True)
 
