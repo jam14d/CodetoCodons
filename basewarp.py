@@ -187,7 +187,7 @@ def app():
         max-width: 800px;
         margin: 30px auto;
         border: 5px solid rgba(0, 100, 255, 0.2);
-        box-shadow: 0 0 20px rgba(0, 100, 255, 0.2), 0 0 20px rgba(255, 0, 255, 0.1);
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.3), 0 0 30px rgba(0, 150, 255, 0.25);
         backdrop-filter: blur(4px);
     ">
         <p>
