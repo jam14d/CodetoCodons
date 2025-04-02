@@ -2,7 +2,7 @@ import streamlit as st
 import random
 import re
 import requests
-import time
+import time  
 import os
 
 from pipeline import Pipeline
@@ -182,6 +182,18 @@ def app():
         unsafe_allow_html=True
     )
 
+#     st.markdown("""
+# <div style='text-align: left; color: #d4af37; font-size: 18px;'>
+#     Explore the central dogma of molecular biology: <strong>DNA → RNA → Protein</strong>. 
+#     <br>Input any text, and we’ll convert it into a simulated DNA sequence, introduce random mutations, transcribe it into RNA, 
+#     and translate it into a chain of amino acids — the building blocks of proteins. Along the way, 
+#     you'll get explanations of key biological processes and even a visualization of the resulting protein structure. 
+#     Whether you're a student, researcher, or just curious, dive in and see your message come to life — molecule by molecule.
+#     <br>
+# </div>
+# """, unsafe_allow_html=True)
+
+
     user_input = st.text_area("Enter your text to convert into DNA:", "Type your text here...")
     mutation_rate = st.slider("Mutation rate (in percentage):", min_value=0.0, max_value=100.0, value=0.0, step=0.1) / 100
     prepend_start_codon = st.checkbox("Prepend 'ATG' to DNA sequence", value=False)
@@ -193,16 +205,14 @@ def app():
             st.subheader("Your DNA Adventure Begins!")
             st.code(original_dna, language="plaintext")
 
-            with st.spinner("Initializing bio-transcription core..."):
-                st.markdown('<div class="retro-loader"><div class="scanline-spinner"></div></div>', unsafe_allow_html=True)
+            with st.spinner("Thinking of a cool explanation..."):
                 explanation_dna = query_llm("Explain DNA in a fun and simple way.")
             st.markdown("**DNA: The Blueprint**")
             st.write(explanation_dna)
 
             st.code(mutated_dna, language="plaintext")
 
-            with st.spinner("Injecting mutation analysis..."):
-                st.markdown('<div class="retro-loader"><div class="scanline-spinner"></div></div>', unsafe_allow_html=True)
+            with st.spinner("Unraveling the mystery of mutations..."):
                 explanation_mutation = query_llm("Describe DNA mutations using a construction blueprint analogy.")
             st.markdown("**Mutations: Altering The Blueprint**")
             st.write(explanation_mutation)
@@ -210,8 +220,7 @@ def app():
             rna_output = transcribe_dna_to_rna(mutated_dna)
             st.code(rna_output, language="plaintext")
 
-            with st.spinner("Transcribing with virtual nanocopy..."):
-                st.markdown('<div class="retro-loader"><div class="scanline-spinner"></div></div>', unsafe_allow_html=True)
+            with st.spinner("Writing the script for transcription..."):
                 explanation_transcription = query_llm("Explain DNA transcription using a copy machine analogy.")
             st.markdown("**Transcription: A Copy Machine**")
             st.write(explanation_transcription)
@@ -224,8 +233,17 @@ def app():
             st.code(protein_sequence, language="plaintext")
 
             if protein_sequence:
-                with st.spinner("Rendering protein schematics..."):
-                    st.markdown('<div class="retro-loader"><div class="scanline-spinner"></div></div>', unsafe_allow_html=True)
+                with st.spinner("Generating 2D molecular structures..."):
                     image_path = generate_amino_acid_image(protein_sequence)
                 if image_path and os.path.exists(image_path):
-                    st.image(image_path, caption="2D S
+                    st.image(image_path, caption="2D Structure of Amino Acids", use_container_width=True)
+                else:
+                    st.error("Could not generate amino acid structure image.")
+
+            with st.spinner("Decoding the protein-making process..."):
+                explanation_translation = query_llm("Describe translation (mRNA to protein) using a factory analogy.")
+            st.markdown("**Translation: The Protein Factory!**")
+            st.write(explanation_translation)
+
+        else:
+            st.error("Please enter a DNA sequence to start the process!")
