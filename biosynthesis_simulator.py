@@ -111,7 +111,7 @@ def app():
             background-color: #1b1b1b;
             padding: 20px;
             margin: 20px 0;
-            font-size: 13px;
+            font-size: 20px;
             color: #ff5e00;
             text-align: center;
             text-shadow: 0 0 3px #ff5e00;
