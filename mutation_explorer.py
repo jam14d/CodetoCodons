@@ -45,24 +45,8 @@ def app():
             color: #eeeeff;
         }
 
-        .stSidebar button {
-            background: linear-gradient(180deg, #00FFC6, #7a9ccf);
-            color: #0A0A0F;
-
-            
-            text-transform: uppercase;
-            border: none;
-            border-radius: 7px;
-            padding: 5px 10px;
-            cursor: pointer;
-            transition: 1s ease;
-            box-shadow: 0 0 10px rgba(255, 60, 0, 0.6);
-        }
-
-        .stSidebar button:hover {
-            background: linear-gradient(180deg, #EFBF04, #FF3C00);
-            box-shadow: 0 0 25px #FF3C00;
-        }
+        
+        
         </style>
 
         <div class="mutation-title"></div>
