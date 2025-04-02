@@ -94,7 +94,7 @@ def app():
             border-radius: 12px;
             background-color: #111a33;
             box-shadow: 0 0 12px rgba(230, 197, 106, 0.4);
-            margin-bottom: 30px;
+            margin-bottom: 10px;
         }
 
         .intro-scroll {
@@ -104,6 +104,7 @@ def app():
             border-radius: 10px;
             margin: 40px 0 60px 0;
             color: #e6c56a;
+            text-align: center;
             font-size: 18px;
             line-height: 1.6;
             box-shadow: 0 0 10px rgba(255, 215, 120, 0.3);
@@ -143,9 +144,9 @@ def app():
     st.markdown(
         """
         <div class="intro-scroll">
-            <strong>Begin your journey through the language of life:</strong><br><br>
+            <strong>Begin your journey through the language of life:</strong>
             Input any phrase and watch it transform — from alphabet to synthetic DNA,
-            from transcription into RNA, and onward to the construction of proteins.<br><br>
+            from transcription into RNA, and onward to the construction of proteins.
             Every step includes molecular logic and just a hint of magic.
         </div>
         """,
