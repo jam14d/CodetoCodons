@@ -49,9 +49,10 @@ def app():
                     box-shadow: 0 0 15px #00ffea, 0 0 25px #00ffaa; max-width: 900px; margin: auto; padding: 20px;">
             <h4>How Can We Measure DNA Stability?</h4>
             
-        GC content—the proportion of guanine (G) and cytosine (C) bases in a DNA sequence—plays a critical role in DNA stability. Higher GC content enhances stability due to the stronger triple hydrogen bonding between G and C pairs, making the DNA more resistant to denaturation.
+        GC content—the proportion of guanine (G) and cytosine (C) bases in a DNA sequence—plays a critical role in DNA stability. 
+        Higher GC content enhances stability due to the stronger triple hydrogen bonding between G and C pairs, making the DNA more resistant to denaturation.
         
-        In this module, you will analyze GC content programmatically using Python and Object-Oriented Programming (OOP).
+        ####In this module, you will analyze GC content programmatically using Python and Object-Oriented Programming (OOP).
 
 ##### Define the Class and Initialize Data
 - Use the `__init__` method to set up the class with a DNA sequence.
