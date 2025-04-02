@@ -186,6 +186,7 @@ def app():
 
 
 
+
 ##OLD STYLING
 # def app():
 #     # Initialize game in session state
