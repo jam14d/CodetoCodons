@@ -46,7 +46,7 @@ def app():
     st.markdown("""
         <div style="background-color: #0e0e0e; padding: 20px; border-radius: 10px; color: #00ffea; 
                     font-family: 'Orbitron', monospace; text-align: left; font-size: 14px; line-height: 1.5;
-                    box-shadow: 0 0 15px #00ffea, 0 0 25px #00ffaa; max-width: 900px; margin: 10px; padding: 20px;">
+                    box-shadow: 0 0 15px #00ffea, 0 0 25px #00ffaa; max-width: 900px; margin: 0px; padding: 20px;">
             <h4>How Can We Measure DNA Stability?</h4>
             
 GC content—the proportion of guanine (G) and cytosine (C) bases in a DNA sequence—plays a critical role in DNA stability. 
