@@ -183,9 +183,9 @@ def app():
     # intro box
     st.markdown("""
     <div class="crt-box">
-        <p class="crt-subtext"> 
+        <h4> 
         Your DNA strand has been warped by mutations!<br>
-        Select two nucleotides on your complementary strand to swap them until your double helix is restored.</p>
+        Select two nucleotides on your complementary strand to swap them until your double helix is restored.</h4>
 
     </div>
     """, unsafe_allow_html=True)
