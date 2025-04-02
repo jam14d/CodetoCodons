@@ -182,10 +182,7 @@ def app():
         """
         <div class="intro-scroll">
             <strong>Welcome.</strong>
-            Input any phrase, and initiate molecular encoding — <br>
-            from character input to DNA codification,<br>
-            mutation injections, RNA synthesis, and protein rendering.<br><br>
-            Your words become data. Data becomes code. Code becomes life.<br><br>
+            Input any phrase, and initiate molecular encoding.
         </div>
         """,
         unsafe_allow_html=True
