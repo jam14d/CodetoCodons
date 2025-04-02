@@ -107,6 +107,7 @@ def app():
             font-size: 18px;
             line-height: 1.6;
             box-shadow: 0 0 20px rgba(255, 215, 120, 0.3);
+            text-align: center;
         }
 
         .stTextArea, .stSlider, .stCheckbox {
