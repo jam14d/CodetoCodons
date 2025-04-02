@@ -110,6 +110,7 @@ def app():
 
         .intro-scroll {
             background-color: #1b1b1b;
+            font-family: "Courier New", Courier, monospace;
             padding: 20px;
             margin: 20px 0;
             font-size: 20px;
