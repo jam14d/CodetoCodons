@@ -83,7 +83,7 @@ def app():
                 linear-gradient(to bottom, rgba(255, 0, 0, 0.05) 1px, transparent 1px),
                 linear-gradient(to right, rgba(255, 0, 0, 0.05) 1px, transparent 1px);
             background-size: 20px 20px;
-            animation: flicker 10s infinite alternate;
+            animation: flicker 4s infinite alternate;
         }
 
         @keyframes flicker {
@@ -101,7 +101,7 @@ def app():
             font-family: 'Press Start 2P', monospace !important;
             color: #ffc72c;
             text-align: center;
-            padding: 12px;
+            padding: 15px;
             background-color: #1b1b1b;
             text-shadow: 0 0 3px #ff5e00, 0 0 6px #ff5e00;
             letter-spacing: 1px;

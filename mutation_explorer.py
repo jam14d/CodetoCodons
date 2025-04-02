@@ -75,9 +75,9 @@ def app():
     st.markdown(
         """
         <div class="intro-box">
-            Welcome to your personal genomic gadget!
+            Welcome to your personal genomic gadget.
             The Mutation Explorer dives into the code of life, scanning two DNA sequences to uncover subtle changes known as Single Nucleotide Polymorphisms (SNPs).<br><br>
-            These tiny mutations may be just one letter apart, but they can spark big biological differences — from inherited traits to evolutionary twists.<br><br>
+            These mutations may be just one letter apart, but they can spark big biological differences — from inherited traits to evolutionary twists.<br><br>
             Upload your genomes and hit scan to begin.
 
         </div>
