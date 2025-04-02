@@ -101,7 +101,7 @@ def app():
             background: #111a33;
             border: 2px solid #e6c56a;
             padding: 24px;
-            font-family: 'Forum', serif;
+            font-family: 'IM Fell English SC', serif;
             border-radius: 10px;
             margin: 40px 0 60px 0;
             color: #e6c56a;
@@ -151,8 +151,6 @@ def app():
         """,
         unsafe_allow_html=True
     )
-
-
 
 #     st.markdown("""
 # <div style='text-align: left; color: #d4af37; font-size: 18px;'>
