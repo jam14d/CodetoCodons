@@ -187,12 +187,12 @@ def app():
         max-width: 800px;
         margin: 30px auto;
         border: 1px solid rgba(0, 255, 255, 0.2);
-        box-shadow: 0 0 10px rgba(0, 255, 255, 0.2), 0 0 20px rgba(255, 0, 255, 0.1);
+        box-shadow: 0 0 10px rgba(0, 100, 255, 0.2), 0 0 20px rgba(255, 0, 255, 0.1);
         backdrop-filter: blur(4px);
     ">
         <p>
-            Your DNA strand has been <strong>warped by mutations</strong>.<br>
-            Select two nucleotides on your complementary strand to <em>swap them</em> until your double helix is restored.
+            Your DNA strand has been warped by mutations.<br>
+            Select two nucleotides on your complementary strand to swap them until your double helix is restored.
         </p>
     </div>
     """, unsafe_allow_html=True)
