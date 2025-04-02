@@ -72,109 +72,104 @@ def run_pipeline(input_string, mutation_rate=0, prepend_start_codon=False):
 def app():
     st.markdown(
         """
-        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
 
         <style>
         body, .stApp {
-            background-color: #000000 !important;
-            color: #00fff7 !important;
+            background-color: #0b0b0b !important;
+            color: #f0f0f0 !important;
             font-family: 'Orbitron', sans-serif !important;
             background-image:
-              repeating-linear-gradient(0deg, rgba(255,255,255,0.01), rgba(255,255,255,0.01) 1px, transparent 1px, transparent 2px),
-              radial-gradient(circle at 50% 0%, #111 0%, #000 100%);
-            animation: bgScroll 20s linear infinite;
+                linear-gradient(to bottom, rgba(255, 0, 0, 0.05) 1px, transparent 1px),
+                linear-gradient(to right, rgba(255, 0, 0, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+            animation: flicker 4s infinite alternate;
         }
 
-        @keyframes bgScroll {
-            0% { background-position: 0 0, center top; }
-            100% { background-position: 0 100px, center top; }
+        @keyframes flicker {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.98; }
+            52% { opacity: 0.93; }
+            54% { opacity: 0.95; }
+            56% { opacity: 0.98; }
+            58% { opacity: 0.9; }
+            60% { opacity: 1; }
         }
 
         .fantasy-title {
-            position: relative;
-            font-size: 42px;
+            font-size: 40px;
+            color: #ffc72c;
             text-align: center;
-            padding: 12px 24px;
-            color: #00fff7;
-            border: 2px solid #00fff7;
-            border-radius: 12px;
-            background-color: #0a0a0a;
-            text-shadow: 0 0 10px #00fff7;
-            box-shadow: 0 0 25px #00fff7;
-            font-weight: 700;
-            overflow: hidden;
-        }
-
-        .fantasy-title::before, .fantasy-title::after {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-            clip: rect(0, 900px, 0, 0);
-            animation: glitch 2s infinite linear alternate-reverse;
-        }
-
-        .fantasy-title::after {
-            color: #ff00cc;
-            animation-delay: .3s;
-        }
-
-        @keyframes glitch {
-            0% { clip: rect(42px, 9999px, 44px, 0); transform: skew(0.3deg); }
-            5% { clip: rect(12px, 9999px, 58px, 0); transform: skew(0.5deg); }
-            10% { clip: rect(85px, 9999px, 96px, 0); transform: skew(0.2deg); }
-            15% { clip: rect(25px, 9999px, 32px, 0); transform: skew(0.6deg); }
-            20% { clip: rect(44px, 9999px, 50px, 0); transform: skew(0.1deg); }
-            100% { clip: rect(0, 9999px, 0, 0); transform: skew(0.3deg); }
+            padding: 12px;
+            border: 3px double #ffc72c;
+            background-color: #1b1b1b;
+            text-shadow: 0 0 3px #ff5e00, 0 0 6px #ff5e00;
+            letter-spacing: 2px;
         }
 
         .intro-scroll {
-            background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
-            border: 2px solid #ff00cc;
-            border-radius: 10px;
+            background-color: #1b1b1b;
+            border: 2px dashed #ff5e00;
             padding: 20px;
-            font-size: 14px;
-            color: #ff00cc;
-            text-shadow: 0 0 5px #ff00cc;
-            box-shadow: 0 0 20px #ff00cc;
+            border-radius: 6px;
+            margin: 20px 0;
+            font-size: 13px;
+            color: #ff5e00;
             text-align: center;
+            text-shadow: 0 0 3px #ff5e00;
         }
 
         .stTextArea textarea, .stSlider, .stCheckbox {
-            background-color: #111 !important;
-            color: #00fff7 !important;
-            border: 1px solid #00fff7 !important;
+            background-color: #101010 !important;
+            color: #ffc72c !important;
+            border: 1px solid #ffc72c !important;
         }
 
         .stButton > button {
-            background-color: #000000 !important;
-            color: #00fff7 !important;
-            border: 2px solid #00fff7 !important;
+            background-color: #0b0b0b !important;
+            color: #ffc72c !important;
+            border: 2px solid #ffc72c !important;
             font-family: 'Orbitron', sans-serif;
-            border-radius: 6px;
-            font-size: 16px;
             font-weight: bold;
-            text-shadow: 0 0 5px #00fff7;
-            box-shadow: 0 0 15px #00fff7;
-            transition: 0.3s ease-in-out;
+            letter-spacing: 1px;
+            text-shadow: 0 0 2px #ff5e00;
+            box-shadow: 0 0 6px #ff5e00;
+            border-radius: 0;
         }
 
         .stButton > button:hover {
-            background-color: #0ff !important;
-            color: #000 !important;
-            box-shadow: 0 0 25px #0ff, 0 0 50px #0ff;
+            background-color: #ffc72c !important;
+            color: #0b0b0b !important;
+            box-shadow: 0 0 12px #ff5e00;
         }
 
         .stCodeBlock, .stCode {
             background-color: #111 !important;
-            color: #00fff7 !important;
+            color: #32cdff !important;
             font-family: 'Courier New', Courier, monospace;
-            border-left: 3px solid #ff00cc;
+            border-left: 3px solid #32cdff;
             padding: 10px;
-            box-shadow: inset 0 0 10px #ff00cc;
+            box-shadow: inset 0 0 10px #32cdff;
+        }
+
+        .retro-loader {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .scanline-spinner {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border-top: 4px solid #ffc72c;
+            border-right: 4px solid transparent;
+            animation: spin 1.2s linear infinite;
+            box-shadow: 0 0 10px #ffc72c;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
         </style>
         """,
