@@ -29,6 +29,8 @@ class DNAGame:
     def check_answer(self):
         return self.mutated_strand == self.correct_strand
 
+
+
 def app():
     # Initialize game in session state
     if "dna_game" not in st.session_state:
@@ -36,33 +38,104 @@ def app():
 
     game = st.session_state.dna_game
 
-    # UI Styling and Title
     st.markdown("""
-    <div style=\"background-color: #121212; padding: 20px; border-radius: 15px; color: #ffffff; text-align: center; 
-        box-shadow: 0px 0px 30px rgba(100, 149, 237, 0.6); max-width: 900px; margin: auto;\">
-        <h1 style=\"font-size:50px; color: #6495ed; text-shadow: 0px 0px 10px #6495ed;\">
-            BaseWarp
-        </h1>
-        <hr style=\"border: 2px solid #6495ed; box-shadow: 0px 0px 10px #6495ed;\">
-        <p style=\"color: #a9c9ff; font-size: 20px; font-weight: 500;\">
-            Your DNA strand has been warped by mutations! Select two nucleotides on your complementary strand to swap 
-            them until your double helix is restored.
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+    <style>
+        html, body, [class*="css"] {
+            font-family: 'Orbitron', sans-serif !important;
+        }
+
+        .crt-box {
+            background-color: #121212;
+            padding: 20px;
+            border-radius: 15px;
+            color: #ffffff;
+            text-align: center;
+            max-width: 900px;
+            margin: auto;
+            box-shadow: 0px 0px 30px rgba(100, 149, 237, 0.6);
+        }
+
+        .animated-title {
+            font-size: 50px;
+            color: #6495ed;
+            animation: pulseGlow 2s infinite;
+            text-shadow: 0 0 5px #6495ed, 0 0 15px #6495ed;
+        }
+
+        @keyframes pulseGlow {
+            0% { text-shadow: 0 0 5px #6495ed, 0 0 15px #6495ed; }
+            50% { text-shadow: 0 0 10px #6495ed, 0 0 30px #6495ed; }
+            100% { text-shadow: 0 0 5px #6495ed, 0 0 15px #6495ed; }
+        }
+
+        h3.section-title {
+            text-align: center;
+            font-size: 24px;
+            color: #ffcc33;
+            text-shadow: 0 0 10px #ffcc33;
+            margin-top: 30px;
+        }
+
+        h3.section-title.blue {
+            color: #33ccff;
+            text-shadow: 0 0 10px #33ccff;
+        }
+
+        .dna-box {
+            font-size: 24px;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            border: 3px solid #ffcc33;
+            background-color: #1e1e1e;
+            color: #ffcc33;
+            box-shadow: 0px 0px 15px rgba(230, 184, 0, 0.6);
+        }
+
+        div.stButton > button {
+            font-size: 30px !important;
+            width: 100px !important;
+            height: 100px !important;
+            border-radius: 10px !important;
+            border: 3px solid #33ccff !important;
+            background-color: #1e1e1e !important;
+            color: #33ccff !important;
+            box-shadow: 0px 0px 15px rgba(0, 204, 255, 0.6) !important;
+            transition: all 0.2s !important;
+        }
+
+        div.stButton > button:hover {
+            transform: scale(1.1) !important;
+            box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.9) !important;
+            border-color: #00ffff !important;
+            color: #00ffff !important;
+        }
+    </style>
+    """, unsafe_allow_html=True)
+
+    # Title box
+    st.markdown("""
+    <div class="crt-box">
+        <h1 class="animated-title">BASEWARP</h1>
+        <hr style="border: 2px solid #6495ed; box-shadow: 0px 0px 10px #6495ed;">
+        <p style="color: #a9c9ff; font-size: 14px;">
+            Your DNA strand has been warped by mutations!<br>
+            Select two nucleotides on your complementary strand to swap them until your double helix is restored.
         </p>
     </div>
     """, unsafe_allow_html=True)
 
-    st.header("Template DNA:")
-    st.markdown("""
-        <style>.dna-box { font-size: 30px; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; 
-        border-radius: 8px; border: 3px solid #ffcc33; background-color: #1e1e1e; color: #ffcc33; 
-        box-shadow: 0px 0px 15px rgba(230, 184, 0, 0.6); }</style>
-    """, unsafe_allow_html=True)
-
+    # DNA Display
+    st.markdown('<h3 class="section-title">Template DNA:</h3>', unsafe_allow_html=True)
     st.markdown('<div style="display:flex;justify-content:center;gap:10px;">' +
                 ''.join(f'<div class="dna-box">{b}</div>' for b in game.template_strand) +
                 '</div>', unsafe_allow_html=True)
 
-    st.header("Complementary Strand:")
+    st.markdown('<h3 class="section-title blue">Complementary Strand:</h3>', unsafe_allow_html=True)
     st.markdown('<div class="complementary-strand">', unsafe_allow_html=True)
 
     cols = st.columns(game.length)
@@ -78,7 +151,7 @@ def app():
 
     st.markdown('</div>', unsafe_allow_html=True)
 
-    # Game Controls
+    # Sidebar Controls
     with st.sidebar:
         st.header("Game Controls")
 
@@ -93,30 +166,102 @@ def app():
             if st.button("Play Again!"):
                 st.session_state.dna_game = DNAGame()
                 st.session_state.game_over = False
-                st.rerun()
 
-    # Button Styling
-    st.markdown("""
-    <style>
-    div.stButton > button {
-        font-size: 30px !important;
-        width: 100px !important;
-        height: 100px !important;
-        border-radius: 10px !important;
-        border: 3px solid #33ccff !important;
-        background-color: #1e1e1e !important;
-        color: #33ccff !important;
-        box-shadow: 0px 0px 15px rgba(0, 204, 255, 0.6) !important;
-        transition: all 0.2s !important;
-    }
-    div.stButton > button:hover {
-        transform: scale(1.1) !important;
-        box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.9) !important;
-        border-color: #00ffff !important;
-        color: #00ffff !important;
-    }
-    </style>
-    """, unsafe_allow_html=True)
+
+
+
+
+
+
+##OLD STYLING
+# def app():
+#     # Initialize game in session state
+#     if "dna_game" not in st.session_state:
+#         st.session_state.dna_game = DNAGame()
+
+#     game = st.session_state.dna_game
+
+#     # UI Styling and Title
+#     st.markdown("""
+#     <div style=\"background-color: #121212; padding: 20px; border-radius: 15px; color: #ffffff; text-align: center; 
+#         box-shadow: 0px 0px 30px rgba(100, 149, 237, 0.6); max-width: 900px; margin: auto;\">
+#         <h1 style=\"font-size:50px; color: #6495ed; text-shadow: 0px 0px 10px #6495ed;\">
+#             BaseWarp
+#         </h1>
+#         <hr style=\"border: 2px solid #6495ed; box-shadow: 0px 0px 10px #6495ed;\">
+#         <p style=\"color: #a9c9ff; font-size: 20px; font-weight: 500;\">
+#             Your DNA strand has been warped by mutations! Select two nucleotides on your complementary strand to swap 
+#             them until your double helix is restored.
+#         </p>
+#     </div>
+#     """, unsafe_allow_html=True)
+
+#     st.header("Template DNA:")
+#     st.markdown("""
+#         <style>.dna-box { font-size: 30px; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; 
+#         border-radius: 8px; border: 3px solid #ffcc33; background-color: #1e1e1e; color: #ffcc33; 
+#         box-shadow: 0px 0px 15px rgba(230, 184, 0, 0.6); }</style>
+#     """, unsafe_allow_html=True)
+
+#     st.markdown('<div style="display:flex;justify-content:center;gap:10px;">' +
+#                 ''.join(f'<div class="dna-box">{b}</div>' for b in game.template_strand) +
+#                 '</div>', unsafe_allow_html=True)
+
+#     st.header("Complementary Strand:")
+#     st.markdown('<div class="complementary-strand">', unsafe_allow_html=True)
+
+#     cols = st.columns(game.length)
+#     for i, col in enumerate(cols):
+#         with col:
+#             if st.button(game.mutated_strand[i], key=f"complementary-btn-{i}"):
+#                 if game.selected is None:
+#                     game.selected = i
+#                 else:
+#                     game.swap_bases(game.selected, i)
+#                     game.selected = None
+#                     st.rerun()
+
+#     st.markdown('</div>', unsafe_allow_html=True)
+
+#     # Game Controls
+#     with st.sidebar:
+#         st.header("Game Controls")
+
+#         if st.button("Check Answer"):
+#             if game.check_answer():
+#                 st.success("Correct! You repaired all mutations!")
+#                 st.session_state.game_over = True
+#             else:
+#                 st.error(f"Incorrect! Keep fixing mutations. Correct sequence: `{''.join(game.correct_strand)}`")
+
+#         if "game_over" in st.session_state and st.session_state.game_over:
+#             if st.button("Play Again!"):
+#                 st.session_state.dna_game = DNAGame()
+#                 st.session_state.game_over = False
+#                 st.rerun()
+
+#     # Button Styling
+#     st.markdown("""
+#     <style>
+#     div.stButton > button {
+#         font-size: 30px !important;
+#         width: 100px !important;
+#         height: 100px !important;
+#         border-radius: 10px !important;
+#         border: 3px solid #33ccff !important;
+#         background-color: #1e1e1e !important;
+#         color: #33ccff !important;
+#         box-shadow: 0px 0px 15px rgba(0, 204, 255, 0.6) !important;
+#         transition: all 0.2s !important;
+#     }
+#     div.stButton > button:hover {
+#         transform: scale(1.1) !important;
+#         box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.9) !important;
+#         border-color: #00ffff !important;
+#         color: #00ffff !important;
+#     }
+#     </style>
+#     """, unsafe_allow_html=True)
 
 
 
