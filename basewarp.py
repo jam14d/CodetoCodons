@@ -177,15 +177,15 @@ def app():
     st.markdown("""
     <div style="
         background-color: rgba(18, 18, 18, 0.85);
-        padding: 30px;
+        padding: 20px;
         border-radius: 15px;
         color: #ccf5ff;
-        font-size: 18px;
+        font-size: 20px;
         line-height: 1.6;
         letter-spacing: 0.5px;
         text-align: center;
         max-width: 800px;
-        margin: 30px auto;
+        margin: 20px auto;
         border: 5px solid rgba(0, 100, 255, 0.2);
         box-shadow: 0 0 20px rgba(0, 255, 255, 0.3), 0 0 30px rgba(0, 150, 255, 0.25);
         backdrop-filter: blur(4px);
