@@ -145,10 +145,8 @@ def app():
     st.markdown(
         """
         <div class="intro-scroll">
-            <strong>Begin your journey through the language of life.</strong>
            <br>Input any phrase and watch it transform — from alphabet to DNA,
             from transcription into RNA, and onward to the construction of proteins.
-            <br>Every step includes molecular logic and just a hint of magic.
         </div>
         """,
         unsafe_allow_html=True
