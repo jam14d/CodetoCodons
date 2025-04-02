@@ -72,77 +72,121 @@ def run_pipeline(input_string, mutation_rate=0, prepend_start_codon=False):
 def app():
     
        
+
     st.markdown(
-        """
-        <style>
-            @keyframes wave {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
-        }
+    """
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet">
 
-        .wave-title {
-            display: inline-block;
-            font-size: 36px;
-            font-weight: bold;
-            color: #d9ca80;
-            text-shadow: 2px 2px 4px #ff6600;
-            text-align: center;
-        }
+    <style>
+    @keyframes wave {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-6px); }
+    }
 
-        .wave-title span {
-            display: inline-block;
-            animation: wave 1.5s infinite ease-in-out;
-        }
+    .davinci-title {
+        display: inline-block;
+        font-size: 44px;
+        font-family: 'IM Fell English SC', serif;
+        color: #3e2f1c;
+        text-shadow: 2px 2px 2px rgba(90, 62, 27, 0.4);
+        background: linear-gradient(135deg, #f3eac2 0%, #e0d4a3 100%);
+        padding: 10px 30px;
+        border-radius: 12px;
+        border: 2px solid #5a3e1b;
+        box-shadow: 4px 4px 8px rgba(0,0,0,0.3);
+        transform: rotate(-0.5deg);
+        margin-bottom: 20px;
+    }
 
-        .wave-title span:nth-child(odd) {
-            animation-delay: 0.2s;
-        }
-        body {
-            background-color: #1a1a1a;
-            color: #c9a227;
-            font-family: 'Courier New', monospace;
-        }
-        .stApp {
-            background-color: #1a1a1a;
-        }
-        .stTitle {
-            color: #d9ca80;
-            text-shadow: 2px 2px 4px #ff6600;
-            font-size: 32px;
-        }
-        .stMarkdown {
-            color: #d4af37;
-            font-size: 16px;
-        }
-        .stSidebar {
-            background-color: #262626;
-            color: #ffcc00;
-            border-right: 3px solid #262626;
-        }
-        .stButton>button {
-            background-color: #262626;
-            color: #d9ca80;
-            border-radius: 5px;
-            font-size: 14px;
-        }
-        .stTable {
-            background-color: #333333;
-            color: #ffcc00;
-            border: 1px solid #ff6600;
-        }
-        .stMetric {
-            color: #ffcc00;
-            font-size: 18px;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
+    .davinci-title span {
+        display: inline-block;
+        animation: wave 2s infinite ease-in-out;
+    }
+
+    .davinci-title span:nth-child(odd) {
+        animation-delay: 0.2s;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
     )
-    
-    title_text = "DNA to Protein Simulator"
-    wavy_title = "".join(f"<span>{char}</span>" for char in title_text)
 
-    st.markdown(f"<h1 class='wave-title'>{wavy_title}</h1>", unsafe_allow_html=True)
+    title_text = "DNA to Protein Simulator"
+    wavy_davinci_title = "".join(f"<span>{char}</span>" for char in title_text)
+
+    st.markdown(f"<h1 class='davinci-title'>{wavy_davinci_title}</h1>", unsafe_allow_html=True)
+   
+    # st.markdown(
+    #     """
+    #     <style>
+    #         @keyframes wave {
+    #         0%, 100% { transform: translateY(0px); }
+    #         50% { transform: translateY(-8px); }
+    #     }
+
+    #     .wave-title {
+    #         display: inline-block;
+    #         font-size: 36px;
+    #         font-weight: bold;
+    #         color: #d9ca80;
+    #         text-shadow: 2px 2px 4px #ff6600;
+    #         text-align: center;
+    #     }
+
+    #     .wave-title span {
+    #         display: inline-block;
+    #         animation: wave 1.5s infinite ease-in-out;
+    #     }
+
+    #     .wave-title span:nth-child(odd) {
+    #         animation-delay: 0.2s;
+    #     }
+    #     body {
+    #         background-color: #1a1a1a;
+    #         color: #c9a227;
+    #         font-family: 'Courier New', monospace;
+    #     }
+    #     .stApp {
+    #         background-color: #1a1a1a;
+    #     }
+    #     .stTitle {
+    #         color: #d9ca80;
+    #         text-shadow: 2px 2px 4px #ff6600;
+    #         font-size: 32px;
+    #     }
+    #     .stMarkdown {
+    #         color: #d4af37;
+    #         font-size: 16px;
+    #     }
+    #     .stSidebar {
+    #         background-color: #262626;
+    #         color: #ffcc00;
+    #         border-right: 3px solid #262626;
+    #     }
+    #     .stButton>button {
+    #         background-color: #262626;
+    #         color: #d9ca80;
+    #         border-radius: 5px;
+    #         font-size: 14px;
+    #     }
+    #     .stTable {
+    #         background-color: #333333;
+    #         color: #ffcc00;
+    #         border: 1px solid #ff6600;
+    #     }
+    #     .stMetric {
+    #         color: #ffcc00;
+    #         font-size: 18px;
+    #     }
+    #     </style>
+    #     """,
+    #     unsafe_allow_html=True
+    # )
+    
+    # title_text = "DNA to Protein Simulator"
+    # wavy_title = "".join(f"<span>{char}</span>" for char in title_text)
+
+    # st.markdown(f"<h1 class='wave-title'>{wavy_title}</h1>", unsafe_allow_html=True)
 
     #st.markdown("<h1 class='stTitle'>DNA to Protein Simulator</h1>", unsafe_allow_html=True)
     # st.title('DNA to Protein Simulator')
@@ -164,7 +208,6 @@ def app():
         line-height: 1.7;
         transform: rotate(-0.3deg);
     ">
-        <strong>The Grand Design of Life:</strong><br><br>
         Within every cell lies a script more intricate than any machine — the <em>central dogma</em> of biology: 
         <strong>DNA → RNA → Protein</strong>.<br><br>
         Use this device to transcribe your thoughts into synthetic genetic code, simulate mutations like nature's editor, 
