@@ -2,7 +2,7 @@ import streamlit as st
 import random
 import re
 import requests
-import time  
+import time
 import os
 
 from pipeline import Pipeline
@@ -70,97 +70,117 @@ def run_pipeline(input_string, mutation_rate=0, prepend_start_codon=False):
     return original_dna_output, mutated_dna_output, mutations_occurred
 
 def app():
-    # Custom Dark Fantasy Styles
     st.markdown(
         """
-        <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 
         <style>
         body, .stApp {
-            background-color: #0c1021 !important;
-            background-image: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.05), transparent 60%), 
-                              radial-gradient(circle at 80% 70%, rgba(255,255,255,0.03), transparent 60%);
-            font-family: 'IM Fell English SC', serif;
-            color: #e6c56a;
+            background-color: #000000 !important;
+            color: #00fff7 !important;
+            font-family: 'Orbitron', sans-serif !important;
         }
 
         .fantasy-title {
-            font-size: 48px;
-            font-family: 'IM Fell English SC', serif;
-            color: #e6c56a;
+            position: relative;
+            font-size: 42px;
             text-align: center;
-            padding: 10px 20px;
-            border: 2px solid #e6c56a;
+            padding: 12px 24px;
+            color: #00fff7;
+            border: 2px solid #00fff7;
             border-radius: 12px;
-            background-color: #111a33;
-            box-shadow: 0 0 12px rgba(230, 197, 106, 0.4);
+            background-color: #0a0a0a;
+            text-shadow: 0 0 10px #00fff7;
+            box-shadow: 0 0 25px #00fff7;
+            font-weight: 700;
+            overflow: hidden;
+        }
+
+        .fantasy-title::before, .fantasy-title::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            clip: rect(0, 900px, 0, 0);
+            animation: glitch 2s infinite linear alternate-reverse;
+        }
+
+        .fantasy-title::after {
+            color: #ff00cc;
+            animation-delay: .3s;
+        }
+
+        @keyframes glitch {
+            0% { clip: rect(42px, 9999px, 44px, 0); transform: skew(0.3deg); }
+            5% { clip: rect(12px, 9999px, 58px, 0); transform: skew(0.5deg); }
+            10% { clip: rect(85px, 9999px, 96px, 0); transform: skew(0.2deg); }
+            15% { clip: rect(25px, 9999px, 32px, 0); transform: skew(0.6deg); }
+            20% { clip: rect(44px, 9999px, 50px, 0); transform: skew(0.1deg); }
+            100% { clip: rect(0, 9999px, 0, 0); transform: skew(0.3deg); }
         }
 
         .intro-scroll {
-            background: #111a33;
-            border: 2px solid #e6c56a;
-            padding: 24px;
+            background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
+            border: 2px solid #ff00cc;
             border-radius: 10px;
-            margin: 20px 0 30px 0;
-            color: #e6c56a;
-            font-size: 18px;
-            line-height: 1.6;
-            box-shadow: 0 0 20px rgba(255, 215, 120, 0.3);
+            padding: 20px;
+            font-size: 16px;
+            color: #ff00cc;
+            text-shadow: 0 0 5px #ff00cc;
+            box-shadow: 0 0 20px #ff00cc;
             text-align: center;
         }
 
-        .stTextArea, .stSlider, .stCheckbox {
-            margin-top: 20px;
+        .stButton > button {
+            background-color: #000000 !important;
+            color: #00fff7 !important;
+            border: 2px solid #00fff7 !important;
+            font-family: 'Orbitron', sans-serif;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            text-shadow: 0 0 5px #00fff7;
+            box-shadow: 0 0 15px #00fff7;
+            transition: 0.3s ease-in-out;
         }
 
-        .stButton>button {
-            background-color: #1d2340 !important;
-            color: #e6c56a !important;
-            border: 1px solid #e6c56a !important;
-            border-radius: 8px !important;
-            font-size: 16px !important;
-            box-shadow: 0 0 6px rgba(230, 197, 106, 0.3);
-        }
-
-        .stButton>button:hover {
-            background-color: #283156 !important;
-            box-shadow: 0 0 10px rgba(230, 197, 106, 0.5);
+        .stButton > button:hover {
+            background-color: #0ff !important;
+            color: #000 !important;
+            box-shadow: 0 0 25px #0ff, 0 0 50px #0ff;
         }
 
         .stCodeBlock, .stCode {
-            background-color: #1a1f38 !important;
-            color: #e6c56a !important;
+            background-color: #111 !important;
+            color: #00fff7 !important;
+            font-family: 'Courier New', Courier, monospace;
+            border-left: 3px solid #ff00cc;
+            padding: 10px;
+            box-shadow: inset 0 0 10px #ff00cc;
         }
         </style>
         """,
         unsafe_allow_html=True
     )
 
-    # Title
-    st.markdown("<div class='fantasy-title'>DNA to Protein Simulator</div>", unsafe_allow_html=True)
+    st.markdown("<div class='fantasy-title' data-text='DNA to Protein Simulator'>DNA to Protein Simulator</div>", unsafe_allow_html=True)
 
-    # Intro Box
     st.markdown(
         """
         <div class="intro-scroll">
-           Input any phrase and watch it transform — from alphabet to DNA,
-            from transcription into RNA, and onward to the construction of proteins.
+            <strong>Welcome to the Bio-Synth Terminal.</strong><br><br>
+            Input any phrase, and initiate molecular encoding — <br>
+            from character input to DNA codification,<br>
+            mutation injections, RNA synthesis, and protein rendering.<br><br>
+            Your words become data. Data becomes code. Code becomes life.<br><br>
+            <em>Press [ENGAGE] to initiate bio-sequence pipeline.</em>
         </div>
         """,
         unsafe_allow_html=True
     )
-
-#     st.markdown("""
-# <div style='text-align: left; color: #d4af37; font-size: 18px;'>
-#     Explore the central dogma of molecular biology: <strong>DNA → RNA → Protein</strong>. 
-#     <br>Input any text, and we’ll convert it into a simulated DNA sequence, introduce random mutations, transcribe it into RNA, 
-#     and translate it into a chain of amino acids — the building blocks of proteins. Along the way, 
-#     you'll get explanations of key biological processes and even a visualization of the resulting protein structure. 
-#     Whether you're a student, researcher, or just curious, dive in and see your message come to life — molecule by molecule.
-#     <br>
-# </div>
-# """, unsafe_allow_html=True)
-
 
     user_input = st.text_area("Enter your text to convert into DNA:", "Type your text here...")
     mutation_rate = st.slider("Mutation rate (in percentage):", min_value=0.0, max_value=100.0, value=0.0, step=0.1) / 100
@@ -173,14 +193,16 @@ def app():
             st.subheader("Your DNA Adventure Begins!")
             st.code(original_dna, language="plaintext")
 
-            with st.spinner("Thinking of a cool explanation..."):
+            with st.spinner("Initializing bio-transcription core..."):
+                st.markdown('<div class="retro-loader"><div class="scanline-spinner"></div></div>', unsafe_allow_html=True)
                 explanation_dna = query_llm("Explain DNA in a fun and simple way.")
             st.markdown("**DNA: The Blueprint**")
             st.write(explanation_dna)
 
             st.code(mutated_dna, language="plaintext")
 
-            with st.spinner("Unraveling the mystery of mutations..."):
+            with st.spinner("Injecting mutation analysis..."):
+                st.markdown('<div class="retro-loader"><div class="scanline-spinner"></div></div>', unsafe_allow_html=True)
                 explanation_mutation = query_llm("Describe DNA mutations using a construction blueprint analogy.")
             st.markdown("**Mutations: Altering The Blueprint**")
             st.write(explanation_mutation)
@@ -188,7 +210,8 @@ def app():
             rna_output = transcribe_dna_to_rna(mutated_dna)
             st.code(rna_output, language="plaintext")
 
-            with st.spinner("Writing the script for transcription..."):
+            with st.spinner("Transcribing with virtual nanocopy..."):
+                st.markdown('<div class="retro-loader"><div class="scanline-spinner"></div></div>', unsafe_allow_html=True)
                 explanation_transcription = query_llm("Explain DNA transcription using a copy machine analogy.")
             st.markdown("**Transcription: A Copy Machine**")
             st.write(explanation_transcription)
@@ -201,17 +224,8 @@ def app():
             st.code(protein_sequence, language="plaintext")
 
             if protein_sequence:
-                with st.spinner("Generating 2D molecular structures..."):
+                with st.spinner("Rendering protein schematics..."):
+                    st.markdown('<div class="retro-loader"><div class="scanline-spinner"></div></div>', unsafe_allow_html=True)
                     image_path = generate_amino_acid_image(protein_sequence)
                 if image_path and os.path.exists(image_path):
-                    st.image(image_path, caption="2D Structure of Amino Acids", use_container_width=True)
-                else:
-                    st.error("Could not generate amino acid structure image.")
-
-            with st.spinner("Decoding the protein-making process..."):
-                explanation_translation = query_llm("Describe translation (mRNA to protein) using a factory analogy.")
-            st.markdown("**Translation: The Protein Factory!**")
-            st.write(explanation_translation)
-
-        else:
-            st.error("Please enter a DNA sequence to start the process!")
+                    st.image(image_path, caption="2D S
