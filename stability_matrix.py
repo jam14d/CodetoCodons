@@ -50,6 +50,26 @@ def app():
             <h4>How Can We Measure DNA Stability?</h4>
             
         GC content—the proportion of guanine (G) and cytosine (C) bases in a DNA sequence—plays a critical role in DNA stability. Higher GC content enhances stability due to the stronger triple hydrogen bonding between G and C pairs, making the DNA more resistant to denaturation.
+        
+        <p>In this module, you will analyze GC content programmatically using Python and Object-Oriented Programming (OOP).</p>
+
+##### Define the Class and Initialize Data
+- Use the `__init__` method to set up the class with a DNA sequence.
+- Ensure the sequence is stored in uppercase for consistency.
+
+##### Compute Important DNA Properties
+- Write functions to count the occurrences of specific nucleotides.
+- Calculate the GC content percentage to analyze DNA stability.
+
+##### Implement Output and Display
+- Create methods to return useful information about the DNA sequence.
+- Format the output clearly for easy interpretation.
+
+Use the text boxes below to write your code for each step.   
+Once finished, download the solution to compare with your implementation.
+        
+        
+        
         </div>
     """, unsafe_allow_html=True)
 
@@ -67,28 +87,28 @@ def app():
     # # st.markdown("<br><br>", unsafe_allow_html=True)  # Adds spacing before the next section
 
     # Step Instructions
-    st.markdown("""
-    <div style="background-color: #0e0e0e; padding: 20px;
-            color: #00ffea; font-family: 'Orbitron', monospace; text-align: left; font-size: 14px; line-height: 1.5;
-            box-shadow: 0 0 5px #009e91:, 0 0 25px #009e91:; 
-            border: 1px solid #009e91:; max-width: 900px; margin: auto;">
+#     st.markdown("""
+#     <div style="background-color: #0e0e0e; padding: 20px;
+#             color: #00ffea; font-family: 'Orbitron', monospace; text-align: left; font-size: 14px; line-height: 1.5;
+#             box-shadow: 0 0 5px #009e91:, 0 0 25px #009e91:; 
+#             border: 1px solid #009e91:; max-width: 900px; margin: auto;">
 
-<p>In this module, you will analyze GC content programmatically using Python and Object-Oriented Programming (OOP).</p>
+# <p>In this module, you will analyze GC content programmatically using Python and Object-Oriented Programming (OOP).</p>
 
-##### Define the Class and Initialize Data
-- Use the `__init__` method to set up the class with a DNA sequence.
-- Ensure the sequence is stored in uppercase for consistency.
+# ##### Define the Class and Initialize Data
+# - Use the `__init__` method to set up the class with a DNA sequence.
+# - Ensure the sequence is stored in uppercase for consistency.
 
-##### Compute Important DNA Properties
-- Write functions to count the occurrences of specific nucleotides.
-- Calculate the GC content percentage to analyze DNA stability.
+# ##### Compute Important DNA Properties
+# - Write functions to count the occurrences of specific nucleotides.
+# - Calculate the GC content percentage to analyze DNA stability.
 
-##### Implement Output and Display
-- Create methods to return useful information about the DNA sequence.
-- Format the output clearly for easy interpretation.
+# ##### Implement Output and Display
+# - Create methods to return useful information about the DNA sequence.
+# - Format the output clearly for easy interpretation.
 
-Use the text boxes below to write your code for each step.   
-Once finished, download the solution to compare with your implementation.
+# Use the text boxes below to write your code for each step.   
+# Once finished, download the solution to compare with your implementation.
 
   
     """, unsafe_allow_html=True)
