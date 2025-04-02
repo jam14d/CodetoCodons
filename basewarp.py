@@ -184,7 +184,6 @@ def app():
     st.markdown("""
     <div class="crt-box">
         <h4 class="animated-title">Template DNA</h4>
-        <hr style="border: 2px solid #6495ed; box-shadow: 0px 0px 10px #6495ed;">
     </div>
     """, unsafe_allow_html=True)
 
