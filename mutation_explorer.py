@@ -34,7 +34,7 @@ def app():
 
         .intro-box {
             background: rgba(0, 255, 204, 0.05);
-            border: 1px solid #00FFCC;
+            border: 1px solid #ddffff;
             border-left: 5px solid #FF3C00;
             padding: 20px;
             border-radius: 10px;
@@ -91,7 +91,7 @@ def app():
         <style>
         .markdown-box {
             background: #0A0A0F; 
-            border-left: 5px solid #FF3C00;
+            border-left: 5px solid #ddffff;
             padding: 20px;
             border-radius: 10px;
             margin-top: 30px;
