@@ -102,7 +102,7 @@ def app():
             padding: 24px;
             font-family: 'IM Fell English SC', serif;
             border-radius: 10px;
-            margin: 10px 0 60px 0;
+            margin: 20px 0 30px 0;
             color: #e6c56a;
             font-size: 18px;
             line-height: 1.6;
