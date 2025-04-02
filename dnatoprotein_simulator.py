@@ -149,9 +149,8 @@ def app():
 
 
     st.markdown("""
-<div style='text-align: center; color: #d4af37; font-size: 18px; padding: 10px;'>
-    <strong>Welcome to the DNA to Protein Simulator!</strong><br>
-    This tool lets you explore the central dogma of molecular biology: <em>DNA → RNA → Protein</em>. 
+<div style='text-align: left; color: #d4af37; font-size: 12px; padding: 10px;'>
+    This tool lets you explore the central dogma of molecular biology: <strong>DNA → RNA → Protein</strong>. 
     Input any text, and we’ll convert it into a simulated DNA sequence, introduce random mutations, transcribe it into RNA, 
     and translate it into a chain of amino acids — the building blocks of proteins. Along the way, 
     you'll get explanations of key biological processes and even a visualization of the resulting protein structure. 
