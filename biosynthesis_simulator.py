@@ -183,8 +183,7 @@ def app():
     st.markdown(
         """
         <div class="intro-scroll">
-            <strong>Welcome.</strong>
-            <br>Input any phrase, and initiate molecular encoding.</br>
+            Input any phrase, and initiate molecular encoding.
         </div>
         """,
         unsafe_allow_html=True
