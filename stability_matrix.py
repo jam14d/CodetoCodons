@@ -71,7 +71,6 @@ Once finished, download the solution to compare with your implementation.
         
         
         
-        </div>
     """, unsafe_allow_html=True)
 
 
