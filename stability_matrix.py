@@ -45,7 +45,7 @@ def app():
     # New GC Content Introduction Section
     st.markdown("""
         <div style="background-color: #0e0e0e; padding: 20px; border-radius: 10px; color: #00ffea; 
-                    font-family: 'Orbitron', monospace; text-align: left; 
+                    font-family: 'Orbitron', font-size: 20px; monospace; text-align: left; 
                     box-shadow: 0 0 15px #00ffea, 0 0 25px #00ffaa; max-width: 900px; margin: auto; padding: 20px;">
             <h3>How Can We Measure DNA Stability?</h3>
             
@@ -55,26 +55,26 @@ def app():
 
 
 
-    # Closing statement in the same styled div
-    st.markdown("""
-        <div style="background-color: #0e0e0e; padding: 20px; border-radius: 10px; color: #00ffea; 
-                    font-family: 'Orbitron', monospace; text-align: left; 
-                    box-shadow: 0 0 15px #00ffea, 0 0 25px #00ffaa; max-width: 900px; margin: auto; padding: 20px;">
-            <p>In this module, you will analyze GC content programmatically using Python and Object-Oriented Programming (OOP).</p>
-        </div>
-    """, unsafe_allow_html=True)
+    # # Closing statement in the same styled div
+    # st.markdown("""
+    #     <div style="background-color: #0e0e0e; padding: 20px; border-radius: 10px; color: #00ffea; 
+    #                 font-family: 'Orbitron', monospace; text-align: left; 
+    #                 box-shadow: 0 0 15px #00ffea, 0 0 25px #00ffaa; max-width: 900px; margin: auto; padding: 20px;">
+    #         <p>In this module, you will analyze GC content programmatically using Python and Object-Oriented Programming (OOP).</p>
+    #     </div>
+    # """, unsafe_allow_html=True)
 
-    # st.markdown("<br><br>", unsafe_allow_html=True)  # Adds spacing before the next section
+    # # st.markdown("<br><br>", unsafe_allow_html=True)  # Adds spacing before the next section
 
     # Step Instructions
     st.markdown("""
     <div style="background-color: #0e0e0e; padding: 20px; border-radius: 12px; 
             color: #00ffea; font-family: 'Orbitron', monospace; text-align: left;
-            box-shadow: 0 0 15px #00ffea, 0 0 25px #00ffaa; 
+            box-shadow: 0 0 10px #00ffea, 0 0 25px #00ffaa; 
             border: 1px solid #00ffaa; max-width: 900px; margin: auto;">
 
 <p>In this module, you will analyze GC content programmatically using Python and Object-Oriented Programming (OOP).</p>
-        
+
 ##### Define the Class and Initialize Data
 - Use the `__init__` method to set up the class with a DNA sequence.
 - Ensure the sequence is stored in uppercase for consistency.
