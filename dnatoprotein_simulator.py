@@ -166,17 +166,16 @@ def app():
         unsafe_allow_html=True
     )
 
-    st.markdown("<div class='fantasy-title' data-text='DNA to Protein Simulator'>DNA to Protein Simulator</div>", unsafe_allow_html=True)
+    st.markdown("<div class='fantasy-title' data-text='Bio-Synthesis Terminal'>Bio-Synthesis Terminal</div>", unsafe_allow_html=True)
 
     st.markdown(
         """
         <div class="intro-scroll">
-            <strong>Welcome to the Bio-Synth Terminal.</strong><br><br>
+            <strong>Welcome.</strong><br><br>
             Input any phrase, and initiate molecular encoding — <br>
             from character input to DNA codification,<br>
             mutation injections, RNA synthesis, and protein rendering.<br><br>
             Your words become data. Data becomes code. Code becomes life.<br><br>
-            <em>Press [ENGAGE] to initiate bio-sequence pipeline.</em>
         </div>
         """,
         unsafe_allow_html=True
