@@ -57,12 +57,12 @@ def app():
             padding: 5px 10px;
             cursor: pointer;
             transition: 1s ease;
-            box-shadow: 0 0 20px rgba(255, 60, 0, 0.6);
+            box-shadow: 0 0 10px rgba(255, 60, 0, 0.6);
         }
 
         .stSidebar button:hover {
             background: linear-gradient(180deg, #EFBF04, #FF3C00);
-            box-shadow: 0 0 35px #FF3C00;
+            box-shadow: 0 0 25px #FF3C00;
         }
         </style>
 
@@ -97,7 +97,7 @@ def app():
             margin-top: 30px;
             font-family: 'Chakra Petch', monospace;
             color: #eeeeff;
-            box-shadow: 0 0 20px rgba(255, 60, 0, 0.6);
+            box-shadow: 0 0 10px rgba(255, 60, 0, 0.6);
         }
         </style>
 
