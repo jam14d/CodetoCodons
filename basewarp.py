@@ -164,6 +164,12 @@ def app():
     </style>
     """, unsafe_allow_html=True)
 
+    st.markdown("""
+    <div style="text-align: center;">
+        <h1 class="animated-title" data-text="BASEWARP">BASEWARP</h1>
+    </div>
+    """, unsafe_allow_html=True)
+
 
     # Title box
     st.markdown("""
