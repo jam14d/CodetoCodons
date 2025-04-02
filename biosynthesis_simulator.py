@@ -72,13 +72,13 @@ def run_pipeline(input_string, mutation_rate=0, prepend_start_codon=False):
 def app():
     st.markdown(
         """
-        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
         <style>
         body, .stApp {
             background-color: #0b0b0b !important;
             color: #f0f0f0 !important;
-            font-family: 'Orbitron', sans-serif !important;
+            font-family: 'Press Start 2P', monospace !important;
             background-image:
                 linear-gradient(to bottom, rgba(255, 0, 0, 0.05) 1px, transparent 1px),
                 linear-gradient(to right, rgba(255, 0, 0, 0.05) 1px, transparent 1px);
@@ -179,7 +179,7 @@ def app():
     st.markdown(
         """
         <div class="intro-scroll">
-            <strong>Welcome.</strong><br><br>
+            <strong>Welcome.</strong>
             Input any phrase, and initiate molecular encoding — <br>
             from character input to DNA codification,<br>
             mutation injections, RNA synthesis, and protein rendering.<br><br>
