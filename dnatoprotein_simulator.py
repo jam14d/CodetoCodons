@@ -101,6 +101,7 @@ def app():
             background: #111a33;
             border: 2px solid #e6c56a;
             padding: 24px;
+            font-family: 'IM Fell English SC', serif;
             border-radius: 10px;
             margin: 40px 0 60px 0;
             color: #e6c56a;
@@ -144,7 +145,7 @@ def app():
     st.markdown(
         """
         <div class="intro-scroll">
-            <strong>Begin your journey through the language of life:</strong>
+            <strong>Begin your journey through the language of life!</strong>
            <br>Input any phrase and watch it transform — from alphabet to synthetic DNA,
             from transcription into RNA, and onward to the construction of proteins.
             <br>Every step includes molecular logic and just a hint of magic.
