@@ -69,7 +69,7 @@ def app():
             left: -75%;
             width: 50%;
             height: 100%;
-            background: linear-gradient(120deg, transparent, rgba(255, 223, 100, 0.4), transparent);
+            background: linear-gradient(120deg, transparent, rgba(212, 175, 55, 0.8), transparent);
             animation: shimmer 2.5s infinite;
         }
 
