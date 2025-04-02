@@ -97,14 +97,14 @@ def app():
         }
 
         .fantasy-title {
-            font-size: 40px;
+            font-size: 30px;
             font-family: 'Press Start 2P', monospace !important;
             color: #ffc72c;
             text-align: center;
             padding: 12px;
             background-color: #1b1b1b;
-            text-shadow: 0 0 20px #ff5e00, 0 0 6px #ff5e00;
-            letter-spacing: 2px;
+            text-shadow: 0 0 3px #ff5e00, 0 0 6px #ff5e00;
+            letter-spacing: 1px;
             box-shadow: inset 0 0 10px #ffc72c;
         }
 
