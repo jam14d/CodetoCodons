@@ -147,33 +147,29 @@ def app():
     #st.markdown("<h1 class='stTitle'>DNA to Protein Simulator</h1>", unsafe_allow_html=True)
     # st.title('DNA to Protein Simulator')
     
-    # Intro box
     st.markdown(
-        """
-        <style>
-        .markdown-box {
-            background: #0A0A0F; 
-            border-left: 5px solid #d4af37;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 30px;
-            font-family: 'Chakra Petch', monospace;
-            color: #d4af37;
-            box-shadow: 0 0 10px rgba(0, 255, 204, 0.2);
-        }
-        </style>
-
-        <div class="markdown-box">
-        Explore the central dogma of molecular biology: <strong>DNA → RNA → Protein</strong>. 
-    <br>Input any text, and we’ll convert it into a simulated DNA sequence, introduce random mutations, transcribe it into RNA, 
-    and translate it into a chain of amino acids — the building blocks of proteins. Along the way, 
-    you'll get explanations of key biological processes and even a visualization of the resulting protein structure. 
-    Whether you're a student, researcher, or just curious, dive in and see your message come to life — molecule by molecule.
-    <br>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+    """
+    <div style="
+        background: #0A0A0F;
+        border-left: 5px solid #d4af37;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 30px;
+        font-family: 'Courier New', monospace;
+        color: #d4af37;
+        box-shadow: 0 0 10px rgba(0, 255, 204, 0.2);
+        font-size: 16px;
+        line-height: 1.6;
+    ">
+        <strong>Explore the central dogma of molecular biology:</strong> <em>DNA → RNA → Protein</em>.<br><br>
+        Input any text, and we’ll convert it into a simulated DNA sequence, introduce random mutations, transcribe it into RNA, 
+        and translate it into a chain of amino acids — the building blocks of proteins. Along the way, 
+        you'll get helpful explanations of key biological processes and a visualization of the resulting protein structure. 
+        Whether you're a student, researcher, or just bio-curious, dive in and see your message come to life — molecule by molecule.
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
 
 
