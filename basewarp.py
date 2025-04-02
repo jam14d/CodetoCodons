@@ -38,6 +38,7 @@ def app():
 
     game = st.session_state.dna_game
 
+    # Styling: Font + Animation + Colors
     st.markdown("""
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
     <style>
@@ -59,14 +60,25 @@ def app():
         .animated-title {
             font-size: 50px;
             color: #6495ed;
-            animation: pulseGlow 2s infinite;
-            text-shadow: 0 0 5px #6495ed, 0 0 15px #6495ed;
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
         }
 
-        @keyframes pulseGlow {
-            0% { text-shadow: 0 0 5px #6495ed, 0 0 15px #6495ed; }
-            50% { text-shadow: 0 0 10px #6495ed, 0 0 30px #6495ed; }
-            100% { text-shadow: 0 0 5px #6495ed, 0 0 15px #6495ed; }
+        .animated-title::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -75%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+            animation: shimmer 2.5s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -75%; }
+            100% { left: 125%; }
         }
 
         h3.section-title {
@@ -129,12 +141,13 @@ def app():
     </div>
     """, unsafe_allow_html=True)
 
-    # DNA Display
+    # Template Strand
     st.markdown('<h3 class="section-title">Template DNA:</h3>', unsafe_allow_html=True)
     st.markdown('<div style="display:flex;justify-content:center;gap:10px;">' +
                 ''.join(f'<div class="dna-box">{b}</div>' for b in game.template_strand) +
                 '</div>', unsafe_allow_html=True)
 
+    # Complementary Strand
     st.markdown('<h3 class="section-title blue">Complementary Strand:</h3>', unsafe_allow_html=True)
     st.markdown('<div class="complementary-strand">', unsafe_allow_html=True)
 
@@ -166,7 +179,7 @@ def app():
             if st.button("Play Again!"):
                 st.session_state.dna_game = DNAGame()
                 st.session_state.game_over = False
-
+                st.rerun()
 
 
 
@@ -265,3 +278,4 @@ def app():
 
 
 
+s
