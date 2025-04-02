@@ -83,7 +83,7 @@ def app():
             font-size: 24px;
             color: #ffcc33;
             text-shadow: 0 0 10px #ffcc33;
-            margin-top: 30px;
+            margin-top: 20px;
         }
 
         h3.section-title.blue {
@@ -131,7 +131,7 @@ def app():
     <div class="crt-box">
         <h1 class="animated-title">BASEWARP</h1>
         <hr style="border: 2px solid #6495ed; box-shadow: 0px 0px 10px #6495ed;">
-        <p style="color: #a9c9ff; font-size: 14px;">
+        <p style="color: #a9c9ff; font-size: 20px;">
             Your DNA strand has been warped by mutations!<br>
             Select two nucleotides on your complementary strand to swap them until your double helix is restored.
         </p>
