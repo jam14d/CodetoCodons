@@ -55,28 +55,66 @@ def app():
         }
 
         .animated-title {
-            font-size: 90px;
-            color: #6495ed;
-            position: relative;
-            display: inline-block;
+        font-size: 90px;
+        color: #ffffff;
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+        letter-spacing: 10px;
+        text-shadow:
+            0 0 5px #33ccff,
+            0 0 15px #33ccff,
+            -2px 0 #ff00ff,
+            2px 0 #00ffff;
+        animation: warp 2s infinite ease-in-out;
+
+        }
+
+        .animated-title::before,
+        .animated-title::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
             overflow: hidden;
+            color: #ffffff;
+            z-index: -1;
+        }
+
+        .animated-title::before {
+            color: #ff00ff;
+            left: 2px;
+            animation: glitch-left 1.8s infinite;
         }
 
         .animated-title::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -75%;
-            width: 50%;
-            height: 100%;
-            background: linear-gradient(120deg, transparent, rgba(255, 0, 255, 0.4), transparent);
-            animation: shimmer 2.5s infinite;
+            color: #00ffff;
+            left: -2px;
+            animation: glitch-right 1.8s infinite;
         }
 
-        @keyframes shimmer {
-            0% { left: -75%; }
-            100% { left: 125%; }
+        @keyframes warp {
+            0%, 100% {
+                transform: skewX(0deg);
+            }
+            50% {
+                transform: skewX(2deg) scale(1.02);
+            }
         }
+
+        @keyframes glitch-left {
+            0% { clip-path: inset(0 0 80% 0); }
+            50% { clip-path: inset(30% 0 30% 0); }
+            100% { clip-path: inset(80% 0 0 0); }
+        }
+
+        @keyframes glitch-right {
+            0% { clip-path: inset(80% 0 0 0); }
+            50% { clip-path: inset(20% 0 50% 0); }
+            100% { clip-path: inset(0 0 80% 0); }
+        }
+
 
         h3.section-title {
             text-align: center;
@@ -125,6 +163,7 @@ def app():
         }
     </style>
     """, unsafe_allow_html=True)
+
 
     # Title box
     st.markdown("""
