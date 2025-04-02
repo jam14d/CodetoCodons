@@ -54,6 +54,8 @@ def app():
             box-shadow: 0px 0px 30px rgba(100, 149, 237, 0.6);
         }
 
+
+
         .animated-title {
         font-size: 90px;
         color: #ffffff;
@@ -174,9 +176,9 @@ def app():
     # intro box
     st.markdown("""
     <div class="crt-box">
-        <p> 
+         <h1 class="dna-box" data-text= 
         Your DNA strand has been warped by mutations!<br>
-        Select two nucleotides on your complementary strand to swap them until your double helix is restored.</p>
+        Select two nucleotides on your complementary strand to swap them until your double helix is restored.</h1>
 
     </div>
     """, unsafe_allow_html=True)
