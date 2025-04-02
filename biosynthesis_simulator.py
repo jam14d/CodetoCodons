@@ -184,7 +184,7 @@ def app():
         """
         <div class="intro-scroll">
             <strong>Welcome.</strong>
-            Input any phrase, and initiate molecular encoding.
+            <br>Input any phrase, and initiate molecular encoding.</br>
         </div>
         """,
         unsafe_allow_html=True
