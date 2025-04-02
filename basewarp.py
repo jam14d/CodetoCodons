@@ -57,7 +57,7 @@ def app():
 
 
         .animated-title {
-        font-size: 90px;
+        font-size: 100px;
         color: #ffffff;
         position: relative;
         display: inline-block;
@@ -191,7 +191,7 @@ def app():
         backdrop-filter: blur(4px);
     ">
         <p>
-            Your DNA strand has been warped by mutations.<br>
+            Your DNA strand has been warped by mutations!<br>
             Select two nucleotides on your complementary strand to swap them until your double helix is restored.
         </p>
     </div>
