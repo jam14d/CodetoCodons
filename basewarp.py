@@ -55,7 +55,7 @@ def app():
         }
 
         .animated-title {
-            font-size: 60px;
+            font-size: 90px;
             color: #6495ed;
             position: relative;
             display: inline-block;
