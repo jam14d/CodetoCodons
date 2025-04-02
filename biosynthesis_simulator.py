@@ -101,7 +101,6 @@ def app():
             color: #ffc72c;
             text-align: center;
             padding: 12px;
-            border: 10px double #ffc72c;
             background-color: #1b1b1b;
             text-shadow: 0 0 20px #ff5e00, 0 0 6px #ff5e00;
             letter-spacing: 2px;
@@ -110,9 +109,7 @@ def app():
 
         .intro-scroll {
             background-color: #1b1b1b;
-            border: 2px dashed #ff5e00;
             padding: 20px;
-            border-radius: 6px;
             margin: 20px 0;
             font-size: 13px;
             color: #ff5e00;
