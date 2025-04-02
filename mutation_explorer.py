@@ -96,7 +96,7 @@ def app():
             margin-top: 30px;
             font-family: 'Chakra Petch', monospace;
             color: #eeeeff;
-            box-shadow: 0 0 10px rgba(255, 60, 0, 0.6);
+            box-shadow: 0 0 5px rgba(255, 60, 0, 0.6);
         }
         </style>
 
