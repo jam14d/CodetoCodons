@@ -72,7 +72,7 @@ def run_pipeline(input_string, mutation_rate=0, prepend_start_codon=False):
 def app():
     st.markdown(
         """
-        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
 
         <style>
         body, .stApp {
@@ -98,7 +98,7 @@ def app():
 
         .fantasy-title {
             font-size: 30px;
-            font-family: 'Press Start 2P', monospace !important;
+            font-family: 'Audiowide', cursive;
             color: #ffc72c;
             text-align: center;
             padding: 15px;
