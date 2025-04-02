@@ -94,7 +94,6 @@ def app():
             border-radius: 12px;
             background-color: #111a33;
             box-shadow: 0 0 12px rgba(230, 197, 106, 0.4);
-            margin-bottom: 10px;
         }
 
         .intro-scroll {
