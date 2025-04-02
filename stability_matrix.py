@@ -68,9 +68,9 @@ def app():
 
     # Step Instructions
     st.markdown("""
-    <div style="background-color: #0e0e0e; padding: 20px; border-radius: 12px; 
+    <div style="background-color: #0e0e0e; padding: 20px; border-radius: 5px; 
             color: #00ffea; font-family: 'Orbitron', monospace; text-align: left; font-size: 14px; line-height: 1.5;
-            box-shadow: 0 0 5px #009e91:, 0 0 5px #009e91:; 
+            box-shadow: 0 0 5px #009e91:, 0 0 25px #009e91:; 
             border: 1px solid #009e91:; max-width: 900px; margin: auto;">
 
 <p>In this module, you will analyze GC content programmatically using Python and Object-Oriented Programming (OOP).</p>
