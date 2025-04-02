@@ -73,6 +73,8 @@ def app():
     st.markdown(
         """
         <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
+
 
         <style>
         body, .stApp {
@@ -110,7 +112,7 @@ def app():
 
         .intro-scroll {
             background-color: #1b1b1b;
-            font-family: 'Audiowide', cursive;
+            font-family: 'Major Mono Display', monospace;
             padding: 20px;
             margin: 20px 0;
             font-size: 16px;
