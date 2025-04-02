@@ -85,7 +85,7 @@ def app():
                 linear-gradient(to bottom, rgba(255, 0, 0, 0.05) 1px, transparent 1px),
                 linear-gradient(to right, rgba(255, 0, 0, 0.05) 1px, transparent 1px);
             background-size: 20px 20px;
-            animation: flicker 4s infinite alternate;
+            animation: flicker 2s infinite alternate;
         }
 
         @keyframes flicker {
