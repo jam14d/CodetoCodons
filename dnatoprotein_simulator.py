@@ -146,18 +146,47 @@ def app():
 
     #st.markdown("<h1 class='stTitle'>DNA to Protein Simulator</h1>", unsafe_allow_html=True)
     # st.title('DNA to Protein Simulator')
+    
+    # Intro box
+    st.markdown(
+        """
+        <style>
+        .markdown-box {
+            background: #0A0A0F; 
+            border-left: 5px solid #d4af37;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            font-family: 'Chakra Petch', monospace;
+            color: #d4af37;
+            box-shadow: 0 0 10px rgba(0, 255, 204, 0.2);
+        }
+        </style>
 
-
-    st.markdown("""
-<div style='text-align: left; color: #d4af37; font-size: 18px;'>
-    Explore the central dogma of molecular biology: <strong>DNA → RNA → Protein</strong>. 
+        <div class="markdown-box">
+        Explore the central dogma of molecular biology: <strong>DNA → RNA → Protein</strong>. 
     <br>Input any text, and we’ll convert it into a simulated DNA sequence, introduce random mutations, transcribe it into RNA, 
     and translate it into a chain of amino acids — the building blocks of proteins. Along the way, 
     you'll get explanations of key biological processes and even a visualization of the resulting protein structure. 
     Whether you're a student, researcher, or just curious, dive in and see your message come to life — molecule by molecule.
     <br>
-</div>
-""", unsafe_allow_html=True)
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+
+
+#     st.markdown("""
+# <div style='text-align: left; color: #d4af37; font-size: 18px;'>
+#     Explore the central dogma of molecular biology: <strong>DNA → RNA → Protein</strong>. 
+#     <br>Input any text, and we’ll convert it into a simulated DNA sequence, introduce random mutations, transcribe it into RNA, 
+#     and translate it into a chain of amino acids — the building blocks of proteins. Along the way, 
+#     you'll get explanations of key biological processes and even a visualization of the resulting protein structure. 
+#     Whether you're a student, researcher, or just curious, dive in and see your message come to life — molecule by molecule.
+#     <br>
+# </div>
+# """, unsafe_allow_html=True)
 
 
     user_input = st.text_area("Enter your text to convert into DNA:", "Type your text here...")
