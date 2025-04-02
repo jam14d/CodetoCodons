@@ -149,23 +149,27 @@ def app():
     
     st.markdown(
     """
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+
     <div style="
-        background: #0A0A0F;
-        border-left: 5px solid #d4af37;
+        background: linear-gradient(135deg, #f3eac2 0%, #e0d4a3 100%);
+        border: 2px solid #5a3e1b;
         padding: 20px;
         border-radius: 10px;
         margin-top: 30px;
-        font-family: 'Courier New', monospace;
-        color: #d4af37;
-        box-shadow: 0 0 10px rgba(0, 255, 204, 0.2);
-        font-size: 16px;
-        line-height: 1.6;
+        font-family: 'IM Fell English SC', serif;
+        color: #3e2f1c;
+        box-shadow: 4px 4px 12px rgba(0,0,0,0.4);
+        font-size: 17px;
+        line-height: 1.7;
+        transform: rotate(-0.3deg);
     ">
-        <strong>Explore the central dogma of molecular biology:</strong> <em>DNA → RNA → Protein</em>.<br><br>
-        Input any text, and we’ll convert it into a simulated DNA sequence, introduce random mutations, transcribe it into RNA, 
-        and translate it into a chain of amino acids — the building blocks of proteins. Along the way, 
-        you'll get helpful explanations of key biological processes and a visualization of the resulting protein structure. 
-        Whether you're a student, researcher, or just bio-curious, dive in and see your message come to life — molecule by molecule.
+        <strong>The Grand Design of Life:</strong><br><br>
+        Within every cell lies a script more intricate than any machine — the <em>central dogma</em> of biology: 
+        <strong>DNA → RNA → Protein</strong>.<br><br>
+        Use this device to transcribe your thoughts into synthetic genetic code, simulate mutations like nature's editor, 
+        and observe how strands of letters become the molecules of life. Along the journey, you shall uncover insights 
+        into transcription, translation, and amino acid chains.<br><br>
     </div>
     """,
     unsafe_allow_html=True
