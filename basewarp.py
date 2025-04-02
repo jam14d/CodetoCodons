@@ -183,7 +183,7 @@ def app():
     # intro box
     st.markdown("""
     <div class="crt-box">
-        <p class="crt-subtext"> style="font-size: 20px; line-height: 1.4;">
+        <p class="crt-subtext"> 
         Your DNA strand has been warped by mutations!<br>
         Select two nucleotides on your complementary strand to swap them until your double helix is restored.</p>
 
