@@ -51,7 +51,7 @@ def app():
             
         GC content—the proportion of guanine (G) and cytosine (C) bases in a DNA sequence—plays a critical role in DNA stability. Higher GC content enhances stability due to the stronger triple hydrogen bonding between G and C pairs, making the DNA more resistant to denaturation.
         
-        <p>In this module, you will analyze GC content programmatically using Python and Object-Oriented Programming (OOP).</p>
+        In this module, you will analyze GC content programmatically using Python and Object-Oriented Programming (OOP).
 
 ##### Define the Class and Initialize Data
 - Use the `__init__` method to set up the class with a DNA sequence.
