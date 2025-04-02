@@ -43,7 +43,6 @@ def app():
             font-size: 16px;
             line-height: 1.6;
             color: #eeeeff;
-            box-shadow: 0 0 20px rgba(255, 60, 0, 0.6);
         }
 
         .stSidebar button {
