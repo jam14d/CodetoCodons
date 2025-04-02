@@ -174,7 +174,7 @@ def app():
     # Title box
     st.markdown("""
     <div class="crt-box">
-            <p class="animated-title" style="font-size: 20px; line-height: 1.4;">
+            <p class="animated-title" style="font-size: 10px; line-height: 1.0;">
         Your DNA strand has been warped by mutations!<br>
         Select two nucleotides on your complementary strand to swap them until your double helix is restored.
     </p>
