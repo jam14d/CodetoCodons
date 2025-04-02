@@ -186,7 +186,7 @@ def app():
         text-align: center;
         max-width: 800px;
         margin: 30px auto;
-        border: 1px solid rgba(0, 255, 255, 0.2);
+        border: 5px solid rgba(0, 100, 255, 0.2);
         box-shadow: 0 0 20px rgba(0, 100, 255, 0.2), 0 0 20px rgba(255, 0, 255, 0.1);
         backdrop-filter: blur(4px);
     ">
