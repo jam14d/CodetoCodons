@@ -180,14 +180,7 @@ def app():
     </div>
     """, unsafe_allow_html=True)
 
-    # Template DNA
-    st.markdown("""
-    <div class="crt-box">
-        <h4 class="animated-title">Template DNA</h4>
-    </div>
-    """, unsafe_allow_html=True)
-
-    #st.markdown('<h3 class="section-title">Template DNA:</h3>', unsafe_allow_html=True)
+    st.markdown('<h3 class="section-title">Template DNA:</h3>', unsafe_allow_html=True)
     st.markdown('<div style="display:flex;justify-content:center;gap:10px;">' +
                 ''.join(f'<div class="dna-box">{b}</div>' for b in game.template_strand) +
                 '</div>', unsafe_allow_html=True)
