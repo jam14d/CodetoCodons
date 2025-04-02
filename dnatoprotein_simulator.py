@@ -101,7 +101,7 @@ def app():
             background: #111a33;
             border: 2px solid #e6c56a;
             padding: 24px;
-            font-family: 'IM Fell English SC', serif;
+            font-family: 'Cardo', serif;
             border-radius: 10px;
             margin: 40px 0 60px 0;
             color: #e6c56a;
