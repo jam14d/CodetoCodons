@@ -113,7 +113,7 @@ def app():
         st.markdown("""
         <div class="neon-box sci-fi-section">
             <h4 class="title-glow">Bio-Synthesis Simulator</h4>
-            <p class="cyber-text">Transform character input to DNA to protein.</p>
+            <p class="cyber-text">Transform text into DNA, simulate mutations, and visualize protein output.</p>
         </div>
         """, unsafe_allow_html=True)
 
