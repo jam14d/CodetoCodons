@@ -45,7 +45,7 @@ def app():
     # New GC Content Introduction Section
     st.markdown("""
         <div style="background-color: #0e0e0e; padding: 20px; border-radius: 10px; color: #00ffea; 
-                    font-family: 'Orbitron', monospace; text-align: left; 
+                    font-family: 'Orbitron', monospace; text-align: left; font-size: 16px; line-height: 1.5;
                     box-shadow: 0 0 15px #00ffea, 0 0 25px #00ffaa; max-width: 900px; margin: auto; padding: 20px;">
             <h3>How Can We Measure DNA Stability?</h3>
             
