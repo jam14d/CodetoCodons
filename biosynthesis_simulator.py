@@ -98,6 +98,7 @@ def app():
 
         .fantasy-title {
             font-size: 40px;
+            font-family: 'Press Start 2P', monospace !important;
             color: #ffc72c;
             text-align: center;
             padding: 12px;
