@@ -166,7 +166,7 @@ def app():
         unsafe_allow_html=True
     )
 
-    st.markdown("<div class='fantasy-title' data-text='Bio-Synthesis Terminal'>Bio-Synthesis Terminal</div>", unsafe_allow_html=True)
+    st.markdown("<div class='fantasy-title' data-text='Bio-Synthesis Simulator'>Bio-Synthesis Simulator</div>", unsafe_allow_html=True)
 
     st.markdown(
         """

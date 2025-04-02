@@ -1,14 +1,14 @@
 import streamlit as st
 import home  # Import home page
 import mutation_explorer  
-import dnatoprotein_simulator 
+import biosynthesis_simulator 
 import basewarp
 import stability_matrix
 
 PAGES = {
     "Home": home,  # Home page
     "BaseWarp Game": basewarp,
-    "DNA to Protein Simulator": dnatoprotein_simulator,
+    "Bio-Synthesis Simulator": biosynthesis_simulator,
     "Mutation Explorer": mutation_explorer,
     "Stability Matrix": stability_matrix,
 }
