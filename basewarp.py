@@ -60,7 +60,7 @@ def app():
         color: #ccf5ff;
         text-shadow: 0 0 3px rgba(0, 255, 255, 0.3);
         letter-spacing: 0.5px;
-        
+
         }
 
         .animated-title {
@@ -183,10 +183,9 @@ def app():
     # intro box
     st.markdown("""
     <div class="crt-box">
-            <p class="crt-subtext"> style="font-size: 20px; line-height: 1.4;">
+        <p class="crt-subtext"> style="font-size: 20px; line-height: 1.4;">
         Your DNA strand has been warped by mutations!<br>
-        Select two nucleotides on your complementary strand to swap them until your double helix is restored.
-    </p>
+        Select two nucleotides on your complementary strand to swap them until your double helix is restored.</p>
 
     </div>
     """, unsafe_allow_html=True)
