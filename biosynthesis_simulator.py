@@ -69,6 +69,29 @@ def run_pipeline(input_string, mutation_rate=0, prepend_start_codon=False):
     mutated_dna_output, mutations_occurred = mutate_dna(original_dna_output, mutation_rate)
     return original_dna_output, mutated_dna_output, mutations_occurred
 
+# New: Find introns via GT-AG
+def find_introns_by_splice_sites(dna_sequence):
+    intron_matches = []
+    pattern = re.compile(r'GT(.*?)AG')
+    for match in pattern.finditer(dna_sequence):
+        start = match.start()
+        end = match.end()
+        intron_seq = match.group(0)
+        intron_matches.append((start, end, intron_seq))
+    return intron_matches
+
+# New: Extract exon segments (regions NOT inside introns)
+def extract_exons(dna_sequence, intron_regions):
+    exons = []
+    last_pos = 0
+    for start, end, _ in intron_regions:
+        if last_pos < start:
+            exons.append((last_pos, start, dna_sequence[last_pos:start]))
+        last_pos = end
+    if last_pos < len(dna_sequence):
+        exons.append((last_pos, len(dna_sequence), dna_sequence[last_pos:]))
+    return exons
+
 def app():
     st.markdown(
         """
@@ -189,18 +212,6 @@ def app():
         unsafe_allow_html=True
     )
 
-#     st.markdown("""
-# <div style='text-align: left; color: #d4af37; font-size: 18px;'>
-#     Explore the central dogma of molecular biology: <strong>DNA → RNA → Protein</strong>. 
-#     <br>Input any text, and we’ll convert it into a simulated DNA sequence, introduce random mutations, transcribe it into RNA, 
-#     and translate it into a chain of amino acids — the building blocks of proteins. Along the way, 
-#     you'll get explanations of key biological processes and even a visualization of the resulting protein structure. 
-#     Whether you're a student, researcher, or just curious, dive in and see your message come to life — molecule by molecule.
-#     <br>
-# </div>
-# """, unsafe_allow_html=True)
-
-
     user_input = st.text_area("Enter your text to convert into DNA:", "Type your text here...")
     mutation_rate = st.slider("Mutation rate (in percentage):", min_value=0.0, max_value=100.0, value=0.0, step=0.1) / 100
     prepend_start_codon = st.checkbox("Prepend 'ATG' to DNA sequence", value=False)
@@ -224,33 +235,159 @@ def app():
             st.markdown("**Mutations: Altering The Blueprint**")
             st.write(explanation_mutation)
 
-            rna_output = transcribe_dna_to_rna(mutated_dna)
-            st.code(rna_output, language="plaintext")
+            # Add a little narrative before we find introns
+            st.markdown("""
+            <div style='font-size: 16px; color: #ffc72c; background-color: #1a1a1a; padding: 15px; border-left: 5px solid #ff5e00; margin-top: 20px;'>
+            <strong>Let's find the parts of DNA that actually get transcribed!</strong><br>
+            Not all parts of your DNA are used to make proteins — some sections (called introns) are removed before transcription. Let's scan for splice sites and identify the meaningful coding regions (exons).
+            </div>
+            """, unsafe_allow_html=True)    
+            #Find introns
+            introns = find_introns_by_splice_sites(mutated_dna)
+            if introns:
+                st.markdown("**Predicted Introns (GT...AG):**")
+                for idx, (start, end, seq) in enumerate(introns, 1):
+                    st.code(f"Intron {idx} (positions {start}-{end}): {seq}", language="plaintext")
+            else:
+                st.info("No GT...AG intron-like sequences found.")
 
-            with st.spinner("Writing the script for transcription..."):
-                explanation_transcription = query_llm("Explain DNA transcription using a copy machine analogy.")
-            st.markdown("**Transcription: A Copy Machine**")
-            st.write(explanation_transcription)
+            # Extract exons
+            exons = extract_exons(mutated_dna, introns)
+            if exons:
+                st.markdown("**Extracted Exons (used for transcription and translation):**")
+                for idx, (start, end, exon_seq) in enumerate(exons, 1):
+                    st.code(f"Exon {idx} (positions {start}-{end}): {exon_seq}", language="plaintext")
 
-            if not original_dna.startswith("ATG"):
-                st.warning("⚠️ Your original DNA doesn't start with 'ATG'. No translation will happen.")
-                return
+                exon_only_dna = ''.join([exon_seq for _, _, exon_seq in exons])
+                rna_output = transcribe_dna_to_rna(exon_only_dna)
+                st.markdown("**Transcribed RNA (Exon regions only):**")
+                st.code(rna_output, language="plaintext")
 
-            protein_sequence, stop_codon_present = translate_rna_to_protein(rna_output)
-            st.code(protein_sequence, language="plaintext")
+                with st.spinner("Writing the script for transcription..."):
+                    explanation_transcription = query_llm("Explain DNA transcription using a copy machine analogy.")
+                st.markdown("**Transcription: A Copy Machine**")
+                st.write(explanation_transcription)
 
-            if protein_sequence:
-                with st.spinner("Generating 2D molecular structures..."):
-                    image_path = generate_amino_acid_image(protein_sequence)
-                if image_path and os.path.exists(image_path):
-                    st.image(image_path, caption="2D Structure of Amino Acids", use_container_width=True)
-                else:
-                    st.error("Could not generate amino acid structure image.")
+                with st.spinner("Why did we transcribe only exons?"):
+                    explanation_exons = query_llm("Explain what exons are and how they differ from introns, in an educational way.")
+                st.markdown("**Exons: The Coding Chapters**")
+                st.write(explanation_exons)
 
-            with st.spinner("Decoding the protein-making process..."):
-                explanation_translation = query_llm("Describe translation (mRNA to protein) using a factory analogy.")
-            st.markdown("**Translation: The Protein Factory!**")
-            st.write(explanation_translation)
+                st.markdown("""
+                <div style='font-size: 15px; color: #aaa; background-color: #111; padding: 10px; border-left: 4px solid #ffc72c;'>
+                <strong>Note on Intron Detection:</strong><br>
+                In this simulation, introns are identified using the common <code>GT...AG</code> splice site pattern, a biological rule often found at the start and end of introns. 
+                However, in real genomes, splicing is more complex and depends on surrounding sequences, protein machinery, and alternative splicing. 
+                </div>
+                """, unsafe_allow_html=True)
 
+                st.markdown("<div style='margin-top: 20px;'></div>", unsafe_allow_html=True)
+
+
+
+                # Translate exon-derived RNA to protein
+                protein_sequence, stop_codon_present = translate_rna_to_protein(rna_output)
+                st.markdown("**Protein Product:**")
+                st.code(protein_sequence, language="plaintext")
+
+                # with st.spinner("What do exons do, anyway?"):
+                #     explanation_exons = query_llm("Explain what exons are and how they differ from introns, in an educational way.")
+                # st.markdown("**Exons: The Coding Chapters**")
+                # st.write(explanation_exons)
+
+                if protein_sequence:
+                    with st.spinner("Generating 2D molecular structures..."):
+                        image_path = generate_amino_acid_image(protein_sequence)
+                    if image_path and os.path.exists(image_path):
+                        st.image(image_path, caption="2D Structure of Amino Acids", use_container_width=True)
+                    else:
+                        st.error("Could not generate amino acid structure image.")
+
+                with st.spinner("Decoding the protein-making process..."):
+                    explanation_translation = query_llm("Describe translation (mRNA to protein) using a factory analogy.")
+                st.markdown("**Translation: The Protein Factory!**")
+                st.write(explanation_translation)
+            else:
+                st.warning("No exons found after removing introns.")
         else:
             st.error("Please enter a DNA sequence to start the process!")
+
+#     st.markdown("<div class='fantasy-title' data-text='Bio-Synthesis Simulator'>Bio-Synthesis Simulator</div>", unsafe_allow_html=True)
+
+#     st.markdown(
+#         """
+#         <div class="intro-scroll">
+#             Input any phrase, and initiate molecular encoding.
+#         </div>
+#         """,
+#         unsafe_allow_html=True
+#     )
+
+# #     st.markdown("""
+# # <div style='text-align: left; color: #d4af37; font-size: 18px;'>
+# #     Explore the central dogma of molecular biology: <strong>DNA → RNA → Protein</strong>. 
+# #     <br>Input any text, and we’ll convert it into a simulated DNA sequence, introduce random mutations, transcribe it into RNA, 
+# #     and translate it into a chain of amino acids — the building blocks of proteins. Along the way, 
+# #     you'll get explanations of key biological processes and even a visualization of the resulting protein structure. 
+# #     Whether you're a student, researcher, or just curious, dive in and see your message come to life — molecule by molecule.
+# #     <br>
+# # </div>
+# # """, unsafe_allow_html=True)
+
+
+#     user_input = st.text_area("Enter your text to convert into DNA:", "Type your text here...")
+#     mutation_rate = st.slider("Mutation rate (in percentage):", min_value=0.0, max_value=100.0, value=0.0, step=0.1) / 100
+#     prepend_start_codon = st.checkbox("Prepend 'ATG' to DNA sequence", value=False)
+
+#     if st.button("Let's Transcribe and Translate!"):
+#         if user_input:
+#             original_dna, mutated_dna, mutations_occurred = run_pipeline(user_input, mutation_rate, prepend_start_codon)
+
+#             st.subheader("Your DNA Adventure Begins!")
+#             st.code(original_dna, language="plaintext")
+
+#             with st.spinner("Thinking of a cool explanation..."):
+#                 explanation_dna = query_llm("Explain DNA in a fun and simple way.")
+#             st.markdown("**DNA: The Blueprint**")
+#             st.write(explanation_dna)
+
+#             st.code(mutated_dna, language="plaintext")
+
+#             with st.spinner("Unraveling the mystery of mutations..."):
+#                 explanation_mutation = query_llm("Describe DNA mutations using a construction blueprint analogy.")
+#             st.markdown("**Mutations: Altering The Blueprint**")
+#             st.write(explanation_mutation)
+
+#             rna_output = transcribe_dna_to_rna(mutated_dna)
+#             st.code(rna_output, language="plaintext")
+
+#             with st.spinner("Writing the script for transcription..."):
+#                 explanation_transcription = query_llm("Explain DNA transcription using a copy machine analogy.")
+#             st.markdown("**Transcription: A Copy Machine**")
+#             st.write(explanation_transcription)
+
+#             if not original_dna.startswith("ATG"):
+#                 st.warning("⚠️ Your original DNA doesn't start with 'ATG'. No translation will happen.")
+#                 return
+
+#             protein_sequence, stop_codon_present = translate_rna_to_protein(rna_output)
+#             st.code(protein_sequence, language="plaintext")
+
+#             if protein_sequence:
+#                 with st.spinner("Generating 2D molecular structures..."):
+#                     image_path = generate_amino_acid_image(protein_sequence)
+#                 if image_path and os.path.exists(image_path):
+#                     st.image(image_path, caption="2D Structure of Amino Acids", use_container_width=True)
+#                 else:
+#                     st.error("Could not generate amino acid structure image.")
+
+#             with st.spinner("Decoding the protein-making process..."):
+#                 explanation_translation = query_llm("Describe translation (mRNA to protein) using a factory analogy.")
+#             st.markdown("**Translation: The Protein Factory!**")
+#             st.write(explanation_translation)
+
+#         else:
+#             st.error("Please enter a DNA sequence to start the process!")
+
+if __name__ == "__main__":
+    app()
