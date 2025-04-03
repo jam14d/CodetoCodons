@@ -24,7 +24,7 @@ def app():
         .mutation-title::after {
             content: "MUTATION EXPLORER";
             font-family: 'Share Tech Mono', monospace;
-            font-size: 70px;
+            font-size: 50px;
             color: #eeeeff;
             letter-spacing: 3px;
             display: block;
@@ -40,7 +40,7 @@ def app():
             border-radius: 10px;
             margin-top: 30px;
             font-family: 'Chakra Petch', monospace;
-            font-size: 16px;
+            font-size: 14px;
             line-height: 1.6;
             color: #eeeeff;
         }
