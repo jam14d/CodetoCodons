@@ -29,7 +29,7 @@ def app():
   white-space: nowrap;
   border-right: .05em solid #00FFAA1;
   width: 0;
-  animation: typing 5s steps(30, end) forwards;
+  animation: typing 2s steps(30, end) forwards;
   display: inline-block;
 }
 .cursor {
