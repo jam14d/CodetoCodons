@@ -45,7 +45,7 @@ def app():
     # New GC Content Introduction Section
     st.markdown("""
         <div style="background-color: #0e0e0e; padding: 20px; border-radius: 10px; color: #00ffea; 
-                    font-family: 'Orbitron', monospace; text-align: left; font-size: 14px; line-height: 1.5;
+                    font-family: 'Orbitron', monospace; text-align: left; font-size: 12px; line-height: 1.5;
                     box-shadow: 0 0 15px #00ffea, 0 0 25px #00ffaa; max-width: 900px; margin: auto; padding: 20px;">
             <h4>How Can We Measure DNA Stability?</h4>
             
@@ -137,7 +137,7 @@ Once finished, download the solution to compare with your implementation.
     # """)
     # User Code Inputs
     st.markdown("""
-    ## STEP 1: CLASS DEFINITION
+    ### STEP 1: CLASS DEFINITION
     - Define functions inside the class using `def`
     - Think about what your class needs when you create `__init__` (like a DNA sequence).
     - Use `self` to store attributes that belong to the object.
@@ -145,7 +145,7 @@ Once finished, download the solution to compare with your implementation.
     user_class_code = st.text_area("Write your class definition and `__init__` method:")
 
     st.markdown("""
-    ## STEP 2: COUNT CYTOSINE BASES
+    ### STEP 2: COUNT CYTOSINE BASES
     - Create a method called `count_cytosine`.
     - This function should count the number of 'C' bases in the sequence.
     - Use `.count('C')` to count occurrences.
@@ -153,7 +153,7 @@ Once finished, download the solution to compare with your implementation.
     user_count_code = st.text_area("Write your `count_cytosine` function:")
 
     st.markdown("""
-    ## STEP 3: COUNT GUANINE BASES
+    ### STEP 3: COUNT GUANINE BASES
     - Create a method called `count_guanine`.
     - This function should count the number of 'G' bases in the sequence.
     - Use `.count('G')` to count occurrences.
@@ -161,7 +161,7 @@ Once finished, download the solution to compare with your implementation.
     user_guanine_code = st.text_area("Write your `count_guanine` function:")
 
     st.markdown("""
-    ## STEP 4: COMPUTE GC CONTENT
+    ### STEP 4: COMPUTE GC CONTENT
     - Create a function `compute_gc_percentage(self)`. 
     - Count the number of 'G' and 'C' bases.
     - Divide their sum by the total length of the sequence.
@@ -170,7 +170,7 @@ Once finished, download the solution to compare with your implementation.
     user_gc_code = st.text_area("Write your `compute_gc_percentage` function:")
 
     st.markdown("""
-    ## STEP 5: DISPLAY RESULTS
+    ### STEP 5: DISPLAY RESULTS
     - Print the calculated GC content in a user-friendly way.
     - Use `print(f"GC Content: {gc_content:.2f}%")` for formatted output.
     """)
