@@ -180,7 +180,7 @@ def app():
         padding: 20px;
         border-radius: 15px;
         color: #ccf5ff;
-        font-size: 20px;
+        font-size: 18px;
         line-height: 1.6;
         letter-spacing: 0.5px;
         text-align: center;
