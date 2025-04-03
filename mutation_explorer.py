@@ -78,6 +78,7 @@ def app():
             padding: 20px;
             border-radius: 10px;
             margin-top: 30px;
+            font-size: 12px;
             font-family: 'Chakra Petch', monospace;
             color: #eeeeff;
             box-shadow: 0 0 5px rgba(255, 60, 0, 0.6);
