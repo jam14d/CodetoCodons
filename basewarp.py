@@ -177,7 +177,7 @@ def app():
     st.markdown("""
     <div style="
         background-color: rgba(18, 18, 18, 0.85);
-        padding: 30px;
+        padding: 20px;
         border-radius: 15px;
         color: #ccf5ff;
         font-size: 18px;
