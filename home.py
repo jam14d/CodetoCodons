@@ -1,125 +1,120 @@
 import streamlit as st
 
 def app():
-    # Inject Custom CSS
     st.markdown("""
     <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+
     html, body, [class*="st"] {
         background-color: #282425;
         color: #a8e6cf;
         font-family: 'Orbitron', sans-serif;
+        overflow-x: hidden;
     }
 
     * > [data-testid=stHeaderActionElements] {
         display: none;
     }
+
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0; left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-image: repeating-linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.02),
+            rgba(255, 255, 255, 0.02) 1px,
+            transparent 1px,
+            transparent 4px
+        );
+        pointer-events: none;
+        z-index: 9999;
+    }
+
     .big-title-glow {
-        font-size: 50px;
+        font-size: 56px;
         font-weight: bold;
         text-align: center;
         color: #ffcc66;
-        text-shadow: 0 0 50px #ff9966, 0 0 50px #ffcc66, 0 0 50px #ff6633;
-        animation: flicker-big 1.5s infinite alternate;
+        text-shadow: 0 0 8px #ff9966, 0 0 22px #ffcc66, 0 0 42px #ff6633;
+        animation: flicker-big 2s infinite alternate;
     }
+
     .title-glow {
-        font-size: 20px;
+        font-size: 22px;
         font-weight: bold;
         text-align: center;
         color: #88c0d0;
         text-shadow: 0 0 10px #88c0d0, 0 0 15px #6fa3bf, 0 0 20px #5790af;
-        animation: flicker 1.5s infinite alternate;
+        animation: flicker 1.8s infinite alternate;
     }
+
     @keyframes flicker-big {
-        0% { opacity: 1; text-shadow: 0 0 25px #ff9966; }
-        50% { opacity: 0.9; text-shadow: 0 0 40px #ffcc66; }
-        100% { opacity: 1; text-shadow: 0 0 25px #ff9966; }
+        0%, 100% { opacity: 1; text-shadow: 0 0 25px #ff9966; }
+        50% { opacity: 0.7; text-shadow: 0 0 50px #ffcc66; }
     }
+
     @keyframes flicker {
-        0% { opacity: 1; text-shadow: 0 0 20px #88c0d0; }
-        50% { opacity: 0.9; text-shadow: 0 0 25px #6fa3bf; }
-        100% { opacity: 1; text-shadow: 0 0 20px #88c0d0; }
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.85; }
     }
+
     .neon-box {
-        background-color: rgba(38, 34, 35, 0.9);
-        border: 2px solid #88c0d0;
-        border-radius: 10px;
-        padding: 20px;
-        box-shadow: 0px 0px 15px #88c0d0;
+        background: linear-gradient(145deg, rgba(40,36,37,0.95), rgba(50,45,46,0.95));
+        border: 2px dashed #88c0d0;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 0 25px #88c0d0;
+        max-width: 960px;
         margin: auto;
-        max-width: 900px;
         text-align: center;
+        transition: all 0.3s ease-in-out;
     }
+
+    .neon-box:hover {
+        box-shadow: 0 0 45px #a8e6cf;
+        transform: scale(1.02);
+    }
+
     .cyber-text {
-        color: #88c0d0;
         font-size: 22px;
         font-weight: 500;
+        background: linear-gradient(to right, #a8e6cf, #88c0d0);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
+
     .sci-fi-section {
-        transition: transform 0.3s ease-in-out;
-    }
-    .sci-fi-section:hover {
-        transform: scale(1.03);
-    }
-    .call-to-action {
-        text-align: center;
         margin-top: 20px;
-        padding: 10px;
     }
-    /* Fix for black boxes under link icons */
+
+    hr {
+        border: 0;
+        height: 3px;
+        background: linear-gradient(to right, #ffcc66, #ff9966, #ffcc66);
+        box-shadow: 0 0 15px #ffcc66;
+    }
+
     a, a:visited {
-        background: none !important;   
+        background: none !important;
         display: inline-flex;
         align-items: center;
     }
-    a svg {
-        background: none !important;
-        filter: none !important;
-    }
+
     a svg path {
         fill: #a8e6cf !important;
     }
     </style>
     """, unsafe_allow_html=True)
 
-    # Glowing Title
     st.markdown("""
     <div class="neon-box">
         <h1 class="big-title-glow">Code to Codons</h1>
-        <hr style="border: 2px solid #ffcc66; box-shadow: 0px 0px 50px #ffcc66;">
+        <hr />
         <p class="cyber-text">
             Explore the mysteries of DNA with tools and games!
         </p>
     </div>
     """, unsafe_allow_html=True)
-
-    # # Sci-Fi Sections with subtle animation
-    # st.markdown("""
-    # <div class="neon-box sci-fi-section">
-    #     <h4 class="title-glow">BaseWarp Game</h4>
-    #     <p class="cyber-text">Fix mutations in a DNA strand by swapping base pairs in this neon-lit arcade challenge!</p>
-    # </div>
-    # """, unsafe_allow_html=True)
-
-    # col1, col2 = st.columns(2)
-    # with col1:
-    #     st.markdown("""
-    #     <div class="neon-box sci-fi-section">
-    #         <h4 class="title-glow">Mutation Explorer</h4>
-    #         <p class="cyber-text">Analyze genetic variations and detect mutations in viral genomes.</p>
-    #     </div>
-    #     """, unsafe_allow_html=True)
-    
-    # with col2:
-    #     st.markdown("""
-    #     <div class="neon-box sci-fi-section">
-    #         <h4 class="title-glow">Bio-Synthesis Simulator</h4>
-    #         <p class="cyber-text">Transform text into DNA, simulate mutations, and visualize protein output.</p>
-    #     </div>
-    #     """, unsafe_allow_html=True)
-
-    # st.markdown("""
-    # <div class="neon-box sci-fi-section">
-    #     <h4 class="title-glow">Stability Matrix</h4>
-    #     <p class="cyber-text">Decode DNA like never before!</p>
-    # </div>
-    # """, unsafe_allow_html=True)
