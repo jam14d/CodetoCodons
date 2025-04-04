@@ -30,6 +30,18 @@ def app():
         position: relative;
         animation: scanlines 1s infinite linear, glitch 2.5s infinite alternate;
     }
+        /* Hide default Streamlit sidebar toggle blocks */
+    section[data-testid="stSidebar"] [data-testid^="stExpanderToggleIcon"] {
+        display: none !important;
+    }
+
+    /* Optional: smooth out sidebar inputs */
+    section[data-testid="stSidebar"] input[type="checkbox"],
+    section[data-testid="stSidebar"] input[type="radio"] {
+        accent-color: #88c0d0; /* matches your palette */
+        transform: scale(1.1);
+    }
+
 
     @keyframes glitch {
         0% { transform: translateX(0); }
