@@ -17,19 +17,19 @@ def app():
     }
 
     .big-title-glow {
-        font-size: 90px;
-        font-weight: 800;
+        font-size: 100px;
+        font-weight: 900;
         text-align: center;
         color: #00ffe7;
         text-shadow:
-            0 0 15px #00ffe7,
-            0 0 35px #00ffe7,
+            0 0 5px #00ffe7,
+            0 0 20px #00ffe7,
             0 0 60px #00d4ff,
             0 0 80px #00baff,
             0 0 100px #00baff;
         position: relative;
-        animation: scanlines 1s infinite linear, glitch 2.5s infinite alternate;
-        line-height: 1.2;
+        animation: scanlines 0.05s infinite linear, glitch 3.0s infinite alternate;
+        line-height: 8.0;
     }
 
     /* Make title container bigger */
@@ -37,7 +37,7 @@ def app():
         background-color: rgba(38, 34, 35, 0.9);
         border: 2px solid #88c0d0;
         border-radius: 14px;
-        padding: 50px 40px;
+        padding: 50px 45px;
         box-shadow: 0px 0px 25px #88c0d0;
         margin: 40px auto;
         max-width: 1000px;
@@ -83,7 +83,7 @@ def app():
     }
 
     .title-glow {
-        font-size: 20px;
+        font-size: 10px;
         font-weight: bold;
         text-align: center;
         color: #88c0d0;
@@ -99,7 +99,7 @@ def app():
 
     .cyber-text {
         color: #88c0d0;
-        font-size: 22px;
+        font-size: 50px;
         font-weight: 500;
     }
 
