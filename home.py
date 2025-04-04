@@ -17,30 +17,33 @@ def app():
     }
 
     .big-title-glow {
-        font-size: 58px;
-        font-weight: 700;
-        text-align: center;
-        color: #00ffe7;
-        text-shadow:
-            0 0 5px #00ffe7,
-            0 0 15px #00ffe7,
-            0 0 25px #00ffe7,
-            0 0 40px #00d4ff,
-            0 0 60px #00baff;
-        position: relative;
-        animation: scanlines 1s infinite linear, glitch 2.5s infinite alternate;
+    font-size: 80px;
+    font-weight: 700;
+    text-align: center;
+    color: #00ffe7;
+    text-shadow:
+        0 0 10px #00ffe7,
+        0 0 25px #00ffe7,
+        0 0 40px #00d4ff,
+        0 0 60px #00baff,
+        0 0 80px #00baff;
+    position: relative;
+    animation: scanlines 1s infinite linear, glitch 2.5s infinite alternate;
     }
-        /* Hide default Streamlit sidebar toggle blocks */
-    section[data-testid="stSidebar"] [data-testid^="stExpanderToggleIcon"] {
+
+    /* Hide gray vertical bars likely from expanders or other input controls */
+    section[data-testid="stSidebar"] svg {
         display: none !important;
     }
 
-    /* Optional: smooth out sidebar inputs */
+    /* Optional: customize Streamlit checkbox/radio visuals to match */
     section[data-testid="stSidebar"] input[type="checkbox"],
     section[data-testid="stSidebar"] input[type="radio"] {
-        accent-color: #88c0d0; /* matches your palette */
-        transform: scale(1.1);
+        accent-color: #88c0d0;
+        transform: scale(1.15);
     }
+
+
 
 
     @keyframes glitch {
