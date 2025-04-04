@@ -55,6 +55,17 @@ def app():
         accent-color: #88c0d0;
         transform: scale(1.15);
     }
+        /* === Hide Scrollbars === */
+    ::-webkit-scrollbar {
+        width: 0px;
+        height: 0px;
+    }
+
+    body {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
 
     @keyframes glitch {
         0% { transform: translateX(0); }
