@@ -17,34 +17,44 @@ def app():
     }
 
     .big-title-glow {
-    font-size: 80px;
-    font-weight: 700;
-    text-align: center;
-    color: #00ffe7;
-    text-shadow:
-        0 0 10px #00ffe7,
-        0 0 25px #00ffe7,
-        0 0 40px #00d4ff,
-        0 0 60px #00baff,
-        0 0 80px #00baff;
-    position: relative;
-    animation: scanlines 1s infinite linear, glitch 2.5s infinite alternate;
+        font-size: 90px;
+        font-weight: 800;
+        text-align: center;
+        color: #00ffe7;
+        text-shadow:
+            0 0 15px #00ffe7,
+            0 0 35px #00ffe7,
+            0 0 60px #00d4ff,
+            0 0 80px #00baff,
+            0 0 100px #00baff;
+        position: relative;
+        animation: scanlines 1s infinite linear, glitch 2.5s infinite alternate;
+        line-height: 1.2;
     }
 
-    /* Hide gray vertical bars likely from expanders or other input controls */
-    section[data-testid="stSidebar"] svg {
+    /* Make title container bigger */
+    .neon-box {
+        background-color: rgba(38, 34, 35, 0.9);
+        border: 2px solid #88c0d0;
+        border-radius: 14px;
+        padding: 50px 40px;
+        box-shadow: 0px 0px 25px #88c0d0;
+        margin: 40px auto;
+        max-width: 1000px;
+        text-align: center;
+    }
+
+    /* Fix gray vertical bar issue in sidebar (for expanders, etc.) */
+    section[data-testid="stSidebar"] svg[data-testid="stIcon"] {
         display: none !important;
     }
 
-    /* Optional: customize Streamlit checkbox/radio visuals to match */
+    /* Streamlit checkbox and radio matching palette */
     section[data-testid="stSidebar"] input[type="checkbox"],
     section[data-testid="stSidebar"] input[type="radio"] {
         accent-color: #88c0d0;
         transform: scale(1.15);
     }
-
-
-
 
     @keyframes glitch {
         0% { transform: translateX(0); }
@@ -74,17 +84,6 @@ def app():
         0% { opacity: 1; text-shadow: 0 0 20px #88c0d0; }
         50% { opacity: 0.9; text-shadow: 0 0 25px #6fa3bf; }
         100% { opacity: 1; text-shadow: 0 0 20px #88c0d0; }
-    }
-
-    .neon-box {
-        background-color: rgba(38, 34, 35, 0.9);
-        border: 2px solid #88c0d0;
-        border-radius: 10px;
-        padding: 20px;
-        box-shadow: 0px 0px 15px #88c0d0;
-        margin: auto;
-        max-width: 900px;
-        text-align: center;
     }
 
     .cyber-text {
@@ -124,7 +123,7 @@ def app():
     </style>
     """, unsafe_allow_html=True)
 
-    # Neon-glow title with original layout
+    # Title box
     st.markdown("""
     <div class="neon-box">
         <h1 class="big-title-glow">Code to Codons</h1>
@@ -134,8 +133,6 @@ def app():
         </p>
     </div>
     """, unsafe_allow_html=True)
-
-
 
 if __name__ == "__main__":
     app()
