@@ -238,7 +238,7 @@ def app():
             st.code(original_dna, language="plaintext")
 
             with st.spinner("Reading genetic instructions..."):
-                explanation_dna = query_llm("What is DNA? Answer in under 5 sentences using simple, accurate language. Do not use metaphors. Just describe what DNA is, what it's made of, and what it does."
+                explanation_dna = query_llm("What is DNA? Answer in simple, accurate language. Do not use metaphors. Just describe what DNA is, what it's made of, and what it does."
 )
             st.write(explanation_dna)
 
