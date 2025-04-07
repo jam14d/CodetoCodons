@@ -207,7 +207,7 @@ def app():
         """
         <div style='background-color:#1a1a1a; color:#ff5e00; padding:10px; border-left: 4px solid #ffc72c; font-size: 14px; margin-top: 10px;'>
             <strong>Note:</strong> This app currently uses a lightweight language model for explanations. 
-            While it's capable, it's still under development and may occasionally generate scientifically inaccurate or oversimplified responses. 
+            It's still under development and may occasionally generate scientifically inaccurate or oversimplified responses. 
             We're working on improvements — thanks for your curiosity and patience!
         </div>
         """,
