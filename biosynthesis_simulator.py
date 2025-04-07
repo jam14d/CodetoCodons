@@ -224,7 +224,7 @@ def app():
             st.code(original_dna, language="plaintext")
 
             with st.spinner("Thinking of a cool explanation..."):
-                explanation_dna = query_llm("Explain what DNA is in simple, scientifically accurate language. Compare it to a blueprint that cells use to build and run the body. Say that DNA is made of four bases: adenine (A), thymine (T), cytosine (C), and guanine (G). These bases pair up—A with T, and C with G—and form the rungs of a twisted ladder called a double helix. The sides of the ladder are made of sugar and phosphate. The order of the bases is what carries the genetic instructions for making proteins.")
+                explanation_dna = query_llm("Explain what DNA is in simple and accurate terms. Use the analogy of a blueprint that cells follow to build and run the body. Describe DNA as a double helix made of two strands. Say that each strand contains a sequence of four bases—adenine (A), thymine (T), cytosine (C), and guanine (G)—which pair A with T, and C with G. The sides of the helix are made of sugar and phosphate molecules. Make it clear that the sequence of these bases carries the instructions for making proteins. Optionally, you can mention that this information is first copied into RNA before proteins are made. ")
             st.markdown("**DNA: The Blueprint**")
             st.write(explanation_dna)
 
