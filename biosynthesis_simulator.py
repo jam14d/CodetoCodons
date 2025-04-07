@@ -237,8 +237,8 @@ def app():
             st.subheader("Your DNA Adventure Begins!")
             st.code(original_dna, language="plaintext")
 
-            with st.spinner("Thinking of a cool explanation..."):
-                explanation_dna = query_llm("Explain what DNA is in simple, scientifically accurate language.")
+            with st.spinner("Reading genetic instructions..."):
+                explanation_dna = query_llm("Explain what DNA is in simple, accurate terms. Just explain what DNA is, what it's made of, and what it does.")
             st.write(explanation_dna)
 
             st.code(mutated_dna, language="plaintext")
