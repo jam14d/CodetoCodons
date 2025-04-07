@@ -205,6 +205,20 @@ def app():
 
     st.markdown(
         """
+        <div style='background-color:#1a1a1a; color:#ff5e00; padding:10px; border-left: 4px solid #ffc72c; font-size: 14px; margin-top: 10px;'>
+            ⚠️ <strong>Note:</strong> This app currently uses the <code>Falcon 7B</code> language model for explanations. 
+            While it's capable, it's still under development and may occasionally generate scientifically inaccurate or oversimplified responses. 
+            We're working on improvements — thanks for your curiosity and patience!
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+
+
+
+    st.markdown(
+        """
         <div class="intro-scroll">
             Input any phrase, and initiate molecular encoding.
         </div>
