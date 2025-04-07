@@ -224,7 +224,7 @@ def app():
             st.code(original_dna, language="plaintext")
 
             with st.spinner("Thinking of a cool explanation..."):
-                explanation_dna = query_llm("Explain what DNA is and how it works, accurately but in simple terms suitable for someone without a science background. Avoid including incorrect details like DNA containing proteins or DNA primers unless you're explaining lab techniques.")
+                explanation_dna = query_llm("Explain what DNA is in simple, accurate terms using analogies like a blueprint. Please include the four chemical bases (A, T, C, G), mention the double helix structure, and avoid incorrect info like DNA containing proteins or primers.")
             st.markdown("**DNA: The Blueprint**")
             st.write(explanation_dna)
 
