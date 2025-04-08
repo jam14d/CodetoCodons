@@ -18,7 +18,11 @@ def load_and_filter_clinvar(filepath: str, cache_path: str = "data/filtered_clin
         'Start', 'ReferenceAllele', 'AlternateAllele', 'Assembly', 'Type'
     ]
     
-    df = pd.read_csv(filepath, sep='\t', usecols=usecols, low_memory=False)
+    #df = pd.read_csv(filepath, sep='\t', usecols=usecols, low_memory=False)
+
+    # Treat "na" as missing
+    df = pd.read_csv(filepath, sep='\t', usecols=usecols, na_values="na", low_memory=False)
+
 
     # Filter data
     df = df[
