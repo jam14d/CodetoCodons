@@ -1,5 +1,9 @@
+#ignore data from ml folder
+ml_model/data/
+
 .env
 # Ignore compiled Python files
 __pycache__/
 *.pyc
 *.pyo
+ml_model/data/
