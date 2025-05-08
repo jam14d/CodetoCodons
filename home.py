@@ -145,5 +145,11 @@ def app():
     </div>
     """, unsafe_allow_html=True)
 
+    #sig
+
+    st.markdown("---")
+    st.caption("Developed by Jamie Anne Mortel")
+
 if __name__ == "__main__":
     app()
+
