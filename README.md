@@ -2,11 +2,9 @@
 
 **Code to Codons** is a project dedicated to making biology concepts more accessible. This project consists of a Streamlit application that explores different aspects of genetics, DNA mutations, and protein synthesis. Below are key pages in this project:
 
----
-
 ### Quick Links
-- 🚀 [Live App](https://codetocodons.streamlit.app/)
-- 🎥 [Watch Demo](https://streamable.com/3nef8x)
+- [Live App](https://codetocodons.streamlit.app/)
+- [Watch Demo](https://streamable.com/3nef8x)
 
 ---
 ## BaseWarp
