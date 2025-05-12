@@ -1,6 +1,6 @@
 # Code to Codons: Interactive Biology Web Application
 
-**Code to Codons** is a project dedicated to making biology concepts more accessible. This project consists of a Streamlit application that explores different aspects of genetics, DNA mutations, and protein synthesis. Below are key pages in this project:
+**Code to Codons** is a project dedicated to making biology concepts more accessible. This project consists of a Streamlit application that explores different aspects of genetics, DNA mutations, and protein synthesis. 
 
 ### Quick Links
 - [Live App](https://codetocodons.streamlit.app/)
