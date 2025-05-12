@@ -2,14 +2,13 @@
 
 **Code to Codons** is a project dedicated to making biology concepts more accessible. This project consists of a Streamlit application that explores different aspects of genetics, DNA mutations, and protein synthesis. Below are key pages in this project:
 
-Live App [https://codetocodons.streamlit.app/]
-
-[Watch the demo](https://streamable.com/627p65)
-
-
-
 ---
 
+### Quick Links
+- 🚀 [Live App](https://codetocodons.streamlit.app/)
+- 🎥 [Watch Demo](https://streamable.com/3nef8x)
+
+---
 ## BaseWarp
 
 BaseWarp is an interactive DNA repair game built using Streamlit. In this game, a DNA strand has been mutated, and your task is to swap bases on the complementary strand until it correctly pairs with the template strand.
