@@ -1,9 +1,28 @@
 #ignore data from ml folder
 ml_model/data/
 
-.env
-# Ignore compiled Python files
+
+# Python-specific
 __pycache__/
+*.py[cod]
+*$py.class
 *.pyc
 *.pyo
+*.pyd
 ml_model/data/
+
+Icon
+Icon?
+Icon\r
+"Icon\r"
+Icon*
+
+
+
+# Virtual environments
+venv/
+.env/
+.env
+
+# Streamlit cache
+.streamlit/
