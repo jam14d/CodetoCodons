@@ -4,7 +4,7 @@
 
 [Live App](https://codetocodons.streamlit.app/)
 
-![Demo](/Users/jamieannemortel/Downloads/codetocodons_demo.gif)
+![Demo](demo/codetocodons_demo-ezgif.com-optimize.gif)
 
 ---
 
